@@ -20,20 +20,20 @@ export default defineConfig({
       gtag('config', 'GTM-M4Z2H3LQ');
       `
     ],
-    ["link", { rel: "icon", href: "https://compphysschool.github.io/2026/images/compphys_icon.jpg" }],
-    ["meta", { property: "og:image", content: "https://rd070672.github.io/yamazakilab-wiki/images/compphys_hp_top_1200.jpg" }],
+    ["link", { rel: "icon", href: "https://rd070672.github.io/yamazakilab-wiki/images/favicon.png" }],
+    ["meta", { property: "og:image", content: "https://rd070672.github.io/yamazakilab-wiki/images/top.jpg" }],
     ["meta", { property: "og:site_name", content: "YNU山崎研究室" }],
     ["meta", { property: "twitter:card", content: "summary" }],
     ["meta", { property: "twitter:site", content: "@yamazakilab-ynu"}],
     ["meta", { property: "twitter:title", content: "YNU山崎研究室"}],
     ["meta", { property: "twitter:description", content: "YNU山崎研究室における知見や経験をwikiとして共有します"}],
-    ["meta", { property: "twitter:image", content: "https://rd070672.github.io/yamazakilab-wiki/images/compphys_hp_top_1200.jpg" }]
+    ["meta", { property: "twitter:image", content: "https://rd070672.github.io/yamazakilab-wiki/images/top.jpg" }]
   ],
   // https://vitepress.dev/reference/default-theme-config
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'ホームページ', link: 'https://tyamazaki.com/' },
+      { text: 'ホームページ', link: 'https://tyamazaki.com' },
       { text: '計算', link: '/registration' },
       { text: '実験', link: '/timetable' },
       { text: 'データサイエンス', link: '/about-sponsorship'},
