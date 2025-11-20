@@ -33,25 +33,40 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
+      { text: 'ホームページ', link: 'https://tyamazaki.com/' },
       { text: '計算', link: '/registration' },
       { text: '実験', link: '/timetable' },
       { text: 'データサイエンス', link: '/about-sponsorship'},
       { text: 'ラボ運営', items: [
-          { text: '2025年度', link: 'https://compphysschool.github.io/homepage2025/index.html'},
-          { text: '2024年度', link: 'https://compphysspringschool2024.github.io/homepage2024/'},
-          { text: '2023年度', link: 'https://hohno0223.github.io/comp_phys_spring_school2023/'}
+          { text: '2025年度', link: '/'},
+          { text: '2024年度', link: '/'},
+          { text: '2023年度', link: '/'}
       ]},
       { text: 'その他', link: '/others'},
     ],
     sidebar: [
       { text: 'Home', link: '/' },
-      { text: '計算', link: '/registration' },
-      { text: '実験', link: '/timetable' },
+      { text: '計算', items: [
+          { text: 'VASP v6.5.1のインストール方法', link: '/'},
+          { text: 'VASPを用いたDFT計算', link: '/'},
+          { text: 'MAELAS v3.0', link: '/'}
+      ]},
+      { text: '実験', items: [
+          { text: '装置類の引っ越し', link: '/'},
+          { text: '土禁・フロアマット', link: '/'},
+      ]},
       { text: 'データサイエンス', link: '/about-sponsorship'},
       { text: 'ラボ運営', items: [
-          { text: '2025年度', link: 'https://compphysschool.github.io/homepage2025/index.html'},
-          { text: '2024年度', link: 'https://compphysspringschool2024.github.io/homepage2024/'},
-          { text: '2023年度', link: 'https://hohno0223.github.io/comp_phys_spring_school2023/'}
+          { text: '装置類の引っ越し', link: '/'},
+          { text: '土禁・フロアマット', link: '/'},
+          { text: '机・椅子（居室）', link: '/'},
+          { text: '机・椅子（実験室）', link: '/'},
+          { text: 'Wi-Fiのセットアップ', link: '/'},
+        
+          { text: '家電類', link: '/'},
+          { text: 'サーバールーム', link: '/'},
+          { text: 'クリーンベンチ', link: '/'},
+          { text: 'シンク周り', link: '/'},
       ]},
       { text: 'その他', link: '/others'},
     ],
@@ -60,7 +75,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/rd070672/yamazakilab-wiki' }
     ],
     footer: {
-      copyright: '© 2026 Yamazakilab-ynu',
+      copyright: '© 2026 Yamazaki Lab',
     },
   },
 
