@@ -33,32 +33,36 @@ features:
 ## 計算関連
 
 ### VASP
-- [VASP v6.5.1のインストールメモ](calc/vasp-install.md)
-- [VASPを用いたDFT計算](calc/vasp-dft.md)
-- [vaspkit v1.5 メモ](calc/vaspkit-v1.5.md)
-- [phonopy v2.44.0 メモ](calc/phonopy-v2.44.0.md)
-- [MAELAS v3.0 メモ](calc/maelas-v3.0.md)
-- [Bader charge analysis メモ](calc/bader-charge.md)
+- [VASP v6.5.1のインストールメモ](/calc/vasp-install.md)
+- [VASPを用いたDFT計算](/calc/vasp-dft.md)
+- [vaspkit v1.5 メモ](/calc/vaspkit.md)
+- [phonopy v2.44.0 メモ](/calc/phonopy.md)
+- [MAELAS v3.0 メモ](/calc/maelas.md)
+- [Bader charge analysis メモ](/calc/bader-charge.md)
 
 ### SPR-KKR
-- [SPR-KKR v8.6.0 のインストールメモ](calc/spr-kkr-install.md)
+- [SPR-KKR v8.6.0 のインストールメモ](/calc/sprkkr-install.md)
 
 ### Wien2k
-- [Wien2k v23.2 のインストールメモ](calc/wien2k-install.md)
+- [Wien2k v23.2 のインストールメモ](/calc/wien2k-install.md)
 
 ### mumax3
-- [mumax3 v3.11 のインストールメモ](calc/mumax3-install.md)
-- [mumax3 を用いた LLG 計算](calc/mumax3-llg.md)
-- [拡張版 mumax+ による磁気弾性計算](calc/mumax-plus-magnetoelastic.md)
+- [mumax3 v3.11 のインストールメモ](/calc/mumax3-install.md)
+- [mumax3 を用いた LLG 計算](/calc/mumax3-llg.md)
+- [拡張版 mumax+ による磁気弾性計算](/calc/mumaxplus.md)
 
 ### COMSOL Multiphysics
-- [COMSOL Multiphysics v6.4 のインストールメモ](calc/comsol-v6.4-install.md)
+- [COMSOL Multiphysics v6.4 のインストールメモ](/calc/comsol-install.md)
+- [固体力学計算](/calc/comsol-solid.md)
+- [AC/DC計算](/calc/comsol-ac-dc.md)
+- [LLG計算](/calc/comsol-llg.md)
+- [LLG連成計算](/calc/comsol-multi.md)
 
 ### Linux-PC の初期設定
-- [Linux-PC 初期設定メモ](calc/linux-pc-setup.md)
+- [Linux-PC 初期設定メモ](/calc/linux-setup.md)
 
 ### 東北大金研スパコン "Masamune-II"
-- [Masamune-II 利用メモ](calc/masamune-ii.md)
+- [Masamune-II 利用メモ](/calc/masamune.md)
 
 
 
