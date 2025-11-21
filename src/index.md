@@ -32,12 +32,12 @@ features:
 
 ### 第一原理計算
 - VASP
-  - [VASP v6.5.1 のインストールメモ](/calc/vasp-install.md)
-  - [DFT 計算](/calc/vasp-dft.md)
-  - [vaspkit v1.5 メモ](/calc/vaspkit.md)
-  - [phonopy v2.44.0 メモ](/calc/phonopy.md)
-  - [MAELAS v3.0 メモ](/calc/maelas.md)
-  - [Bader charge analysis メモ](/calc/bader-charge.md)
+  - [VASP v6.5.1 のインストールメモ](/calc/vasp-install.md)★
+  - VASPの計算例
+  - [vaspkit v1.5 メモ](/calc/vaspkit.md)★
+  - [phonopy v2.44.0 メモ](/calc/phonopy.md)★
+  - [MAELAS v3.0 メモ](/calc/maelas.md)★
+  - [Bader charge analysis メモ](/calc/bader-charge.md)★
 - SPR-KKR
   - [SPR-KKR v8.6.0 のインストールメモ](/calc/sprkkr-install.md)
   - SPR-KKRの計算例
@@ -46,7 +46,7 @@ features:
   - Wien2kの計算例
 
 ### 第一原理MD計算
-- [VASPを用いた第一原理 MD 計算](/calc/vasp-aimd.md)
+- [VASPを用いた第一原理 MD 計算](/calc/vasp-aimd.md)★
 
 ### 分子動力学計算（MD）
 - MDの原理
@@ -71,15 +71,15 @@ features:
 - FEMとFDMの原理
 - メッシュ生成
 - mumax3
-  - [mumax3 v3.11 のインストールメモ](/calc/mumax3-install.md)
-  - [mumax3 を用いた LLG 計算](/calc/mumax3-llg.md)
-  - [拡張版 mumax+ による磁気弾性計算](/calc/mumaxplus.md)
+  - [mumax3 v3.11 のインストールメモ](/calc/mumax3-install.md)★
+  - mumax3 を用いた LLG 計算
+  - 拡張版 mumax+ による磁気弾性計算
 - COMSOL
   - [COMSOL Multiphysics v6.4 のインストールメモ](/calc/comsol-install.md)
-  - [COMSOL を用いた 固体力学計算](/calc/comsol-solid.md)
-  - [COMSOL を用いた AC/DC 計算](/calc/comsol-ac-dc.md)
-  - [COMSOL を用いた LLG 計算](/calc/comsol-llg.md)
-  - [COMSOL を用いた LLG 連成計算](/calc/comsol-multiphys.md)
+  - COMSOL を用いた 固体力学計算
+  - COMSOL を用いた AC/DC 計算
+  - COMSOL を用いた LLG 計算
+  - COMSOL を用いた LLG 連成計算
 - C++でのプログラミング
   - フェーズフィールとLLG計算による強磁性形状記憶合金の計算
 
@@ -198,7 +198,8 @@ features:
 - Linuxの基本
 - リモートアクセス (Anydesk)
 - データ管理 (NAS)
-- [所有ワクステ (SHIMA/TANI/MORI/MBN)](/system/workstations.md)
+- [所有ワクステ (SHIMA/TANI/MORI/MBN)](/system/workstations.md)★
+- [購入後の初期設定](/system/initial.md)★
 
 ### ソフトウェア管理
 - 無料・有料ライセンス
