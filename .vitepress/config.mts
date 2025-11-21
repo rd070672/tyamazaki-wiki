@@ -9,17 +9,24 @@ export default defineConfig({
   title: "Yamazaki Lab Wiki",
   description: "山崎研究室における知見や経験をwikiとして共有します",
   head: [
-    ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-HLYFJVDYL3' }],
-    [
-      'script',
-      {},
-      `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-HLYFJVDYL3');
-      `
+    // ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-HLYFJVDYL3' }],
+    // [
+    //   'script',
+    //   {},
+    //   `
+    //   window.dataLayer = window.dataLayer || [];
+    //   function gtag(){dataLayer.push(arguments);}
+    //   gtag('js', new Date());
+    //   gtag('config', 'G-HLYFJVDYL3');
+    //   `
+    // ],
+    ['script', {}, `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-M4Z2H3LQ');`
     ],
+    
     ["link", { rel: "icon", href: "https://rd070672.github.io/yamazakilab-wiki/images/favicon.png" }],
     ["meta", { property: "og:image", content: "https://rd070672.github.io/yamazakilab-wiki/images/top.jpg" }],
     ["meta", { property: "og:site_name", content: "山崎研究室" }],
