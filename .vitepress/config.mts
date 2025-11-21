@@ -38,12 +38,7 @@ export default defineConfig({
       { text: '実験', link: '/#実験' },
       { text: 'データサイエンス', link: '/#データサイエンス'},
       { text: '情報システム', link: '/#情報システム'},
-      { text: 'ラボ運営', link: '/ラボ運営', items: [
-          { text: '2025年度', link: '/'},
-          { text: '2024年度', link: '/'},
-          { text: '2023年度', link: '/'}
-      ]},
-      { text: 'その他', link: '/'},
+      { text: 'ラボ運営', link: '/#ラボ運営'},
       { text: 'ホームページ', link: 'https://tyamazaki.com' },
       { text: 'Github', link: 'https://github.com/rd070672/yamazakilab-wiki' },
     ],
@@ -70,12 +65,16 @@ export default defineConfig({
           { text: 'Masamune-II 利用メモ',             link: '/calc/masamune' },
       ]},
 
-      { text: '実験', items: [
+      { text: '実験', link: '/exp', items: [
           { text: '装置類の引っ越し', link: '/'},
           { text: '土禁・フロアマット', link: '/'},
       ]},
-      { text: 'データサイエンス', link: '/about-sponsorship'},
-      { text: 'ラボ運営', items: [
+
+      { text: 'データサイエンス', link: '/data', items: [
+          { text: '装置類の引っ越し', link: '/'},
+          { text: '土禁・フロアマット', link: '/'},
+      ]},
+      { text: 'ラボ運営', link: '/lab', items: [
           { text: '装置類の引っ越し', link: '/'},
           { text: '土禁・フロアマット', link: '/'},
           { text: '机・椅子（居室）', link: '/'},
@@ -87,7 +86,8 @@ export default defineConfig({
           { text: 'クリーンベンチ', link: '/'},
           { text: 'シンク周り', link: '/'},
       ]},
-      { text: 'その他', link: '/others'},
+      { text: 'ホームページ', link: 'https://tyamazaki.com' },
+      { text: 'Github', link: 'https://github.com/rd070672/yamazakilab-wiki' },
     ],
     socialLinks: [
       { icon: 'x', link: 'https://x.com/yamazakilab-ynu' },
