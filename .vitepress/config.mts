@@ -6,7 +6,7 @@ export default defineConfig({
 
   base: '/yamazakilab-wiki/',
   srcDir: 'src',
-  title: "Yamazakilab-wiki",
+  title: "Yamazaki Lab",
   description: "山崎研究室@YNUにおける知見や経験をwikiとして共有します",
   head: [
     ['script', { async: true, src: 'https://www.googletagmanager.com/ns.html?id=GTM-M4Z2H3LQ' }],
