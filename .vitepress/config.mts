@@ -34,10 +34,10 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
-      { text: '計算', link: '/calc' },
-      { text: '実験', link: '/exp' },
-      { text: 'データサイエンス', link: '/data'},
-      { text: '情報システム', link: '/system'},
+      { text: '計算', link: '/#計算' },
+      { text: '実験', link: '/#実験' },
+      { text: 'データサイエンス', link: '/#データサイエンス'},
+      { text: '情報システム', link: '/#情報システム'},
       { text: 'ラボ運営', link: '/lab', items: [
           { text: '2025年度', link: '/'},
           { text: '2024年度', link: '/'},
