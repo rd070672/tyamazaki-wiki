@@ -6,7 +6,7 @@ export default defineConfig({
 
   base: '/yamazakilab-wiki/',
   srcDir: 'src',
-  title: "Yamazaki Lab Wiki",
+  title: "Wiki | Yamazaki Lab",
   description: "山崎研究室における知見や経験をwikiとして共有します",
   head: [
     // ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-HLYFJVDYL3' }],
@@ -26,7 +26,7 @@ export default defineConfig({
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-M4Z2H3LQ');`
     ],
-    
+
     ["link", { rel: "icon", href: "https://rd070672.github.io/yamazakilab-wiki/images/favicon.png" }],
     ["meta", { property: "og:image", content: "https://rd070672.github.io/yamazakilab-wiki/images/top.jpg" }],
     ["meta", { property: "og:site_name", content: "山崎研究室" }],
