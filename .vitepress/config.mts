@@ -7,7 +7,7 @@ export default defineConfig({
   base: '/yamazakilab-wiki/',
   srcDir: 'src',
   title: "Yamazaki Lab Wiki",
-  description: "山崎研究室@YNUにおける知見や経験をwikiとして共有します",
+  description: "山崎研究室における知見や経験をwikiとして共有します",
   head: [
     ['script', { async: true, src: 'https://www.googletagmanager.com/ns.html?id=GTM-M4Z2H3LQ' }],
     [
@@ -22,11 +22,11 @@ export default defineConfig({
     ],
     ["link", { rel: "icon", href: "https://rd070672.github.io/yamazakilab-wiki/images/favicon.png" }],
     ["meta", { property: "og:image", content: "https://rd070672.github.io/yamazakilab-wiki/images/top.jpg" }],
-    ["meta", { property: "og:site_name", content: "山崎研究室@YNU" }],
+    ["meta", { property: "og:site_name", content: "山崎研究室" }],
     ["meta", { property: "twitter:card", content: "summary" }],
-    ["meta", { property: "twitter:site", content: "@yamazakilab-ynu"}],
-    ["meta", { property: "twitter:title", content: "山崎研究室@YNU"}],
-    ["meta", { property: "twitter:description", content: "山崎研究室@YNUにおける知見や経験をwikiとして共有します"}],
+    ["meta", { property: "twitter:site", content: "@yamazakilab"}],
+    ["meta", { property: "twitter:title", content: "山崎研究室"}],
+    ["meta", { property: "twitter:description", content: "山崎研究室における知見や経験をwikiとして共有します"}],
     ["meta", { property: "twitter:image", content: "https://rd070672.github.io/yamazakilab-wiki/images/top.jpg" }]
   ],
 
@@ -43,7 +43,6 @@ export default defineConfig({
       { text: 'Github', link: 'https://github.com/rd070672/yamazakilab-wiki' },
     ],
     sidebar: [
-      { text: 'Home', link: '/' },
       { text: '計算', link: '/calc', items: [
           { text: 'VASP v6.5.1のインストールメモ',  link: '/calc/vasp-install' },
           { text: 'VASPを用いたDFT計算',           link: '/calc/vasp-dft' },
@@ -90,7 +89,7 @@ export default defineConfig({
       { text: 'Github', link: 'https://github.com/rd070672/yamazakilab-wiki' },
     ],
     socialLinks: [
-      { icon: 'x', link: 'https://x.com/yamazakilab-ynu' },
+      { icon: 'x', link: '/' },
       { icon: 'github', link: 'https://github.com/rd070672/yamazakilab-wiki' }
     ],
     footer: {
