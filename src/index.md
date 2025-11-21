@@ -27,32 +27,28 @@ features:
 
 ---
 
-## 
-# wiki
-
 ## 計算
 本セクションでは、第一原理計算、数値計算、スパコンを用いた大規模計算を中心に、材料科学・物性物理の研究に不可欠な計算科学の基盤を整理する。環境構築やソフトウェアのインストール方法だけでなく、代表的な計算手法の考え方や典型的な解析事例までを俯瞰し、材料物性の理解からデータ駆動型解析までを一貫して扱うことを目的とする。
 
 計算科学は、理論式から得られる定性的な議論と、実験から得られる定量データの間を接続する役割を担う。第一原理計算による電子状態・エネルギー地形の評価、マイクロ磁気シミュレーションによる磁区構造・ダイナミクスの予測、有限要素法による連成場解析、さらにはこれらをスパコン上で大規模に実行するための計算環境整備までを統合的に運用することで、材料設計の指針を高い再現性と一般性をもって提示できるようになる。
 
 ### 第一原理計算
-- [VASP v6.5.1 のインストールメモ](/calc/vasp-install.md)
-- [DFT 計算](/calc/vasp-dft.md)
-- [第一原理 MD 計算](/calc/vasp-aimd.md)
-- [vaspkit v1.5 メモ](/calc/vaspkit.md)
-- [phonopy v2.44.0 メモ](/calc/phonopy.md)
-- [MAELAS v3.0 メモ](/calc/maelas.md)
-- [Bader charge analysis メモ](/calc/bader-charge.md)
-- [SPR-KKR v8.6.0 のインストールメモ](/calc/sprkkr-install.md)
-- [Wien2k v23.2 のインストールメモ](/calc/wien2k-install.md)
+- VASP
+  - [VASP v6.5.1 のインストールメモ](/calc/vasp-install.md)
+  - [DFT 計算](/calc/vasp-dft.md)
+  - [vaspkit v1.5 メモ](/calc/vaspkit.md)
+  - [phonopy v2.44.0 メモ](/calc/phonopy.md)
+  - [MAELAS v3.0 メモ](/calc/maelas.md)
+  - [Bader charge analysis メモ](/calc/bader-charge.md)
+- SPR-KKR
+  - [SPR-KKR v8.6.0 のインストールメモ](/calc/sprkkr-install.md)
+  - SPR-KKRの計算例
+- Wien2k
+  - [Wien2k v23.2 のインストールメモ](/calc/wien2k-install.md)
+  - Wien2kの計算例
 
 ### 第一原理MD計算
 - [VASPを用いた第一原理 MD 計算](/calc/vasp-aimd.md)
-
-### モンテカルロ計算
-- Monte Carlo
-- マルコフ連鎖MC
-- クラスター展開
 
 ### 分子動力学計算（MD）
 - [LAMMPS 10 Sep 2025 version のインストールメモ](/calc/lammps-install.md)
@@ -61,6 +57,11 @@ features:
 - ASE を用いた MD 計算
 - JAX-MD を用いた MD 計算
 
+### モンテカルロ計算
+- Monte Carlo
+- マルコフ連鎖MC
+- クラスター展開
+
 ### フェーズフィール計算
 - Phase Fieldモデル（Cahn–Hilliard）
 - 結晶成長（Allen–Cahn）
@@ -68,14 +69,16 @@ features:
 ### 有限要素・有限差分計算
 - FEMとFDMの原理
 - メッシュ生成
-- [mumax3 v3.11 のインストールメモ](/calc/mumax3-install.md)
-- [mumax3 を用いた LLG 計算](/calc/mumax3-llg.md)
-- [拡張版 mumax+ による磁気弾性計算](/calc/mumaxplus.md)
-- [COMSOL Multiphysics v6.4 のインストールメモ](/calc/comsol-install.md)
-- [COMSOL を用いた 固体力学計算](/calc/comsol-solid.md)
-- [COMSOL を用いた AC/DC 計算](/calc/comsol-ac-dc.md)
-- [COMSOL を用いた LLG 計算](/calc/comsol-llg.md)
-- [COMSOL を用いた LLG 連成計算](/calc/comsol-multiphys.md)
+- mumax3
+  - [mumax3 v3.11 のインストールメモ](/calc/mumax3-install.md)
+  - [mumax3 を用いた LLG 計算](/calc/mumax3-llg.md)
+  - [拡張版 mumax+ による磁気弾性計算](/calc/mumaxplus.md)
+- COMSOL
+  - [COMSOL Multiphysics v6.4 のインストールメモ](/calc/comsol-install.md)
+  - [COMSOL を用いた 固体力学計算](/calc/comsol-solid.md)
+  - [COMSOL を用いた AC/DC 計算](/calc/comsol-ac-dc.md)
+  - [COMSOL を用いた LLG 計算](/calc/comsol-llg.md)
+  - [COMSOL を用いた LLG 連成計算](/calc/comsol-multiphys.md)
 
 
 <!-- ################################################################################### -->
@@ -201,7 +204,7 @@ features:
 - 予約システム（共用機器）の利用
 - 奨学金
 - 留学支援
-- ドクターへの誘い
+- 博士進学のすゝめ
 
 ### 研究活動
 - 研究活動とは？
@@ -232,5 +235,3 @@ features:
 - Wi-Fiのセットアップ
 - 机・椅子・棚
 - 家電類
-
----
