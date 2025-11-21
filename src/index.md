@@ -13,7 +13,7 @@ hero:
 
     - theme: alt
       text: Github
-      link: /https://github.com/rd070672/yamazakilab-wiki
+      link: https://github.com/rd070672/yamazakilab-wiki
 
 features:
   - title: 計算
