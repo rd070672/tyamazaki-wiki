@@ -6,7 +6,7 @@ export default defineConfig({
 
   base: '/yamazakilab-wiki/',
   srcDir: 'src',
-  title: "Yamazaki Lab",
+  title: "Yamazaki Lab Wiki",
   description: "山崎研究室@YNUにおける知見や経験をwikiとして共有します",
   head: [
     ['script', { async: true, src: 'https://www.googletagmanager.com/ns.html?id=GTM-M4Z2H3LQ' }],
@@ -39,7 +39,7 @@ export default defineConfig({
       { text: 'データサイエンス', link: '/#データサイエンス'},
       { text: '情報システム', link: '/#情報システム'},
       { text: 'ラボ運営', link: '/#ラボ運営'},
-      { text: 'ホームページ', link: 'https://tyamazaki.com' },
+      { text: 'Website', link: 'https://tyamazaki.com' },
       { text: 'Github', link: 'https://github.com/rd070672/yamazakilab-wiki' },
     ],
     sidebar: [

@@ -8,12 +8,12 @@ hero:
   tagline: # 横浜国立大学<br>材料工学教育プログラム
   actions:
     - theme: brand
-      text: ホームページ
+      text: Website
       link: https://tyamazaki.com/
 
     - theme: alt
-      text: wiki
-      link: /#wiki
+      text: Github
+      link: /https://github.com/rd070672/yamazakilab-wiki
 
 features:
   - title: 計算
@@ -51,11 +51,14 @@ features:
 - [VASPを用いた第一原理 MD 計算](/calc/vasp-aimd.md)
 
 ### 分子動力学計算（MD）
-- [LAMMPS 10 Sep 2025 version のインストールメモ](/calc/lammps-install.md)
+- MDの原理
 - 古典的・機械学習ポテンシャルの選定
-- LAMMPS を用いた MD 計算
-- ASE を用いた MD 計算
-- JAX-MD を用いた MD 計算
+- LAMMPS
+  - [LAMMPS 10 Sep 2025 version のインストールメモ](/calc/lammps-install.md)
+  - LAMMPS を用いた MD 計算
+- Pythonでのプログラミング
+  - ASE を用いた MD 計算
+  - JAX-MD を用いた MD 計算
 
 ### モンテカルロ計算
 - Monte Carlo
@@ -79,6 +82,8 @@ features:
   - [COMSOL を用いた AC/DC 計算](/calc/comsol-ac-dc.md)
   - [COMSOL を用いた LLG 計算](/calc/comsol-llg.md)
   - [COMSOL を用いた LLG 連成計算](/calc/comsol-multiphys.md)
+- C++でのプログラミング
+  - フェーズフィールとLLG計算による強磁性形状記憶合金の計算
 
 
 <!-- ################################################################################### -->
@@ -110,6 +115,10 @@ features:
 - 透過電子顕微鏡 (TEM)
 - 5D-STEM
 
+### 汎用機器・治具設計
+- 3Dプリンター
+- アルミフレーム設計
+
 ### 放射光施設
 - SPring-8
   - 申請と実験準備
@@ -134,13 +143,13 @@ features:
 - [統計学の基礎](/data/statistics.md)
 - ブートストラップ、ベイズ統計
 
-### 位相学的データ解析 (TDA)
-- パーシステントホモロジー (PH)
-- TDA の距離学習
+### 特徴量エンジニアリング
+- 統計量解析
+- スペクトル解析
+- 位相学的データ解析 (TDA)
 
 ### 教師あり学習（回帰・分類）
 - 決定木系手法
-- SHAP値
 - アンサンブル学習（Bagging, Boosting）
 
 ### 次元削減手法・可視化
@@ -154,11 +163,21 @@ features:
 - グラフ (GNN, MPNN, GraphSAGE)
 - 物理 (Physics-informed NNs）
 
+### モデル解釈
+- SHAP値
+- 部分依存プロット（PDP）
+- Feature importance
+
+###　実験計画・最適化
+- 実験計画法（DOE）
+- ベイズ最適化（BO）
+- アクティブラーニング（AL）
+- 逆問題・最適化
+
 ### その他
 - 機械学習ポテンシャル
 - ファインチューニング
 - サロゲートモデル
-- 逆問題・最適化
 
 
 <!-- ################################################################################### -->
@@ -175,7 +194,7 @@ features:
 - IDE (Visual studio Code, Cursor) 
 
 ### スーパーコンピュータの利用
-- [東北大金研Masamune-II](/calc/supercom-masamune.md)
+- [東北大金研Masamune-II](/system/supercom-masamune.md)
 
 ### サーバー・HPC管理
 - Linuxの基本
@@ -207,7 +226,7 @@ features:
 - 博士進学のすゝめ
 
 ### 研究活動
-- 研究活動とは？
+- そもそも研究活動とは？
 - 学部・修士・博士における研究活動
 - 文献調査の方法
 - 論文紹介
@@ -230,8 +249,9 @@ features:
 ### 立ち上げ期メモ
 - 備品・機器類のお引っ越し
 - 電源容量の確認
+- 最大積載荷重の確認
 - サーバールームの構築
 - クリーンベンチ・実験机
 - Wi-Fiのセットアップ
-- 机・椅子・棚
-- 家電類
+- 机・椅子・棚のセットアップ
+- 家電類の準備
