@@ -11,11 +11,11 @@
 
 ## 基本方程式
 - 扱う自由度：
-  - 原子核（イオン）の座標 \(\{\mathbf{R}_I\}\) と速度 \(\{\mathbf{V}_I\}\)。
-  - 電子は量子力学的に扱い、波動関数 \(\{\psi_n\}\) を DFT などで求める。
+  - 原子核（イオン）の座標 $\{\mathbf{R}_I\}$ と速度 $\{\mathbf{V}_I\}$。
+  - 電子は量子力学的に扱い、波動関数 $\{\psi_n\}$ を DFT などで求める。
 - 原子核の運動方程式（古典力学）：
-  - \( M_I \dfrac{d^2\mathbf{R}_I}{dt^2} = \mathbf{F}_I = -\dfrac{\partial E_{\text{BO}}(\{\mathbf{R}_J\})}{\partial \mathbf{R}_I} \)
-  - \(E_{\text{BO}}\)：与えられた原子配置での電子の基底状態エネルギー（Born–Oppenheimer エネルギー面）。
+  - $ M_I \dfrac{d^2\mathbf{R}_I}{dt^2} = \mathbf{F}_I = -\dfrac{\partial E_{\text{BO}}(\{\mathbf{R}_J\})}{\partial \mathbf{R}_I} $
+  - $E_{\text{BO}}$：与えられた原子配置での電子の基底状態エネルギー（Born–Oppenheimer エネルギー面）。
 - 電子部分：
   - 各ステップで DFT の Kohn–Sham 方程式を解き、基底状態エネルギーと力を得る。
   - 力は Hellmann–Feynman 力（＋必要なら Pulay 力）として計算される。
@@ -25,7 +25,7 @@
 - 前提：**Born–Oppenheimer 近似**
   - 電子質量 ≪ 原子核質量のため、電子は「瞬時に」基底状態に追従するとみなす。
 - 1 ステップの流れ：
-  - (1) 原子配置 \(\{\mathbf{R}_I\}\) を固定して DFT SCF を収束させ、基底状態エネルギー \(E_{\text{BO}}\) と力 \(\{\mathbf{F}_I\}\) を得る。
+  - (1) 原子配置 $\{\mathbf{R}_I\}$ を固定して DFT SCF を収束させ、基底状態エネルギー $E_{\text{BO}}$ と力 $\{\mathbf{F}_I\}$ を得る。
   - (2) その力を用いて、時間積分（Verlet など）により原子核の位置と速度を更新。
   - (3) 更新された配置で再び電子構造を解く。
 - 特徴：
