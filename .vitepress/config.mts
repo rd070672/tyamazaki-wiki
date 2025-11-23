@@ -10,7 +10,9 @@ export default defineConfig({
   description: "山崎研究室における知見や経験をwikiとして共有します",
   lastUpdated: {text: '最終更新', formatOptions: {dateStyle: 'short', timeStyle: 'medium'}},
   cleanUrls: true,
-  markdown: {math: true,},
+  markdown: {
+    math: true,
+  },
 
   head: [
     
@@ -22,7 +24,10 @@ export default defineConfig({
     ],
 
     ["link", { rel: "icon", href: "https://rd070672.github.io/yamazakilab-wiki/images/favicon.png" }],
-    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css'}],
+    ['link', { 
+      rel: 'stylesheet', 
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css'
+    }],
 
     ["meta", { property: "og:image", content: "https://rd070672.github.io/yamazakilab-wiki/images/top.jpg" }],
     ["meta", { property: "og:site_name", content: "山崎研究室" }],
@@ -140,12 +145,9 @@ export default defineConfig({
 
       ]
     },
-    
     ssr: {
       // KaTeX を外部バンドルしないように
       noExternal: ['katex']
-    },
-    
-  },
-
+    }
+  }
 })
