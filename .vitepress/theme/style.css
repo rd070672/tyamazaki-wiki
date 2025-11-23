@@ -119,12 +119,17 @@
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
-  min-width: auto;
 }
 
 /* 検索ボタンの「Ctrl K」キー表示を消す */
 .DocSearch-Button-Keys {
   display: none !important;
+}
+
+/* 検索ボタンの幅を調整 */
+.VPNavBarSearch .DocSearch-Button {
+  width: 300px;      /* 好きな値に。例: 220〜260px */
+  /* justify-content: flex-start; */
 }
 
 /**
