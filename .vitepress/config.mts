@@ -11,12 +11,7 @@ export default defineConfig({
   lastUpdated: {text: '最終更新', formatOptions: {dateStyle: 'short', timeStyle: 'medium'}},
   cleanUrls: true,
   markdown: {math: true,},
-  vite: {
-    ssr: {
-      // KaTeX を外部バンドルしないように
-      noExternal: ['katex']
-    }
-  },
+
   head: [
     
     ['script', {}, `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -144,7 +139,13 @@ export default defineConfig({
         }
 
       ]
-    }
+    },
+    
+    ssr: {
+      // KaTeX を外部バンドルしないように
+      noExternal: ['katex']
+    },
+    
   },
 
 })
