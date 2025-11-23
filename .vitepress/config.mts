@@ -15,6 +15,8 @@ export default defineConfig({
       timeStyle: 'medium'
     }
   },
+  cleanUrls: true,
+
   head: [
     
     ['script', {}, `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -39,8 +41,13 @@ export default defineConfig({
     search: {
       provider: 'local'
     },
-    
+
     returnToTopLabel: 'Return to top',
+
+    editLink: {
+      pattern: 'https://github.com/rd070672/yamazakilab-wiki/edit/main/src/:path',
+      text: 'Edit this page on GitHub'
+    },
 
     nav: [
       { text: 'Home', link: '/' },

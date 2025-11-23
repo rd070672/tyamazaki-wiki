@@ -118,7 +118,8 @@
  * -------------------------------------------------------------------------- */
 
 .DocSearch {
-  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+  /* --docsearch-primary-color: var(--vp-c-brand-1) !important; */
+  display: none !important;
 }
 
 /**
