@@ -259,3 +259,6 @@ features:
 - Wi-Fiのセットアップ
 - 机・椅子・棚のセットアップ
 - 家電類の準備
+
+
+<!--@include: /src/changelog.md-->
