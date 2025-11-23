@@ -8,6 +8,13 @@ export default defineConfig({
   srcDir: 'src',
   title: "Wiki | Yamazaki Lab",
   description: "山崎研究室における知見や経験をwikiとして共有します",
+  lastUpdated: {
+    text: '最終更新',
+    formatOptions: {
+      dateStyle: 'short',
+      timeStyle: 'medium'
+    }
+  },
   head: [
     
     ['script', {}, `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -29,6 +36,10 @@ export default defineConfig({
 
   // https://vitepress.dev/reference/default-theme-config
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
+
     nav: [
       { text: 'Home', link: '/' },
       { text: '計算', link: '/#計算' },
