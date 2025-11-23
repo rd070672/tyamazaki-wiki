@@ -31,7 +31,7 @@ features:
 第一原理計算、数値計算、スパコンを用いた大規模計算を中心に、材料科学・物性物理の研究に不可欠な計算科学の基盤を整理する。環境構築やソフトウェアのインストール方法だけでなく、代表的な計算手法の考え方や典型的な計算事例までを俯瞰し、材料物性の理解からデータ駆動型解析までを一貫して扱うことを目的とする。
 
 ## 第一原理計算
-- 第一原理計算の原理
+- [第一原理計算の原理](/calc/vasp.md)
 - VASP
   - [VASP v6.5.1 のインストールメモ](/calc/vasp-install.md)
   - [VASPの計算例](/calc/vasp-dft.md)
@@ -75,7 +75,9 @@ features:
 - [Cahn–Hilliard法に基づく計算例](/calc/ph-cahn-hilliard.md)
 
 ## 有限要素・有限差分計算
-- FEMとFDMの原理
+- [FEMとFDMの原理](/calc/fem-fdm.md)
+- [PDE（偏微分方程式）の基礎](/calc/pde.md)
+- [ODE（常微分方程式）の基礎](/calc/ode.md)
 - mumax3
   - [mumax3 v3.11 のインストールメモ](/calc/mumax3-install.md)
   - mumax3 を用いた LLG 計算
@@ -178,6 +180,7 @@ features:
 
 ## その他
 - 機械学習ポテンシャル
+- テンソルネットワーク
 - ファインチューニング
 - サロゲートモデル
 
