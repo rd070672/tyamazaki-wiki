@@ -41,17 +41,17 @@ features:
     - [Bader charge analysis メモ](/calc/bader-charge.md)
 - SPR-KKR
   - [SPR-KKR のインストールメモ](/calc/sprkkr-install.md)
-  - SPR-KKRの計算例
+  - [SPR-KKRの計算例](/calc/sprkkr.md)
 - Wien2k
   - [Wien2k v23.2 のインストールメモ](/calc/wien2k-install.md)
-  - Wien2kの計算例
+  - [Wien2kの計算例](/calc/wien2k.md)
 
 ### 第一原理MD計算
-- 第一原理MD計算の原理
-- [第一原理 MD 計算によるアモルファスの計算例](/calc/vasp-aimd.md)
+- [第一原理MD計算の原理](/calc/vasp-aimd.md)
+- [AIMDによるアモルファスの計算例](/calc/vasp-aimd-amorphous.md)
 
-### 分子動力学計算（MD）
-- MDの原理
+### 分子動力学（MD）計算
+- [MDの原理](/calc/md.md)
 - 古典的・機械学習ポテンシャルの選定
 - LAMMPS
   - [LAMMPS 10 Sep 2025 version のインストールメモ](/calc/lammps-install.md)
@@ -61,8 +61,8 @@ features:
   - JAX-MD を用いた MD 計算
 
 ### モンテカルロ計算
-- モンテカルロ計算の原理
-- Monte Carlo
+- [モンテカルロ計算の原理](/calc/monte-carlo.md)
+- [MC計算による磁性体の計算例](/calc/monte-carlo-mag.md)
 - マルコフ連鎖MC
 - クラスター展開
 
