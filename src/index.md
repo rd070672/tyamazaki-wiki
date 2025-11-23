@@ -70,9 +70,9 @@ features:
 - [クラスター展開](/calc/mc-cluster.md)
 
 ## フェーズフィール計算
-- [フェーズフィール計算の原理](/calc/ph.md)
-- [Allen–Cahn法に基づく計算例](/calc/ph-allen-cahn.md)
-- [Cahn–Hilliard法に基づく計算例](/calc/ph-cahn-hilliard.md)
+- [フェーズフィール計算の原理](/calc/pf.md)
+- [Allen–Cahn法に基づく計算例](/calc/pf-allen-cahn.md)
+- [Cahn–Hilliard法に基づく計算例](/calc/pf-cahn-hilliard.md)
 
 ## 有限要素・有限差分計算
 - [FEMとFDMの原理](/calc/fem-fdm.md)
@@ -83,11 +83,11 @@ features:
   - mumax3 を用いた LLG 計算
   - 拡張版 mumax+ による磁気弾性計算
 - COMSOL
-  - [COMSOL Multiphysics v6.4 のインストールメモ](/calc/comsol-install.md)
-  - COMSOL を用いた 固体力学計算
-  - COMSOL を用いた AC/DC 計算
-  - COMSOL を用いた LLG 計算
-  - COMSOL を用いた LLG 連成計算
+  - [COMSOL Multiphysics のインストールメモ](/calc/comsol-install.md)
+  - [COMSOL を用いた LLG 計算](/calc/comsol-llg.md)
+  - [COMSOL を用いた 電磁場-LLG 連成計算](/calc/comsol-maxwell-llg.md)
+  - [COMSOL を用いた 弾性場-LLG 連成計算](/calc/comsol-maelas-llg.md)
+  - [COMSOL を用いた 相変態解析](/calc/comsol-pf.md)
 
 
 <!-- ################################################################################### -->
