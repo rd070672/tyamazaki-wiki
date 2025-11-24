@@ -36,29 +36,29 @@ features:
 ## 第一原理計算
 - [第一原理計算の原理](/calc/vasp.md)
 - VASP
-  - [VASP v6.5.1 のインストールメモ](/calc/vasp-install.md)
-  - [VASPの計算例](/calc/vasp-dft.md)
+  - [VASP のインストールメモ](/calc/vasp-install.md)
+  - [VASP の計算例](/calc/vasp-dft.md)
     - [vaspkit メモ](/calc/vaspkit.md)
     - [phonopy メモ](/calc/phonopy.md)
     - [MAELAS メモ](/calc/maelas.md)
-    - [Bader charge analysis メモ](/calc/bader.md)
+    - [Bader 電解解析メモ](/calc/bader.md)
 - SPR-KKR
   - [SPR-KKR のインストールメモ](/calc/sprkkr-install.md)
-  - [SPR-KKRの計算例](/calc/sprkkr.md)
+  - [SPR-KKR の計算例](/calc/sprkkr.md)
 - Wien2k
-  - [Wien2k v23.2 のインストールメモ](/calc/wien2k-install.md)
-  - [Wien2kの計算例](/calc/wien2k.md)
+  - [Wien2k のインストールメモ](/calc/wien2k-install.md)
+  - [Wien2k の計算例](/calc/wien2k.md)
 
-## 第一原理MD計算
-- [第一原理計算に基づくMD計算(AIMD)の原理](/calc/aimd.md)
-- [AIMDによるアモルファスの計算例](/calc/aimd-amorphous.md)
+## 第一原理分子動力学 (AIMD) 計算
+- [第一原理計算に基づく MD 計算の原理](/calc/aimd.md)
+- [AIMD によるアモルファスの計算例](/calc/aimd-amorphous.md)
 
 ## 第一原理フェーズフィール計算
 - [第一原理計算に基づくフェーズフィールド計算の原理](/calc/dft-pf.md)
 
 ## 分子動力学（MD）計算
-- [MDの原理](/calc/md.md)
-- [MD計算における古典的・機械学習ポテンシャルの選定](/calc/md-potential.md)
+- [MD の原理](/calc/md.md)
+- [MD 計算における古典的・機械学習ポテンシャルの選定](/calc/md-potential.md)
 - LAMMPS
   - [LAMMPS のインストールメモ](/calc/md-lammps-install.md)
   - [LAMMPS を用いた MD 計算](/calc/md-lammps.md)
@@ -68,21 +68,21 @@ features:
 
 ## モンテカルロ計算
 - [モンテカルロ計算の原理](/calc/mc.md)
-- [MC計算による磁性体の計算例](/calc/mc-mag.md)
+- [MC 計算による磁性体の計算例](/calc/mc-mag.md)
 - [マルコフ連鎖MC](/calc/mcmc.md)
 - [クラスター展開](/calc/mc-cluster.md)
 
 ## フェーズフィール計算
 - [フェーズフィール計算の原理](/calc/pf.md)
-- [Allen–Cahn法に基づく計算例](/calc/pf-allen-cahn.md)
-- [Cahn–Hilliard法に基づく計算例](/calc/pf-cahn-hilliard.md)
+- [Allen–Cahn 法に基づく計算例](/calc/pf-allen-cahn.md)
+- [Cahn–Hilliard 法に基づく計算例](/calc/pf-cahn-hilliard.md)
 
-## 有限要素・有限差分計算
-- [FEMとFDMの原理](/calc/fem-fdm.md)
+## マルチフィジックス計算
+- [FEM と FDM の原理](/calc/fem-fdm.md)
 - [PDE（偏微分方程式）の基礎](/calc/pde.md)
 - [ODE（常微分方程式）の基礎](/calc/ode.md)
 - mumax3
-  - [mumax3 v3.11 のインストールメモ](/calc/mumax3-install.md)
+  - [mumax3 のインストールメモ](/calc/mumax3-install.md)
   - [mumax3 を用いた LLG 計算](/calc/mumax3-llg.md)
   - [拡張版 mumax+ による磁気弾性計算](/calc/mumaxplus.md)
 - COMSOL

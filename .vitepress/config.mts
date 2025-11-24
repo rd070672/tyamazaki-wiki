@@ -52,39 +52,38 @@ export default defineConfig({
     },
 
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'About', link: '/about' },
+      { text: 'ホーム', link: '/' },
       { text: '計算', link: '/#計算' },
       { text: '実験', link: '/#実験' },
       { text: 'データサイエンス', link: '/#データサイエンス'},
       { text: '情報基盤', link: '/#情報基盤'},
       { text: 'ラボ運営', link: '/#ラボ運営'},
       { text: 'Changelog', link: '/changelog' },
-      // { text: 'Website', link: 'https://tyamazaki.com' },
-      // { text: 'Github', link: 'https://github.com/rd070672/yamazakilab-wiki' },
+      { text: 'About', link: '/about' },
+      { text: 'Website', link: 'https://tyamazaki.com' },
+      { text: 'Github', link: 'https://github.com/rd070672/yamazakilab-wiki' },
     ],
     sidebar: [
       { text: '計算', collapsed: false, items: [
-        { text: '第一原理計算', collapsed: true, items: [
+        { text: '第一原理計算', collapsed: false, items: [
           { text: '第一原理計算の原理', link: '/calc/vasp' },
           { text: 'VASP のインストールメモ', link: '/calc/vasp-install' },
-          { text: 'VASPの計算例', link: '/calc/vasp-dft' },
+          { text: 'VASP の計算例', link: '/calc/vasp-dft' },
           { text: 'vaspkit メモ', link: '/calc/vaspkit' },
           { text: 'phonopy メモ', link: '/calc/phonopy' },
           { text: 'MAELAS メモ', link: '/calc/maelas' },
-          { text: 'Bader電荷解析メモ', link: '/calc/bader' },
+          { text: 'Bader 電荷解析メモ', link: '/calc/bader' },
           { text: 'SPR-KKR のインストールメモ', link: '/calc/sprkkr-install' },
-          { text: 'SPR-KKRの計算例', link: '/calc/sprkkr' },
+          { text: 'SPR-KKR の計算例', link: '/calc/sprkkr' },
           { text: 'Wien2k のインストールメモ', link: '/calc/wien2k-install' },
-          { text: 'Wien2kの計算例', link: '/calc/wien2k' },
-
-          { text: '第一原理計算に基づくMD計算(AIMD)の原理', link: '/calc/aimd' },
-          { text: 'AIMDによるアモルファスの計算例', link: '/calc/aimd-amorphous' },
+          { text: 'Wien2k の計算例', link: '/calc/wien2k' },
+          { text: '第一原理計算に基づく MD 計算の原理', link: '/calc/aimd' },
+          { text: 'AIMD によるアモルファスの計算例', link: '/calc/aimd-amorphous' },
           { text: '第一原理計算に基づくフェーズフィールド計算の原理', link: '/calc/dft-pf' },
         ]},
-        { text: 'MD計算', collapsed: true, items: [
-          { text: 'MDの原理', link: '/calc/md' },
-          { text: 'MD計算における古典的・機械学習ポテンシャルの選定', link: '/calc/md-potential' },
+        { text: 'MD 計算', collapsed: true, items: [
+          { text: 'MD の原理', link: '/calc/md' },
+          { text: 'MD 計算における古典的・機械学習ポテンシャルの選定', link: '/calc/md-potential' },
           { text: 'LAMMPS のインストールメモ', link: '/calc/md-lammps-install' },
           { text: 'LAMMPS を用いた MD 計算', link: '/calc/md-lammps' },
           { text: 'ASE を用いた MD 計算', link: '/calc/md-ase' },
@@ -98,13 +97,13 @@ export default defineConfig({
         ]},
         { text: 'フェーズフィール計算', collapsed: true, items: [
           { text: 'フェーズフィール計算の原理', link: '/calc/pf' },
-          { text: 'Allen-Cahn法に基づく計算例', link: '/calc/pf-allen-cahn' },
-          { text: 'Cahn-Hilliard法に基づく計算例', link: '/calc/pf-cahn-hilliard' },
+          { text: 'Allen-Cahn 法に基づく計算例', link: '/calc/pf-allen-cahn' },
+          { text: 'Cahn-Hilliard 法に基づく計算例', link: '/calc/pf-cahn-hilliard' },
         ]},
-        { text: 'スケーラブル計算', collapsed: true, items: [
-          { text: 'FEMとFDMの原理', link: '/calc/fem-fdm' },
-          { text: 'PDE（偏微分方程式）の基礎', link: '/calc/pde' },
-          { text: 'ODE（常微分方程式）の基礎', link: '/calc/ode' },
+        { text: 'マルチフィジックス計算', collapsed: true, items: [
+          { text: 'FEM と FDM の原理', link: '/calc/fem-fdm' },
+          { text: 'PDE (偏微分方程式) の基礎', link: '/calc/pde' },
+          { text: 'ODE (常微分方程式) の基礎', link: '/calc/ode' },
           { text: 'mumax3 のインストールメモ', link: '/calc/mumax3-install' },
           { text: 'mumax3 を用いた LLG 計算', link: '/calc/mumax3-llg' },
           { text: '拡張版 mumax+ による磁気弾性計算', link: '/calc/mumaxplus' },

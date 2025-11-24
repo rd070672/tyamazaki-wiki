@@ -1,9 +1,7 @@
 # ASE を用いた MD 計算
 
 ## 参考にしたドキュメント
-- ASE documentation
-  - https://ase-lib.org/ase/md.html
-
+- [ASE documentation](https://ase-lib.org/ase/md.html)
 
 ## 概要
 - ASE（Atomic Simulation Environment）は Python ベースの原子シミュレーション用フレームワークであり、
@@ -17,8 +15,8 @@
   - 「エネルギー・力」を外部計算コードや内蔵ポテンシャル（calculator）から取得する  
   という役割分担になっている。
 - したがって、
-  - **ポテンシャル（calculator）の選定**
-  - **MD の条件（アンサンブル・温度・ステップ幅など）の設定**
+  - ポテンシャル（calculator）の選定
+  - MD の条件（アンサンブル・温度・ステップ幅など）の設定
   を ASE 上で明示的に行うことが重要である。
 
 ## ASE による MD の基本構造
@@ -51,7 +49,7 @@
     - `MACE`, `M3GNet`, `NequIP` などの ML ポテンシャルに対応した calculator が、各プロジェクト側から提供されていることが多い。
 
 ## ASE による MD の典型的なコード構造（シンプルな例）
-- 以下は、内蔵 EMT ポテンシャルを用いた NVT Langevin MD の最小例（イメージ）：
+- 以下は、内蔵 EMT ポテンシャルを用いた NVT Langevin MD の一例：
 
 ```python
 from ase.build import bulk
@@ -151,8 +149,3 @@ dyn.run(5000)
 - 再現性
   - 乱数シード（初期速度）や入力条件は明示的に記録する。
   - Git + Python スクリプトとしてワークフローを管理しておくと後から追跡しやすい。
-
-
----
----
-Created: 2025-11-24
