@@ -1,9 +1,13 @@
 # 第一原理分子動力学 (AIMD) の原理
-作成日：2025年11月23日
+
+## 参考ドキュメント  
+- J. Park et al., ["AIMD study and experimental verification of Ge-doped Fe80P13C7 amorphous soft magnetic alloys, Journal of Non-Crystalline Solids, 624, 2024, 122724.](https://www.sciencedirect.com/science/article/abs/pii/S0022309323005896)
+- Liquid Si - Standard MD - [VASP Wiki](https://www.vasp.at/wiki/index.php/Liquid_Si_-_Standard_MD)
+--- 
 
 ## 概要
 - 第一原理分子動力学（Ab Initio Molecular Dynamics, AIMD）は、  
-  「**電子状態を第一原理（主に DFT）で毎ステップ解きながら、原子核の運動を追跡する MD**」。
+  「電子状態を第一原理（主に DFT）で毎ステップ解きながら、原子核の運動を追跡する MD」。
 - 古典 MD との違い：
   - 古典 MD：経験ポテンシャル（EAM, LJ, MEAM, ReaxFF など）から力を計算。
   - AIMD：電子構造計算（DFT など）からポテンシャルエネルギーと力を直接計算。
@@ -14,7 +18,7 @@
   - 原子核（イオン）の座標 $\{\mathbf{R}_I\}$ と速度 $\{\mathbf{V}_I\}$。
   - 電子は量子力学的に扱い、波動関数 $\{\psi_n\}$ を DFT などで求める。
 - 原子核の運動方程式（古典力学）：
-  - $ M_I \dfrac{d^2\mathbf{R}_I}{dt^2} = \mathbf{F}_I = -\dfrac{\partial E_{\text{BO}}(\{\mathbf{R}_J\})}{\partial \mathbf{R}_I} $
+  - $M_I \dfrac{d^2\mathbf{R}_I}{dt^2} = \mathbf{F}_I = -\dfrac{\partial E_{\text{BO}}(\{\mathbf{R}_J\})}{\partial \mathbf{R}_I}$
   - $E_{\text{BO}}$：与えられた原子配置での電子の基底状態エネルギー（Born–Oppenheimer エネルギー面）。
 - 電子部分：
   - 各ステップで DFT の Kohn–Sham 方程式を解き、基底状態エネルギーと力を得る。
@@ -22,7 +26,7 @@
 
 ## Born–Oppenheimer MD (BOMD)
 - 最もよく使われる第一原理 MD の枠組み。
-- 前提：**Born–Oppenheimer 近似**
+- 前提：Born–Oppenheimer 近似
   - 電子質量 ≪ 原子核質量のため、電子は「瞬時に」基底状態に追従するとみなす。
 - 1 ステップの流れ：
   - (1) 原子配置 $\{\mathbf{R}_I\}$ を固定して DFT SCF を収束させ、基底状態エネルギー $E_{\text{BO}}$ と力 $\{\mathbf{F}_I\}$ を得る。
@@ -30,7 +34,7 @@
   - (3) 更新された配置で再び電子構造を解く。
 - 特徴：
   - 各ステップで電子構造が十分収束していれば、ポテンシャルエネルギー面に正確に沿った運動が得られる。
-  - 1 ステップごとに SCF 収束が必要なため、**計算コストが高い**。
+  - 1 ステップごとに SCF 収束が必要なため、計算コストが高い。
 
 ## Car–Parrinello MD（補足）
 - もう一つの代表的 AIMD 手法（Car–Parrinello 法）。
@@ -65,7 +69,7 @@
   - 典型値：0.5–2.0 fs 程度。  
   - 水素を含む系や高温では、振動周期が短いため小さめ（~0.5–1.0 fs）が無難。
 - シミュレーション全時間：
-  - DFT ベースでは **数十 ps 程度**が現実的な上限になることが多い。
+  - DFT ベースでは数十 ps 程度が現実的な上限になることが多い。
   - そのため、ガラス形成・拡散・相変態など「長時間現象」は十分に再現できないこともあり、解釈に注意が必要。
 
 ## アモルファス・液体系への応用（原理的な見方）
@@ -74,7 +78,7 @@
   - そこから急冷すると、原子はエネルギー的に局所安定な「非晶質（アモルファス）」配置にトラップされる。
 - AIMD での意味付け：
   - DFT によるポテンシャルエネルギー面上で、原子核が「高温で広く探索 → 急冷で局所谷に落ちる」プロセスを直接追跡している。
-  - その結果として得られるアモルファス構造は、**ポテンシャルエネルギー面の局所最小の一つ**として理解できる。
+  - その結果として得られるアモルファス構造は、ポテンシャルエネルギー面の局所最小の一つとして理解できる。
 - 注意：
   - 実験に比べて冷却速度が極端に速い（10¹²–10¹⁴ K/s 相当など）ため、「得られた構造が実験アモルファスとどこまで一致しているか」は、RDF・配位数・密度などで慎重にチェックが必要。
 

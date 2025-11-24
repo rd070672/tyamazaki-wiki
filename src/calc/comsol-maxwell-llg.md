@@ -1,18 +1,21 @@
 # COMSOL を用いた 電磁場–LLG 連成計算
-作成日：2025年11月23日
+
+#### 参考ドキュメント
+- [Micromagnetic Simulation with COMSOL Multiphysics](https://www.comsol.com/blogs/micromagnetic-simulation-with-comsol-multiphysics)
+
+---
 
 ## 概要
-- COMSOL Multiphysics では  
-  **電磁界（Maxwell 方程式）と磁化ダイナミクス（LLG 方程式）を同時に解く連成計算** を構築できる。
+- COMSOL Multiphysics では電磁界（Maxwell 方程式）と磁化ダイナミクス（LLG 方程式）を同時に解く連成計算 を構築できる。
 - 典型的な構成は
-  - 電磁界：**AC/DC モジュールの Magnetic Fields（mf）などのインターフェース**
-  - 磁化：**General Form PDE などで実装した LLG 方程式**
-  を **Time Dependent スタディで連成**する形になる。
+  - 電磁界：AC/DC モジュールの Magnetic Fields（mf）などのインターフェース
+  - 磁化：General Form PDE などで実装した LLG 方程式
+  を Time Dependent スタディで連成する形になる。
 - 物理的には、
   - Maxwell 方程式から **H, B, E** を解き
   - その H を LLG の有効磁場 $ \mathbf{H}_\text{eff} $ に含める  
   一方で、
-  - LLG から得られる磁化 $\mathbf{M} = M_s\mathbf{m}$ が **Maxwell 方程式側の B–H 関係や磁化電流としてフィードバック**する  
+  - LLG から得られる磁化 $\mathbf{M} = M_s\mathbf{m}$ が Maxwell 方程式側の B–H 関係や磁化電流としてフィードバックする  
   という双方向連成となる。
 
 ---
@@ -30,7 +33,7 @@
     \mathbf{B} = \mu_0 (\mathbf{H} + \mathbf{M}),\quad
     \mathbf{D} = \varepsilon_0 \mathbf{E} + \dots
   $$
-- ここで、**磁化 $\mathbf{M}$** は LLG から与えられる：
+- ここで、磁化 $\mathbf{M}$ は LLG から与えられる：
   $$
     \mathbf{M} = M_s \mathbf{m}(x,y,z,t)
   $$
@@ -60,14 +63,14 @@
 
 ---
 
-## COMSOL での連成の考え方（概念）
+## COMSOL での連成の考え方
 
 ### 1. Maxwell 側（Magnetic Fields インターフェース）
 - AC/DC モジュールの「Magnetic Fields（mf）」などを使用し、
   - ベクトルポテンシャル $\mathbf{A}$ あるいは磁場 $\mathbf{H}$ を解く。
 - 材料の磁気特性として
   - 相対透磁率 $\mu_r$ を指定する代わりに、
-  - **磁化 $\mathbf{M}$** を明示的に導入する（サブドメインの磁化として与える機能など）。
+  - 磁化 $\mathbf{M}$ を明示的に導入する（サブドメインの磁化として与える機能など）。
 - COMSOL 内では、
   $$
     \mathbf{B} = \mu_0 (\mathbf{H} + \mathbf{M})
@@ -90,9 +93,9 @@
   などを `f` として書き込む。
 
 ### 3. 連成の仕組み
-- **Maxwell → LLG**：
+- Maxwell → LLG：
   - Magnetic Fields で求めた $\mathbf{H}$ を LLG の有効磁場として使用。
-- **LLG → Maxwell**：
+- LLG → Maxwell：
   - LLG から得た $\mathbf{m}$ から磁化 $\mathbf{M}=M_s\mathbf{m}$ を計算し、  
     Magnetic Fields の「磁化」あるいは「B–H 関係」に組み込む。
 - これにより、
@@ -101,7 +104,7 @@
 
 ---
 
-## 典型的なセットアップ手順（概略）
+## 典型的なセットアップ手順
 
 1. **モデルとパラメータの準備**
    - 3D / 2D モデルを作成。
@@ -122,7 +125,7 @@
 
 5. **LLG 側の設定**
    - 依存変数を `mx, my, mz` に設定。
-   - 交換項・異方性項を含む有効磁場成分 `Hx_eff`, `Hy_eff`, `Hz_eff` を **Variables** などで定義。
+   - 交換項・異方性項を含む有効磁場成分 `Hx_eff`, `Hy_eff`, `Hz_eff` を Variables などで定義。
    - General Form PDE の右辺 `f` に LLG の式（$(1+\alpha^2)^{-1}[-\gamma m×H_\text{eff} -\alpha\gamma m×(m×H_\text{eff})]$）を反映。
    - 初期条件として、磁化の初期分布（単一ドメイン、磁壁など）を与える。
 
@@ -140,28 +143,28 @@
 
 ## Maxwell–LLG 連成の典型的な応用
 
-- **高周波コア・トランスの損失解析**
+- 高周波コア・トランスの損失解析
   - コイルで駆動される磁性コア内部の H・B・J 分布を Maxwell で解き、
   - LLG により局所磁化ダイナミクスと履歴・ダンピングを考慮した磁化応答を評価。
-- **磁気デバイス（MRAM, スピントルク振動子など）の電磁界連成**
+- 磁気デバイス（MRAM, スピントルク振動子など）の電磁界連成
   - 電流駆動による Oersted 磁場と、LLG による磁化スイッチング・プリセッションを同時計算。
-- **渦電流と磁化の共存**
+- 渦電流と磁化の共存
   - 高導電率材料における渦電流の分布・損失と、磁化のダイナミクスを一体として扱う。
 
 ---
 
-## 注意点（実務的なポイント）
+## 備考
 
-- **計算負荷**
+- 計算負荷
   - Maxwell＋LLG の同時 FEM 計算は非常に重くなりやすい。
   - 対称性・2D 簡略モデル・メッシュ粗密化などで負荷を調整する。
-- **時間スケールの違い**
+- 時間スケールの違い
   - 電磁界と磁化の典型時間スケールに差がある場合、  
     ステップ幅・ソルバ設定を慎重に調整しないと、収束性が悪化する。
-- **正規化制約 $|\mathbf{m}|=1$**
+- 正規化制約 $|\mathbf{m}|=1$
   - LLG の実装では $|\mathbf{m}|=1$ を厳密に保つのが難しいので、  
     事後正規化やペナルティ項での補正などを検討する。
-- **物性パラメータの整合性**
+- 物性パラメータの整合性
   - $M_s, A, K_u, \sigma, \mu_r$ などの値を、実験・第一原理計算から取得し SI 単位に変換して用いる。
   - 電磁界解析用の B–H カーブ近似との整合も重要。
 

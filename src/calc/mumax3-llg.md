@@ -1,9 +1,14 @@
 # mumax3 を用いた LLG 計算
-作成日：2025年11月23日
+
+#### 参考ドキュメント
+- [GitHub Pages - mumax3](https://mumax.github.io/)
+- [mumax3-workshop - Universiteit Gent](https://mumax.ugent.be/mumax3-workshop/)
+
+---
 
 ## 概要
-- mumax3 は **GPU (CUDA)** を用いてマイクロ磁気計算を行うためのオープンソースコードであり、  
-  **Landau–Lifshitz–Gilbert (LLG) 方程式**を有限差分で離散化して時間発展を解く。
+- mumax3 は GPU (CUDA) を用いてマイクロ磁気計算を行うためのオープンソースコードであり、  
+  Landau–Lifshitz–Gilbert (LLG) 方程式を有限差分で離散化して時間発展を解く。
 - 計算対象は連続体磁化 $\mathbf{M}(\mathbf{r}, t)$ であり、  
   計算領域を格子セルに分割し、各セルの単位磁化ベクトル $\mathbf{m} = \mathbf{M}/M_s$ を更新していく。
 - 入力は `.mx3` スクリプトで記述し、
@@ -40,7 +45,7 @@
   - 交換場などは近傍セルとの差分
   - 静磁場は FFT による畳み込み
   によって計算される。
-- 空間差分は**有限差分 (FDM)** であり、セルサイズを小さくすると精度は上がるが計算コストも増える。
+- 空間差分は有限差分 (FDM) であり、セルサイズを小さくすると精度は上がるが計算コストも増える。
 
 ## mumax3 スクリプトの基本構成
 典型的な `.mx3` スクリプトは次のような構造を持つ：

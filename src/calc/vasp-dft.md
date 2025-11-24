@@ -1,5 +1,11 @@
 # VASP の計算方法
-作成日：2025年11月23日
+
+## 参考ドキュメント
+- VASP マニュアル（VASP Wiki）：https://vasp.at/wiki/The_VASP_Manual
+- VASP チュートリアル（単原子例）：https://www.vasp.at/tutorials/latest/molecules/part1/ 
+- Materials Project による計算詳細：https://docs.materialsproject.org/methodology/materials-methodology/calculation-details
+
+---
 
 ## 概要  
 - VASP は平面波基底およびプロジェクター強化ウェーブ（PAW）法を用いた周期固体の電子構造計算コード。
@@ -30,9 +36,5 @@
 - 計算コストが非常に高いため、並列実行・メモリ要求・I/O ボトルネックなど運用環境も考慮すべき。  
 - 計算の種類（構造最適化・応力解析・フォノン計算）により最適な入力パラメータが異なるため、該当用途のチュートリアルを参照する。
 
-## 参考リンク  
-- VASP マニュアル（VASP Wiki）：https://vasp.at/wiki/The_VASP_Manual
-- VASP チュートリアル（単原子例）：https://www.vasp.at/tutorials/latest/molecules/part1/ 
-- Materials Project による計算詳細：https://docs.materialsproject.org/methodology/materials-methodology/calculation-details
 
 

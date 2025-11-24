@@ -1,5 +1,9 @@
 # COMSOL を用いた LLG 計算
-作成日：2025年11月23日
+
+#### 参考ドキュメント
+- [Micromagnetic Simulation with COMSOL Multiphysics](https://www.comsol.com/blogs/micromagnetic-simulation-with-comsol-multiphysics)
+
+---
 
 ## 概要
 - COMSOL Multiphysics では、  
@@ -72,7 +76,7 @@
 
 ### 3. PDE インターフェース
 - 代表的な選択：
-  - **General Form PDE**（General Form）：
+  - General Form PDE（General Form）：
     $$
       ea \frac{\partial^2 u}{\partial t^2}
       + d \frac{\partial u}{\partial t}
@@ -152,7 +156,7 @@
 
 ---
 
-## 応用例（イメージ）
+## 応用例
 - FMR シミュレーション：
   - 薄膜にバイアス磁場＋微小 AC 磁場を印加し、平均磁化の時間応答をフーリエ変換。
 - 電流・温度連成：

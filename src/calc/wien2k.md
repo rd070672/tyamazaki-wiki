@@ -1,5 +1,11 @@
 # WIEN2k の計算例（SCF と DOS／バンド構造解析）
-作成日：2025年11月23日
+
+
+## 参考リンク  
+- WIEN2k ユーザーガイド： http://www.wien2k.at/reg_user/textbooks/usersguide.pdf
+- “DFT (WIEN2k) and Wannier orbitals” チュートリアル： https://triqs.github.io/dft_tools/latest/tutorials/sr2mgoso6_soc.html
+
+---
 
 ## 概要  
 - WIEN2k は全電子 FP-(L)APW+lo 法を用した第一原理固体計算コードで、電子構造・バンド構造・状態密度・応力最適化・スピン軌道相互作用 (SOC) などが可能。
@@ -32,7 +38,3 @@
 - k-点密度・エネルギーカットオフ（ENCUT 相当）を適切に設定／収束確認することが重要。  
 - SOC／高精度モードでは計算コストが急増するため、リソース（メモリ・並列数）を考慮。  
 - 出力ログを `grep :ENE` や `grep :DIS` などで監視し、計算状態を把握。
-
-## 参考リンク  
-- WIEN2k ユーザーガイド： http://www.wien2k.at/reg_user/textbooks/usersguide.pdf
-- “DFT (WIEN2k) and Wannier orbitals” チュートリアル： https://triqs.github.io/dft_tools/latest/tutorials/sr2mgoso6_soc.html

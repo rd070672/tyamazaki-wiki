@@ -1,5 +1,12 @@
 # VASPKIT
-作成日：2025年11月23日
+
+## 参考ドキュメント
+- VASPKIT 公式トップ：<https://vaspkit.com/>  
+- Installation：<https://vaspkit.com/installation.html>  
+- Features（タスク一覧）：<https://vaspkit.com/features.html>  
+- Tutorials（Quick Start など）：<https://vaspkit.com/tutorials.html>  
+
+---
 
 ## 概要
 
@@ -47,10 +54,3 @@
   - 例：弾性定数や EOS の解析（応力–ひずみ・エネルギー–ひずみ）  
   - 例：DOS・バンド構造・電荷密度・仕事関数などの解析タスク  
 - コマンドラインモードも利用可能（スクリプトから呼び出したい場合に有用）
-
-## 参考リンク
-
-- VASPKIT 公式トップ：<https://vaspkit.com/>  
-- Installation：<https://vaspkit.com/installation.html>  
-- Features（タスク一覧）：<https://vaspkit.com/features.html>  
-- Tutorials（Quick Start など）：<https://vaspkit.com/tutorials.html>  

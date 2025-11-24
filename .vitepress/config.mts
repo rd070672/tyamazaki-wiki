@@ -61,7 +61,7 @@ export default defineConfig({
       { text: 'Changelog', link: '/changelog' },
       { text: 'About', link: '/about' },
       { text: 'Website', link: 'https://tyamazaki.com' },
-      { text: 'Github', link: 'https://github.com/rd070672/yamazakilab-wiki' },
+      // { text: 'Github', link: 'https://github.com/rd070672/yamazakilab-wiki' },
     ],
     sidebar: [
       { text: '計算', collapsed: false, items: [
@@ -73,6 +73,7 @@ export default defineConfig({
           { text: 'phonopy メモ', link: '/calc/phonopy' },
           { text: 'MAELAS メモ', link: '/calc/maelas' },
           { text: 'Bader 電荷解析メモ', link: '/calc/bader' },
+          { text: 'KKR の基本', link: '/calc/kkr' },
           { text: 'SPR-KKR のインストールメモ', link: '/calc/sprkkr-install' },
           { text: 'SPR-KKR の計算例', link: '/calc/sprkkr' },
           { text: 'Wien2k のインストールメモ', link: '/calc/wien2k-install' },
@@ -142,6 +143,7 @@ export default defineConfig({
           { text: 'シンク周り', link: '/'},
       ]},
 
+      { text: 'About', link: '/about' },
       { text: 'Changelog', link: '/changelog' },
       { text: 'Website', link: 'https://tyamazaki.com' },
       { text: 'Github', link: 'https://github.com/rd070672/yamazakilab-wiki' },

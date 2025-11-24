@@ -1,12 +1,13 @@
 # SPR-KKR のインストールメモ
-作成日：2025年11月23日
+
+---
 
 ## 前提条件
 
 - 対象 OS の例：
   - Ubuntu 20.04 LTS（推奨例）
   - Ubuntu 22.04 LTS（新しめの環境でも概ね同様の手順で対応可）
-- SPR-KKR は配布形態やバージョンにより構成が異なるため、**必ず同梱のマニュアル（例：SPRKKR 7.7 / 8.6 Manual の “Installation” 章）を参照してバージョンに合った make 設定を確認すること**
+- SPR-KKR は配布形態やバージョンにより構成が異なるため、必ず同梱のマニュアル（例：SPRKKR 7.7 / 8.6 Manual の “Installation” 章）を参照してバージョンに合った make 設定を確認すること
 - 推奨コンパイラ・ライブラリ（例）：
   - Fortran コンパイラ：`gfortran` または Intel oneAPI Fortran (`ifx` / `ifort`)
   - C コンパイラ：`gcc` または Intel `icx`
@@ -66,7 +67,7 @@
   - BLAS / LAPACK / FFTW / MPI のリンク設定：
     - 例：`LIBS = -lblas -llapack -lfftw3` + MPI ライブラリ
     - Intel MKL を用いる場合は、MKL のリンク例（マニュアル・Intel ドキュメント記載）に従う
-- ここでの設定内容は SPR-KKR のバージョンや配布 makefile に依存するため、**マニュアルの “Installation” 章にある推奨設定を必ず参照して整合を取ること**
+- ここでの設定内容は SPR-KKR のバージョンや配布 makefile に依存するため、マニュアルの “Installation” 章にある推奨設定を必ず参照して整合を取ること
 
 ## コンパイル（ビルド）
 
@@ -130,5 +131,5 @@
   - SPR-KKR をビルドした MPI と、実行時に利用している MPI が一致しているか確認
 - **マニュアルとの差異**：
   - SPR-KKR のバージョンごとにビルドシステムやファイル構成が変わる場合があるため、
-    - **必ず該当バージョンのマニュアル PDF（例：SPRKKR 8.6 Manual）内の“Installation”章を優先**すること
+    - 必ず該当バージョンのマニュアル PDF（例：SPRKKR 8.6 Manual）内の“Installation”章を優先すること
     - 本メモは Ubuntu 環境での典型的な手順の整理であり、細部（ファイル名・ターゲット名など）はバージョンに合わせて読み替えが必要

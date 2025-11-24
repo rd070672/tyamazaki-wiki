@@ -1,10 +1,15 @@
 # MAELAS（Magneto-ELAStic properties calculation code）
-作成日：2025年11月23日
+
+## 参考ドキュメント 
+- GitHub リポジトリ： https://github.com/pnieves2019/MAELAS
+- 論文 P. Nieves et al., “Automated calculations of exchange magnetostriction”, Computational Materials Science 224 (2023) 112158 
+
+---
 
 ## 概要  
 - MAELAS は磁気ひずみ・磁気弾性定数（magnetostrictive coefficients / magnetoelastic constants）を第一原理計算から自動的に評価するためのソフトウェア。
 - 主に VASP の出力（構造変形・スピン軸変更・エネルギー変化など）を利用して計算を行う。
-- バージョン 2.0 では、非立方晶系（非-cubic）材料でも精度を改善するための新しい手法（線形フィッティング法）を実装。{index=4}  
+- バージョン 2.0 では、非立方晶系（非-cubic）材料でも精度を改善するための新しい手法（線形フィッティング法）を実装。 
 
 ## 入手・依存環境  
 - 公式 GitHub リポジトリ： https://github.com/pnieves2019/MAELAS 
@@ -29,15 +34,12 @@
   - `maelas -d -mode 1 -i POSCAR_rlx -n 7 > results.out` など。
 
 ## 出力・計算対象量  
-- 異方性磁歪係数 λ^{ani}、自発体積磁歪 ω_s^{ani}。
-- 異方性磁気弾性定数 b^{ani}。 
-- 等方性磁気弾性定数 b^{iso}、等方性磁歪係数 λ^{iso}。
+- 異方性磁歪係数 $λ^{ani}$、自発体積磁歪 $ω_s^{ani}$。
+- 異方性磁気弾性定数 $b^{ani}$。 
+- 等方性磁気弾性定数 $b^{iso}$、等方性磁歪係数 $λ^{iso}$。
 
-## 注意事項・運用上のポイント  
+## 備考  
 - MAELAS は VASP の SOC（スピン軌道結合）を有効にしたスピン偏極計算を前提としていることが多い。 
 - 変形パラメータ（-s）や変形数（-n）は材料の対称性・変形量に応じて調整が必要。
 - 同梱マニュアルや GitHub の `INSTALL`／`README` を必ずバージョンに合わせて参照すること。異なるバージョン間で仕様が変わる。  
 
-## 参考リンク  
-- GitHub リポジトリ： https://github.com/pnieves2019/MAELAS
-- 論文 P. Nieves et al., “Automated calculations of exchange magnetostriction”, Computational Materials Science 224 (2023) 112158 

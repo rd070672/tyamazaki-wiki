@@ -1,5 +1,9 @@
 # 分子動力学（MD）計算の原理
-作成日：2025年11月23日
+
+#### 参考ドキュメント
+- [分子動力学シミュレーション入門 | Matlantis](https://matlantis.com/ja/resources/blog/md-intro/)
+
+---
 
 ## 概要
 - 分子動力学（Molecular Dynamics, MD）は、原子や分子を「古典力学」に従って時間発展させることで、物質の構造・運動・熱物性を調べる手法。

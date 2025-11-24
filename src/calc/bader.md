@@ -1,7 +1,11 @@
 # Bader電荷解析のメモ
 
-#### 参考にしたドキュメント
+#### 参考ドキュメント
 - [Code: Bader Charge Analysis](https://theory.cm.utexas.edu/henkelman/code/bader/)
+- 公式サイト：https://theory.cm.utexas.edu/bader/
+- VASP 用手順（解説ページ）：https://theory.cm.utexas.edu/vasp/bader/
+
+--- 
 
 ## 概要
 - Bader 解析は電子密度をゼロフラックス面で分割し、各原子に電子数を割り当てる手法。
@@ -55,7 +59,3 @@
 - ドーピング・欠陥の電荷状態評価
 - 表面吸着・界面電荷分布の比較
 - 構造最適化前後の電子数変化の追跡
-
-## 参考リンク
-- 公式サイト：https://theory.cm.utexas.edu/bader/
-- VASP 用手順（解説ページ）：https://theory.cm.utexas.edu/vasp/bader/

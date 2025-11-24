@@ -1,5 +1,9 @@
 # COMSOL Multiphysics v6.4 のインストールメモ
-作成日：2025年11月23日
+
+#### 参考ドキュメント
+- [COMSOL Multiphysics® 6.4 リリースハイライト](https://www.comsol.jp/release/6.4)
+- [COMSOL 6.4 donwload and install](https://www.comsol.jp/product-download)
+---
 
 ## 前提条件
 
@@ -73,7 +77,7 @@
 - 自動生成ファイル削除（任意）：
   - `rm -rf ~/.comsol/`
 
-## よくあるトラブル
+## 備考
 
 - GUIが起動しない：
   - OpenGL依存 → 仮想環境では `comsol -3drender sw` を使用

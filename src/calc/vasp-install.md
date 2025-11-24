@@ -1,7 +1,7 @@
 # VASP v6.5.1 のインストールメモ
-作成日：2025年11月17日
 
-- VASP のバージョンは 2025年時点で vasp6.5.1
+## 参考ドキュメント
+- VASP のバージョンは 2025年時点で [vasp6.5.1](https://www.vasp.at/info/post/new-release-vasp-651/)
 - 参考リンク： https://vasp.at/wiki/Installing_VASP.6.X.X
 
 ## gcc の確認： `gcc --version`

@@ -41,6 +41,7 @@ features:
 - [phonopy メモ](/calc/phonopy.md)
 - [MAELAS メモ](/calc/maelas.md)
 - [Bader 電解解析メモ](/calc/bader.md)
+- [KKR の基本](/calc/kkr.md)
 - [SPR-KKR のインストールメモ](/calc/sprkkr-install.md)
 - [SPR-KKR の計算例](/calc/sprkkr.md)
 - [Wien2k のインストールメモ](/calc/wien2k-install.md)

@@ -1,12 +1,16 @@
 # SPR-KKR の計算例
-作成日：2025年11月23日
+
+## 参考ドキュメント
+- [Munich SPR-KKR 公式ページ](https://www.ebert.cup.uni-muenchen.de/old/index.php?option=com_content&view=article&id=8%3Asprkkr&catid=4%3Asoftware&Itemid=7&lang=en)
+
+---
 
 ## 概要
 - SPR-KKR（Munich SPR-KKR）は、スピン分極・相対論効果・グリーン関数形式を特徴とする第一原理電子構造計算コード（KKR 法）。
 - バルク結晶、表面・界面、クラスター、ランダム合金（CPA）、各種スペクトロスコピー（XAS, XMCD, ARPES 等）の計算が可能。
-- ここでは、典型的な **バルク bcc Fe の SCF + DOS** と **Fe–Co 合金（CPA）** を例に、計算フローのイメージを整理する。
+- ここでは、典型的な バルク bcc Fe の SCF + DOS と Fe–Co 合金（CPA）を例に、計算フローのイメージを整理する。
 
-## 入力と基本フロー（共通）
+## 入力と基本フロー
 - 主な実行プログラム（例）
   - `kkrgen`：入力カードから構造・ポテンシャルの初期設定を生成
   - `kkrscf`：自己無撞着（SCF）計算
@@ -59,13 +63,3 @@
   - 例：特定サイトのコアホールを導入して XAS を計算するチュートリアルが公開されている。
 - 合金・高エントロピー合金
   - KKR–CPA を用いて高エントロピー合金 (HEA) の DOS・磁性を評価した例も多数報告されている。
-
-## 参考になる資料
-- Munich SPR-KKR 公式ページ・配布パッケージ  
-  - 付属の example ディレクトリに、Fe, FeCo 合金, 表面, XAS など多様な計算例が含まれている。
-- ハンズオンコース資料・講演スライド  
-  - SPR-KKR の機能一覧と例題がまとまった PDF。
-- ASE から SPR-KKR を呼び出す Python インターフェース（ase2sprkkr）  
-  - ASE で構造を定義し、SPR-KKR 計算を自動生成する例が紹介されている。
-- 日本語の入門ページ  
-  - SPR-KKR のインストール・計算フロー・結果解釈を解説した日本語サイト。

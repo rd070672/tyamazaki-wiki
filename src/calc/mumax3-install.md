@@ -1,5 +1,10 @@
-# mumax3 v3.11のインストールメモ
-作成日：2025年11月19日
+# mumax3 インストールメモ
+
+#### 参考ドキュメント
+- [GitHub Pages - mumax3](https://mumax.github.io/)
+- [mumax3-workshop - Universiteit Gent](https://mumax.ugent.be/mumax3-workshop/)
+
+---
 
 ## Mumax3 install
 

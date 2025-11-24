@@ -1,5 +1,11 @@
 # 第一原理 MD 計算によるアモルファスの計算例
-作成日：2025年11月23日
+
+## 参考ドキュメント  
+- “How to build amorphous Al2O3 using the AIMD method implemented in VASP? (VASP)”（StackExchange）
+- “Ab Initio Molecular Dynamics Simulations of Amorphous Metal Sulfides as Cathode Materials for Lithium–Sulfur Batteries” (JPCC, 2023)
+- “Structural, electronic, and dielectric properties of amorphous Zr⁢O2 from ab initio molecular dynamics” (PhysRevB, 2005) — 融解‐急冷プロトコルについて記載。
+
+--- 
 
 ## 概要  
 - 第一原理 MD (AIMD) を用して、結晶構造を加熱して融解 (melt) → 急冷 (quench) してアモルファス構造を作成する手法。
@@ -33,13 +39,8 @@
 - 最適化された構造に対して、電子構造・バンド構造・DOS・RDF（原子間距離分布）・原子配位数解析などを実行。  
 - 得られた密度・配位・原子間距離統計が実験値と近似しているかを確認。
 
-## 注意事項・実務上のポイント  
+## 備考  
 - 系のサイズが小さいと、アモルファス構造の統計的な代表性が低くなるため、サイズ依存性を確認することが推奨される。
 - 固定容積 (NVT) では圧力が大きく変動する可能性があり、「実質的な融解」が起きない場合があるため、NPT を併用することも検討。
 - タイムステップ（POTIM）や熱浴設定 (SMASS) の選定が構造の質に影響する。  
 - 計算コストが非常に高いため、まずは小セル・短時間ステップで条件検討を行った上で本番走行をすること。  
-
-## 参考リンク  
-- “How to build amorphous Al2O3 using the AIMD method implemented in VASP? (VASP)”（StackExchange）
-- “Ab Initio Molecular Dynamics Simulations of Amorphous Metal Sulfides as Cathode Materials for Lithium–Sulfur Batteries” (JPCC, 2023)
-- “Structural, electronic, and dielectric properties of amorphous Zr⁢O2 from ab initio molecular dynamics” (PhysRevB, 2005) — 融解‐急冷プロトコルについて記載。
