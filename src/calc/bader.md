@@ -1,5 +1,8 @@
 # Bader電荷解析のメモ
 
+#### 参考にしたドキュメント
+- [Code: Bader Charge Analysis](https://theory.cm.utexas.edu/henkelman/code/bader/)
+
 ## 概要
 - Bader 解析は電子密度をゼロフラックス面で分割し、各原子に電子数を割り当てる手法。
 - 電荷移動・結合性・酸化状態の定量評価に使用される。
