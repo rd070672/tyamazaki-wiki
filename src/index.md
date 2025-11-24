@@ -29,7 +29,7 @@ features:
 
 ## Wikiについて {#about}
 
-<!--@include: ./changelog.md-->
+<!--@include: ./about.md-->
 
 ---
 
