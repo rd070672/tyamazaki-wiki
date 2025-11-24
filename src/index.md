@@ -195,14 +195,14 @@ features:
 - IDE (Visual studio Code, Cursor) 
 
 ## スーパーコンピュータの利用
-- [東北大金研Masamune-II](/system/supercom-masamune.md)
+- [東北大金研Masamune-II](/sys/masamune.md)
 
 ## サーバー・HPC管理
 - Linuxの基本
 - リモートアクセス (Anydesk)
 - データ管理 (NAS)
-- [所有ワクステ (SHIMA/TANI/MORI/MBN)](/system/workstations.md)★
-- [購入後の初期設定](/system/initial.md)★
+- [所有ワクステ (SHIMA/TANI/MORI/MBN)](/sys/workstations.md)
+- [購入後の初期設定](/sys/initial.md)
 
 ## ソフトウェア管理
 - 無料・有料ライセンス
