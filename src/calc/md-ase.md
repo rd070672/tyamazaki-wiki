@@ -62,22 +62,22 @@ from ase.md.velocitydistribution import MaxwellBoltzmannDistribution
 from ase.io import Trajectory
 
 # 1. 構造定義（例：アルミニウムのバルク）
-  - atoms = bulk("Al", "fcc", a=4.05) * (3, 3, 3)  # 3x3x3 supercell
+atoms = bulk("Al", "fcc", a=4.05) * (3, 3, 3)  # 3x3x3 supercell
 
 # 2. calculator を設定
-  - atoms.calc = EMT()  # 実材料では EAM や LAMMPS などを使う方が良い
+atoms.calc = EMT()  # 実材料では EAM や LAMMPS などを使う方が良い
 
 # 3. 初期速度の付与（目標温度 T）
-  - T = 300  # K
-  - MaxwellBoltzmannDistribution(atoms, temperature_K=T)
+T = 300  # K
+MaxwellBoltzmannDistribution(atoms, temperature_K=T)
 
 # 4. MD 積分器の設定（Langevin：NVT）
-  - timestep = 1.0 * units.fs
-  - friction = 0.02  # 1/fs 程度（経験的に選ぶ）
-  - dyn = Langevin(atoms, timestep, temperature_K=T, friction=friction)
+timestep = 1.0 * units.fs
+friction = 0.02  # 1/fs 程度（経験的に選ぶ）
+dyn = Langevin(atoms, timestep, temperature_K=T, friction=friction)
 
 # 5. トラジェクトリ出力
-  - traj = Trajectory("al_md.traj", "w", atoms)
+traj = Trajectory("al_md.traj", "w", atoms)
 
 def print_status(a=atoms, step=[0]):
     epot = a.get_potential_energy() / len(a)
@@ -90,7 +90,7 @@ dyn.attach(print_status, interval=10)
 dyn.attach(traj.write, interval=10)
 
 # 6. MD 実行（ステップ数 N）
-- dyn.run(5000)
+dyn.run(5000)
 ```
 
 - 上記はあくまで「構造 → calculator → 積分器 → 出力」の流れを示す簡易例であり、
@@ -154,5 +154,5 @@ dyn.attach(traj.write, interval=10)
 
 
 ---
-
-#### Created: 2025-11-24
+---
+Created: 2025-11-24

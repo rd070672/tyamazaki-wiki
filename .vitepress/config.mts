@@ -72,7 +72,7 @@ export default defineConfig({
           { text: 'vaspkit メモ', link: '/calc/vaspkit' },
           { text: 'phonopy メモ', link: '/calc/phonopy' },
           { text: 'MAELAS メモ', link: '/calc/maelas' },
-          { text: 'Bader電荷解析メモ', link: '/calc/bader-charge' },
+          { text: 'Bader電荷解析メモ', link: '/calc/bader' },
           { text: 'SPR-KKR のインストールメモ', link: '/calc/sprkkr-install' },
           { text: 'SPR-KKRの計算例', link: '/calc/sprkkr' },
           { text: 'Wien2k のインストールメモ', link: '/calc/wien2k-install' },
