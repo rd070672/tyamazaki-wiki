@@ -1,11 +1,13 @@
 # テンソルネットワーク入門
 
 ## 参考にしたドキュメント
-- R. Orús, “A practical introduction to tensor networks: Matrix Product States and Projected Entangled Pair States,” Ann. Phys. 349, 117–158 (2014).
-- J. C. Bridgeman, C. T. Chubb, “An Introductory Course on Tensor Networks,” J. Phys. A 50, 223001 (2017).
-- U. Schollwöck, “The density-matrix renormalization group in the age of matrix product states,” Ann. Phys. 326, 96–192 (2011).
-- TensorNetwork.org “Review Articles & Learning Resources” まとめページ
-- H. Rieser et al., “Tensor networks for quantum machine learning,” Proc. R. Soc. A 479, 20230218 (2023).
+- R. Orús, “A practical introduction to tensor networks: Matrix Product States and Projected Entangled Pair States,” Ann. Phys. 349, 117–158 (2014).  
+  https://arxiv.org/pdf/1306.2164  
+- テンソルネットワーク入門 (ＫＳ情報科学専門書)  
+- TensorNetwork.org  
+  https://tensornetwork.org/  
+- H. Rieser et al., “Tensor networks for quantum machine learning,” Proc. R. Soc. A 479, 20230218 (2023).  
+  https://arxiv.org/pdf/2303.11735
 
 
 ## 1. テンソルネットワークとは
@@ -122,7 +124,7 @@
 - 高次元・強く絡み合った状態（Volume law entanglement）には不向き
   - ボンド次元が指数的に増え、表現が破綻する。
 - 2D 以上では縮約コストが急増
-  - PEPS や高次元 TN の縮約は一般に #P-hard であり、近似手法に依存。
+  - PEPS や高次元 TN の縮約は一般に P-hard であり、近似手法に依存。
 - ネットワーク構造選びが難しい場合も
   - どの TN 形式（MPS/PEPS/MERA/TTN…）が対象系に適しているかは事前知識を要する。
 
