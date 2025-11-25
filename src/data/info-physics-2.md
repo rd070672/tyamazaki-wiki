@@ -5,9 +5,10 @@
   https://jp.mathworks.com/discovery/physics-informed-neural-networks.html
 - PINN入門: 物理法則を組み込んだAIで微分方程式を解く  
   https://www.codemajin.net/introduction-to-physics-informed-neural-network/
-- PINN 解説（日本語, 物理情報学会）  
-  https://www.msiism.jp/article/physics-informed-machine-learning2.html 
-
+- From PINNs to PIKANs: recent advances in physics-informed machine learning  
+  https://link.springer.com/article/10.1007/s44379-025-00015-1  
+- Zhou et al., Automated design for physics-informed modeling with convolutional neural networks  
+  https://www.nature.com/articles/s42005-025-02414-5
 
 ## 1. 位置づけ：PINNs は「物理インフォマティクスのエンジン」
 

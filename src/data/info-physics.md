@@ -1,4 +1,4 @@
-# 物理インフォマティクス（Physical / Physics Informatics）
+# 物理インフォマティクス（Physics Informatics）
 
 ## 参考にしたドキュメント
 - MathWorks, Physics-Informed Neural Networks (PINNs) とは  
