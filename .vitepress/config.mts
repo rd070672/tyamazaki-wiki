@@ -78,6 +78,8 @@ export default defineConfig({
           { text: 'Wien2k のインストールメモ', link: '/calc/wien2k-install' },
           { text: 'Wien2k の計算例', link: '/calc/wien2k' },
           { text: 'KKR の基本', link: '/calc/kkr' },
+          { text: 'Akai-KKR のインストールメモ', link: '/calc/akaikkr-install' },
+          { text: 'Akai-KKR の計算例', link: '/calc/akaikkr' },
           { text: 'SPR-KKR のインストールメモ', link: '/calc/sprkkr-install' },
           { text: 'SPR-KKR の計算例', link: '/calc/sprkkr' },
           { text: '第一原理計算 MD 計算の原理', link: '/calc/aimd' },
@@ -86,7 +88,7 @@ export default defineConfig({
         ]},
         { text: 'MD 計算', collapsed: true, items: [
           { text: 'MD の原理', link: '/calc/md' },
-          { text: 'MD 計算における古典的・機械学習ポテンシャルの選定', link: '/calc/md-potential' },
+          { text: 'MD 計算における古典的・機械学習ポテンシャルの選定', link: '/calc/md-potential' },{ text: '機械学習ポテンシャルの基礎', link: '/calc/ml-potential' },
           { text: 'LAMMPS のインストールメモ', link: '/calc/md-lammps-install' },
           { text: 'LAMMPS を用いた MD 計算', link: '/calc/md-lammps' },
           { text: 'ASE を用いた MD 計算', link: '/calc/md-ase' },
@@ -94,7 +96,9 @@ export default defineConfig({
         ]},
         { text: 'モンテカルロ計算', collapsed: true, items: [
           { text: 'モンテカルロ計算の原理', link: '/calc/mc' },
-          { text: 'マルコフ連鎖MC', link: '/calc/mcmc' },
+          { text: 'マルコフ連鎖 MC 法', link: '/calc/mcmc' },
+          { text: 'インバース MC 法', link: '/calc/mc-inverse' },
+          { text: '運動論的 MC 法', link: '/calc/mc-kinetic' },
           { text: 'クラスター展開', link: '/calc/mc-cluster' },
           { text: 'MC計算による磁性体の計算例', link: '/calc/mc-mag' },
         ]},

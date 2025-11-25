@@ -42,10 +42,13 @@ features:
 - [MAELAS メモ](/calc/maelas.md)
 - [Bader 電解解析メモ](/calc/bader.md)
 - [KKR の基本](/calc/kkr.md)
-- [Wien2k のインストールメモ](/calc/wien2k-install.md)
-- [Wien2k の計算例](/calc/wien2k.md)
+- [Kubo–Greenwood 法と線形応答理論による輸送特性計算](/calc/kkr-kubo.md)
+- [Akai-KKR のインストールメモ](/calc/akaikkr-install.md)
+- [Akai-KKR の計算例](/calc/akaikkr.md)
 - [SPR-KKR のインストールメモ](/calc/sprkkr-install.md)
 - [SPR-KKR の計算例](/calc/sprkkr.md)
+- [Wien2k のインストールメモ](/calc/wien2k-install.md)
+- [Wien2k の計算例](/calc/wien2k.md)
 
 
 ### 第一原理分子動力学計算
@@ -66,7 +69,9 @@ features:
 
 ### モンテカルロ計算
 - [モンテカルロ計算の原理](/calc/mc.md)
-- [マルコフ連鎖MC](/calc/mcmc.md)
+- [マルコフ連鎖 MC 法](/calc/mcmc.md)
+- [インバース MC 法](/calc/mc-inverse.md)
+- [運動論的 MC 法](/calc/mc-kinetic.md)
 - [クラスター展開](/calc/mc-cluster.md)
 - [MC 計算による磁性体の計算例](/calc/mc-mag.md)
 
@@ -201,8 +206,8 @@ features:
 
 ### その他
 - 機械学習ポテンシャル
-- [テンソルネットワーク入門](/data/tensor-network.md)
 - ファインチューニング
+- [テンソルネットワーク入門](/data/tensor-network.md)
 - サロゲートモデル
 
 

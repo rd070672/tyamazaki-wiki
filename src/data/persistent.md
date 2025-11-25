@@ -5,13 +5,16 @@
   https://www.chino-js.com/ja/tech/tda/
 - I. Obayashi, “Persistent Homology Analysis for Materials Research”, J. Phys. Soc. Jpn. 91, 091013 (2022).  
   https://arxiv.org/pdf/2112.03610
-
+- HomCloud
+  https://homcloud.dev/index.html
+  
 ## 1. パーシステントホモロジーとは何か
 
 - パーシステントホモロジーは、  
   データの「形（トポロジー）」をマルチスケールに解析するための手法であり、  
   トポロジカルデータ解析（Topological Data Analysis, TDA）の中核的な道具である。
-- ざっくり言うと：
+
+- 特徴：
   - 「データから作った図形」を、スケール（しきい値）を連続的に変えながら眺め、
   - その間に現れたり消えたりするトポロジカルな特徴（連結成分・穴・空洞など）を追跡し、
   - それを「バーコード」や「パーシステンス図」として定量化する手法。
