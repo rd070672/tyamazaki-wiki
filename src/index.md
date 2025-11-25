@@ -42,10 +42,11 @@ features:
 - [MAELAS メモ](/calc/maelas.md)
 - [Bader 電解解析メモ](/calc/bader.md)
 - [KKR の基本](/calc/kkr.md)
-- [SPR-KKR のインストールメモ](/calc/sprkkr-install.md)
-- [SPR-KKR の計算例](/calc/sprkkr.md)
 - [Wien2k のインストールメモ](/calc/wien2k-install.md)
 - [Wien2k の計算例](/calc/wien2k.md)
+- [SPR-KKR のインストールメモ](/calc/sprkkr-install.md)
+- [SPR-KKR の計算例](/calc/sprkkr.md)
+
 
 ### 第一原理分子動力学計算
 - [第一原理計算に基づく MD 計算の原理](/calc/aimd.md)
@@ -61,7 +62,7 @@ features:
 - [LAMMPS のインストールメモ](/calc/md-lammps-install.md)
 - [LAMMPS を用いた MD 計算](/calc/md-lammps.md)
 - [ASE を用いた MD 計算](/calc/md-ase.md)
-- [JAX を用いた MD 計算](/calc/md-jax.md)
+- [JAX / JAX-MD を用いた MD 計算](/calc/md-jax.md)
 
 ### モンテカルロ計算
 - [モンテカルロ計算の原理](/calc/mc.md)
