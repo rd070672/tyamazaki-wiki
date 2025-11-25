@@ -40,15 +40,15 @@ features:
 - [vaspkit メモ](/calc/vaspkit.md)
 - [phonopy メモ](/calc/phonopy.md)
 - [MAELAS メモ](/calc/maelas.md)
-- [Bader 電解解析メモ](/calc/bader.md)
+- [Bader 電荷解析メモ](/calc/bader.md)
+- [Wien2k のインストールメモ](/calc/wien2k-install.md)
+- [Wien2k の計算例](/calc/wien2k.md)
 - [KKR の基本](/calc/kkr.md)
 - [Kubo–Greenwood 法と線形応答理論による輸送特性計算](/calc/kkr-kubo.md)
 - [Akai-KKR のインストールメモ](/calc/akaikkr-install.md)
 - [Akai-KKR の計算例](/calc/akaikkr.md)
 - [SPR-KKR のインストールメモ](/calc/sprkkr-install.md)
 - [SPR-KKR の計算例](/calc/sprkkr.md)
-- [Wien2k のインストールメモ](/calc/wien2k-install.md)
-- [Wien2k の計算例](/calc/wien2k.md)
 
 
 ### 第一原理分子動力学計算
@@ -70,7 +70,7 @@ features:
 ### モンテカルロ計算
 - [モンテカルロ計算の原理](/calc/mc.md)
 - [マルコフ連鎖 MC 法](/calc/mcmc.md)
-- [インバース MC 法](/calc/mc-inverse.md)
+- [逆 MC 法](/calc/mc-inverse.md)
 - [運動論的 MC 法](/calc/mc-kinetic.md)
 - [クラスター展開](/calc/mc-cluster.md)
 - [MC 計算による磁性体の計算例](/calc/mc-mag.md)
@@ -159,8 +159,8 @@ features:
 統計解析、機械学習、深層学習、次元削減、TDA、機械学習ポテンシャルなど、材料データ解析に必要な手法を総合的に扱います。画像・時系列・グラフデータの処理からモデル解釈、物性予測、最適化まで、データ駆動型材料研究を支える実用的なアプローチを整理しています。
 
 ### 統計量・特徴量
-- [統計学の基礎](/data/statistics.md)
-- ベイズ統計
+- [統計学入門](/data/statistics.md)
+- [ベイズ統計入門](/data/bayes.md)
 - スペクトル解析
 - [直積・アダマール積](/data/product.md)
 - [パーシステントホモロジー入門](/data/persistent.md)

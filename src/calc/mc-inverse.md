@@ -1,6 +1,6 @@
-# インバース MC 法（Inverse / Reverse Monte Carlo）入門
+# 逆 MC 法（Inverse / Reverse Monte Carlo）入門
 
-#### 参考にしたドキュメント（日本語）
+## 参考ドキュメント
 
 - 日産アーク株式会社「リバースモンテカルロ (RMC) 法による非晶質材料の三次元構造解析」サービス紹介ページ  
 - リガク株式会社「RMC法（Reverse Monte-Carlo RMC 法）」SmartLab Studio II PDF解析：RMC Method 解説ページ  
@@ -10,11 +10,11 @@
 - 千葉大学アモルファス研究グループ「RMC計算用プログラム」および Web メモ（RMC法の実務的な解説）
 
 
-## 1. インバース MC 法とは何か
+## 1. 逆 MC 法とは何か
 
 - 通常のモンテカルロ（MC）法は  
   「ハミルトニアン／ポテンシャルが既知 → その平衡状態をサンプリングする『順問題』」の道具。
-- インバース MC / Reverse Monte Carlo（RMC）法はその逆で、  
+- 逆 (inverse) MC / Reverse Monte Carlo（RMC）法はその逆で、  
   「実験データ（回折・PDF・EXAFS・SRO など）が与えられているときに、  
   それを再現する構造モデルや有効相互作用を求める『逆問題』」を MC で解く手法。
 - 材料・ガラス・液体分野では特に：
