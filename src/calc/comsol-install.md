@@ -3,11 +3,10 @@
 #### 参考ドキュメント
 - [COMSOL Multiphysics® 6.4 リリースハイライト](https://www.comsol.jp/release/6.4)
 - [COMSOL 6.4 donwload and install](https://www.comsol.jp/product-download)
----
-
+- [はじめてのCOMSOL](https://kesco.co.jp/wp-content/uploads/2023/03/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AECOMSOL_Ver.6.2_20240301.pdf)
 ## 前提条件
 
-- 対応 OS：Ubuntu 22.04 / 20.04（64-bit）
+- 対応 OS：Ubuntu 24.04 / 22.04 / 20.04（64-bit）
 - 必要パッケージ（推奨）：
   - `build-essential`
   - `libxext6`
