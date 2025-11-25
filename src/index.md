@@ -208,7 +208,7 @@ features:
 - [機械学習ポテンシャルのFine tuning](/data/fine-tuning.md)
 
 ### その他
-- [ニューラルネットワーク入門](/data/neural-network.md)
+- ニューラルネットワーク入門
 - [テンソルネットワーク入門](/data/tensor-network.md)
 - サロゲートモデル
 - リザバーコンピューティング
