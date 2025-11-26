@@ -185,20 +185,20 @@ features:
 - 自己組織化マップ (SOM)
 
 ### 深層学習フレームワーク
-- 画像 (CNN, VAE, U-net)
-- 時系列 (RNN, LSTM, GRU, Transfomer, TCN)
-- グラフ (GNN, MPNN, GraphSAGE, message-passing)
+- 画像モデル (CNN, VAE, U-netなど)
+- 時系列モデル (RNN, LSTM, GRU, Transfomer, TCN)
+
 
 ### 説明可能 AI (XAI)
 - 特徴量重要度・寄与分解 (SHAP, LIMEなど)
-- Attention機構
-- Grad-CAM
+- [Attention機構](/data/attention.md)
+- [Grad-CAM](/data/gradcam.md)
 - シンボリック回帰
 
 ### 生成 AI 
-- オートエンコーダとVAE
-- Transfomer
-- MatterGen
+- [変分オートエンコーダー（VAE）](/data/vae.md)
+- [Transformer](/data/transformer.md)
+- [材料科学分野におけるLLM](/data/mat-llm.md)
 
 ### 最適化手法
 - [実験計画法（DOE）](/data/doe.md)
@@ -212,8 +212,9 @@ features:
 - [汎用機械学習ポテンシャル](/data/ml-potential-all.md)
 
 ### その他
-- [ニューラルネットワーク](/data/neural-network.md)
-- [リカレントニューラルネットワーク](/data/recurrent-neural-network.md)
+- [ニューラルネットワーク](/data/nn.md)
+- [リカレントニューラルネットワーク](/data/rnn.md)
+- [グラフニューラルネットワーク (GNN, MPNN, GraphSAGE, message-passing)](/data/gnn.md)
 - [テンソルネットワーク](/data/tensor-network.md)
 - [サロゲートモデル](/data/surrogate.md)
 - [リザバーコンピューティング](/data/reservoir.md)

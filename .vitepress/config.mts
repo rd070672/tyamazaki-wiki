@@ -151,7 +151,7 @@ export default defineConfig({
           // { text: 'シンク周り', link: '/'},
       ]},
 
-      { text: 'Home', link: '/' },
+      // { text: 'Home', link: '/' },
       { text: 'About', link: '/about' },
       { text: 'Changelog', link: '/changelog' },
       // { text: 'Website', link: 'https://tyamazaki.com' },
