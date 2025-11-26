@@ -56,6 +56,9 @@ features:
 ### 第一原理フェーズフィールド計算
 - [第一原理計算に基づくフェーズフィールド計算の原理](/calc/dft-pf.md)
 
+### 熱力学計算
+- [CALPHAD法](/calc/calphad.md)
+
 ### 分子動力学計算
 - [MD の原理](/calc/md.md)
 - [LAMMPS のインストールメモ](/calc/md-lammps-install.md)
@@ -169,7 +172,6 @@ features:
 - [物理インフォマティクス](/data/info-physics.md)
 - [物理インフォにおける PINNs とその発展形](/data/info-physics-2.md)
 - [AI4Science](/data/info-ai4science.md)
-
 
 ### 教師あり学習
 - 勾配ブースティング
