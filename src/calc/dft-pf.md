@@ -1,17 +1,17 @@
 # 第一原理計算に基づくフェーズフィールド計算
 
-## 参考ドキュメント
-- [第一原理フェーズフィールド法](https://www.tfc.tohoku.ac.jp/online_event/2020dsw/07/03.pdf)
-- K. Ohno et al., [A first-principles phase field method for quantitatively predicting multi-composition phase separation without thermodynamic empirical parameter](https://www.nature.com/articles/s41467-019-11248-z)
-
-
-## 概要
-
 - 第一原理フェーズフィールド計算とは、DFT などの第一原理計算で得られた情報を用いて、フェーズフィールドモデルの自由エネルギーや物性パラメータを構築し、組織・相変態の時間発展をシミュレーションする枠組みである。
 
 - 典型的には、次の二つのレベルで「第一原理」と結びつく。
   - アプローチ1：DFT から得たエネルギー・弾性定数・界面エネルギー・拡散係数などをパラメータとしてフェーズフィールドに渡す。
   - アプローチ2：より直接的に、第一原理に基づく自由エネルギー汎関数（クラスター展開、PFC など）をフェーズフィールド形式に埋め込む。
+
+## 参考ドキュメント
+- 第一原理フェーズフィールド法
+  https://www.tfc.tohoku.ac.jp/online_event/2020dsw/07/03.pdf
+- K. Ohno et al., A first-principles phase field method for quantitatively predicting multi-composition phase separation without thermodynamic empirical parameter: 
+  https://www.nature.com/articles/s41467-019-11248-z
+
 
 ## アプローチ1：DFT → フェーズフィールドへのパラメータ連結
 
@@ -129,4 +129,3 @@
   - DFT＋CALPHAD＋フェーズフィールド  
   - DFT＋クラスター展開(CE)＋モンテカルロ計算(MC)＋フェーズフィールド  
   といったハイブリッドなマルチスケール連成が現実的な選択肢となる。
-
