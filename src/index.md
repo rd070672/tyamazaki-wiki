@@ -176,21 +176,22 @@ features:
 - [AI4Science](/data/info-ai4science.md)
 
 ### 教師あり学習（予測・分類）
-- 決定木アンサンブル学習
-- 勾配ブースティング（XGBoost / LightGBM / CatBoost）
-- アンサンブル学習（Bagging / Boosting / Stacking）
-- サポートベクターマシン（SVM, SVR）
-- k近傍法（k-NN）
+- [決定木アンサンブル学習](/data/decision-tree.md)
+- [勾配ブースティング決定木](/data/boosting.md)
+- [サポートベクターマシン](/data/svm.md)
+- [k近傍法](/data/k-nn.md)
 
 ### 次元削減手法・可視化
-- 線形手法 (PCA, MDS)
-- 非線形的手法 (UMAP, t-SNE, isomap)
-- 自己組織化マップ (SOM)
+- [線形次元削減](/data/dr-linear.md)
+- [非線形次元削減](/data/dr-nonlinear.md)
+- [確率モデル・ベイズ系の次元削減](/data/dr-probabilistic-bayse.md)
+- [深層学習ベースの次元削減（表現学習）](/data/dr-deep-learning.md)
 
 ### 深層学習フレームワーク
 - [パーセプトロン](/data/perceptron.md)
 - [ニューラルネットワーク](/data/nn.md)
 - [畳み込みニューラルネットワーク](/data/cnn.md)
+- [時間畳み込みネットワーク](/data/tcn.md)
 - [リカレントニューラルネットワーク](/data/rnn.md)
 - [グラフニューラルネットワーク](/data/gnn.md)
 
