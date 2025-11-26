@@ -213,8 +213,8 @@ features:
 - [リカレントニューラルネットワーク](/data/recurrent-neural-network.md)
 - [テンソルネットワーク](/data/tensor-network.md)
 - サロゲートモデル
-- リザバーコンピューティング
-- 物理リザバー
+- [リザバーコンピューティング](/data/reservoir.md)
+- [物理リザバー](/data/reservoir-physical.md)
 
 
 <!-- ## 情報基盤
