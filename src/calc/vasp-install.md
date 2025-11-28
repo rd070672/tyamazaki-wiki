@@ -1,4 +1,4 @@
-# VASP v6.5.1 のインストールメモ
+# VASP のインストールメモ
 
 ## 参考ドキュメント
 - VASP のバージョンは 2025年時点で [vasp6.5.1](https://www.vasp.at/info/post/new-release-vasp-651/)

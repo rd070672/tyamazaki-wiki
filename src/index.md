@@ -32,77 +32,90 @@ features:
 第一原理計算・数値計算・スパコン計算を軸に、環境構築から代表的手法、解析例までを紹介します。材料物性の理解とデータ駆動解析につながる計算科学の要点をまとめます。
 
 ### 第一原理計算
-- [第一原理計算の原理](/calc/vasp.md)
-- [VASP のインストールメモ](/calc/vasp-install.md)
-- [VASP の計算例](/calc/vasp-dft.md)
-- [VASPにおけるWannier90と計算例](/calc/wannier90.md)
-- [vaspkit メモ](/calc/vaspkit.md)
-- [phonopy メモ](/calc/phonopy.md)
-- [MAELAS メモ](/calc/maelas.md)
-- [Bader 電荷解析メモ](/calc/bader.md)
-- [Wien2k のインストールメモ](/calc/wien2k-install.md)
+- [第一原理計算の基本原理](/calc/dft.md)
+- [第一原理計算におけるワニエ関数](/calc/dft-wannier.md)
+- [第一原理計算を支える数値解法](/calc/dft-calc.md)
+- [第一原理計算の各種ソフトウェアと特徴](/calc/dft-software.md)
+<!-- - [VASP のインストールメモ](/calc/vasp-install.md) -->
+- [金属・磁性体のためのVASP計算手順](/calc/vasp-dft.md)
+- [VASPにおける仮想結晶近似](/calc/vasp-vca.md)
+- [VASPKIT の活用ノート](/calc/vaspkit.md)
+- [phonopy の原理と活用](/calc/phonopy.md)
+- [MAELAS の原理と活用](/calc/maelas.md)
+- [Bader電荷解析](/calc/bader-charge-analysis.md)
+<!-- - [Wien2k のインストールメモ](/calc/wien2k-install.md) -->
 - [Wien2k の計算例](/calc/wien2k.md)
-- [KKR の基本](/calc/kkr.md)
-- [Kubo–Greenwood 法と線形応答理論による輸送特性計算](/calc/kkr-kubo.md)
-- [Akai-KKR のインストールメモ](/calc/akaikkr-install.md)
+- [グリーン関数と KKR法](/calc/kkr.md)
+- [線形応答理論とKubo–Greenwood法](/calc/kkr-kubo.md)
+<!-- - [Akai-KKR のインストールメモ](/calc/akaikkr-install.md) -->
 - [Akai-KKR の計算例](/calc/akaikkr.md)
-- [SPR-KKR のインストールメモ](/calc/sprkkr-install.md)
-- [SPR-KKR の計算例](/calc/sprkkr.md)
-
+<!-- - [SPR-KKR のインストールメモ](/calc/sprkkr-install.md) -->
+- [SPR-KKRによる磁性計算](/calc/sprkkr.md)
+- [Ju-KKRによる電子状態計算](/calc/jukkr.md)
 
 ### 第一原理分子動力学計算
-- [第一原理計算に基づく MD 計算の原理](/calc/aimd.md)
-- [AIMD によるアモルファスの計算例](/calc/aimd-amorphous.md)
+- [第一原理分子動力学（AIMD）の原理](/calc/aimd.md)
+- [アモルファス計算のためのAIMD活用](/calc/aimd-amorphous.md)
+- [距離秩序で読み解くアモルファス](/calc/amorphous.md)
+- [アモルファスの構造解析手法](/calc/amorphous-analysis.md)
 
 ### 第一原理フェーズフィールド計算
 - [第一原理計算に基づくフェーズフィールド計算の原理](/calc/dft-pf.md)
 
 ### 熱力学計算
-- [CALPHAD法](/calc/calphad.md)
+- [CALPHAD法（計算熱力学）による状態図・相平衡予測](/calc/calphad.md)
+- [状態図の読み方](/calc/phase-diagram.md)
+- [ランダウ理論と自由エネルギー](/calc/landau.md)
 
 ### 分子動力学計算
 - [MD の原理](/calc/md.md)
-- [MD 計算における古典的・機械学習ポテンシャルの選定](/calc/md-potential.md)
-- [LAMMPS のインストールメモ](/calc/md-lammps-install.md)
-- [LAMMPS を用いた MD 計算](/calc/md-lammps.md)
-- [ASE を用いた MD 計算](/calc/md-ase.md)
-- [JAX / JAX-MD を用いた MD 計算](/calc/md-jax.md)
+- [MD の数値解法](/calc/md-calc.md)
+- [MD 計算における原子間ポテンシャル選定](/calc/md-potential.md)
+- [MD 計算と機械学習](/calc/md-machine-learning.md)
+<!-- - [LAMMPS のインストールメモ](/calc/md-lammps-install.md) -->
+- [LAMMPS による分 MD 計算](/calc/md-lammps.md)
+- [ASE/ JAXによる MD 計算](/calc/md-ase-jax.md)
 
 ### モンテカルロ計算
-- [モンテカルロ計算の原理](/calc/mc.md)
+- [モンテカルロ計算の原理と系統](/calc/mc.md)
+- [モンテカルロ法の数値解法](/calc/mc-calc.md)
+- [密度行列繰り込み群法](/calc/density-matrix.md)
+- [クラスター展開モデル](/calc/mc-cluster.md)
+- [原子論的スピンモデル](/calc/atomic-spin-model.md)
+- [テンソルネットワーク入門](/calc/tensor-network.md)
 - [マルコフ連鎖モンテカルロ法](/calc/mcmc.md)
 - [逆モンテカルロ法](/calc/mc-inverse.md)
 - [運動論的モンテカルロ法](/calc/mc-kinetic.md)
 - [量子モンテカルロ法](/calc/mc-quantum.md)
 - [グランドカノニカルモンテカルロ法](/calc/mc-grand-canonical.md)
 - [レプリカ交換モンテカルロ法](/calc/mc-exchange.md)
-- [クラスター展開モデル](/calc/mc-cluster.md)
 - [MC 計算による磁性体の計算例](/calc/mc-mag.md)
 - [REMCによるスピングラス解析](/calc/spin-glass.md)
-- [原子論的スピンモデル](/calc/atomic-spin-model.md)
-- [密度行列繰り込み群法](/calc/density-matrix.md)
-- [テンソルネットワーク-1](/calc/tensor-network-1.md)
-- [テンソルネットワーク-2](/calc/tensor-network-2.md)
 
 ### フェーズフィールド計算
 - [フェーズフィールド計算の原理](/calc/pf.md)
-- [Allen–Cahn 法に基づく計算例](/calc/pf-allen-cahn.md)
-- [Cahn–Hilliard 法に基づく計算例](/calc/pf-cahn-hilliard.md)
+- [フェーズフィールド法の数値解法](/calc/pf-calc.md)
+- [Allen–Cahn 法に基づく金属組織シミュレーション](/calc/pf-allen-cahn.md)
+- [Cahn–Hilliard 法に基づく金属組織シミュレーション](/calc/pf-cahn-hilliard.md)
 - [デンドライト成長シミュレーション](/calc/dendrite.md)
 
 ### マルチフィジックス計算
-- [FEM と FDM の原理](/calc/fem-fdm.md)
-- [常微分方程式 (ODE) の基礎](/calc/ode.md)
-- [偏微分方程式 (PDE) の基礎](/calc/pde.md)
+- [有限差分法の原理と数値解法](/calc/fdm.md)
+- [有限要素法の原理と数値解法](/calc/fem.md)
+- [常微分方程式 (ODE)と偏微分方程式 (PDE) の基礎](/calc/ode-pde.md)
 - [ボロノイ分割法](/calc/volonoi.md)
-- [mumax3 のインストールメモ](/calc/mumax3-install.md)
+- [LLG方程式に基づくマイクロ磁化シミュレーション](/calc/llg.md)
+- [反磁界（長距離相互作用）の数値解法](/calc/llg-demag-calc.md)
+- [マクスウェル方程式に基づく電磁界解析](/calc/maxwell.md)
+- [磁壁移動に伴う局所渦電流の生成に関する考察](/calc/eddy-current.md)
+- [電磁界解析の数値解法](/calc/maxwell.md)
+<!-- - [mumax3 のインストールメモ](/calc/mumax3-install.md) -->
 - [mumax3 を用いた LLG 計算](/calc/mumax3-llg.md)
 - [拡張版 mumax+ による磁気弾性計算](/calc/mumaxplus.md)
-- [COMSOL Multiphysics のインストールメモ](/calc/comsol-install.md)
+<!-- - [COMSOL Multiphysics のインストールメモ](/calc/comsol-install.md) -->
 - [COMSOL を用いた LLG 計算](/calc/comsol-llg.md)
 - [COMSOL を用いた 電磁場-LLG 連成計算](/calc/comsol-maxwell-llg.md)
 - [COMSOL を用いた 弾性場-LLG 連成計算](/calc/comsol-maelas-llg.md)
-- [COMSOL を用いた 相変化解析](/calc/comsol-pf.md)
 
 
 
@@ -110,39 +123,39 @@ features:
 材料合成・熱処理・プロセス制御から、磁気計測・放射光解析までを整理します。再現性を高める手順や装置運用のコツなど、実験で役立つ知見を共有します。
 
 ### 材料合成
-- 多元スパッタ装置
+<!-- - 多元スパッタ装置
 - PLD
-- MBE
+- MBE -->
 
 ### 熱処理・試料加工
-- 赤外線ランプ炉
+<!-- - 赤外線ランプ炉
 - フォトリソグラフィ
 - 電子線リソグラフィ (EBL)
 - ドライエッチング / ウェットエッチング
-- ワイヤーボンディング・パッケージング
+- ワイヤーボンディング・パッケージング -->
 
 ### 磁気計測
-- バルクハウゼンノイズ計測装置 (MBN)
+<!-- - バルクハウゼンノイズ計測装置 (MBN)
 - 振動試料型磁力計 (VSM)
 - 磁気特性測定システム (MPMS)
-- 磁気光学カー効果顕微鏡　(MOKE)
+- 磁気光学カー効果顕微鏡　(MOKE) -->
 
 ### 構造・化学状態解析
-- X線回折装置 (XRD)
+<!-- - X線回折装置 (XRD)
 - X線光電子分光法 (XPS)
 - 集束イオンビーム加工観察装置 (FIB-SEM)
 - 電子後方散乱回折 (EBSD)
 - 透過電子顕微鏡 (TEM)
-- 5D-STEM
+- 5D-STEM -->
 
 ### 汎用機器・治具設計
-- 3Dプリンター
+<!-- - 3Dプリンター
 - アルミフレーム設計
 - DAQ (Data Acquisition) ボード
-- 回路設計
+- 回路設計 -->
 
 ### 放射光施設
-- [放射光の基礎](/exp/sr.md)
+<!-- - [放射光の基礎](/exp/sr.md)
 - [放射光の光学設計の基礎](/exp/sr-optics.md)
 - [軟X線と硬X線の基礎](/exp/sr-soft-hard.md)
 - SPring-8の申請と実験準備
@@ -156,7 +169,7 @@ features:
   - BL9C XAFS
 - NanoTerasuの申請と実験準備
   - [HAXPESの基礎](/exp/sr-haxpes.md)
-  - BL09U HAXPES
+  - BL09U HAXPES -->
 
 
 
@@ -172,7 +185,7 @@ features:
 - [パーシステントホモロジー (PH))](/data/persistent.md)
 
 ### 材料データベース
-- [Pymatgen](/data/db-pymatgen.md)
+- [Materials Project（材料データベース）](/data/db-materials-project.md)
 - [Open Quantum Materials Database (OQMD)](/data/db-oqmd.md)
 
 ### マテリアルズ・インフォマティクス
