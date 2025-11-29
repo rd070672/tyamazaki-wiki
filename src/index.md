@@ -32,10 +32,17 @@ features:
 第一原理計算・数値計算・スパコン計算を軸に、環境構築から代表的手法、解析例までを紹介します。材料物性の理解とデータ駆動解析につながる計算科学の要点をまとめます。
 
 ### 第一原理計算
+- [量子力学入門とシュレーディンガー方程式](/calc/dft-basis.md)
 - [第一原理計算の基本原理](/calc/dft.md)
-- [第一原理計算におけるワニエ関数](/calc/dft-wannier.md)
+- [ワニエ関数と局在軌道](/calc/dft-wannier.md)
+- [応答理論入門](/calc/response-theory.md)
+- [摂動論の基礎と応用](/calc/perturbation.md)
+- [バンドアンフォールディング](/calc/dft-unfolding.md)
+- [時間依存密度汎関数理論（TDDFT）](/calc/dft-td.md)
+- [実時間TDDFTに基づく量子電子動力学法（QED法）の原理と活用](/calc/qed.md)
+- [虚数時間発展法（ITE）の基礎と計算物性への展開](/calc/dft-imarginary.md)
 - [第一原理計算を支える数値解法](/calc/dft-calc.md)
-- [第一原理計算の各種ソフトウェアと特徴](/calc/dft-software.md)
+- [第一原理計算ソフトウェアと特徴](/calc/dft-software.md)
 <!-- - [VASP のインストールメモ](/calc/vasp-install.md) -->
 - [金属・磁性体のためのVASP計算手順](/calc/vasp-dft.md)
 - [VASPにおける仮想結晶近似](/calc/vasp-vca.md)
@@ -52,6 +59,7 @@ features:
 <!-- - [SPR-KKR のインストールメモ](/calc/sprkkr-install.md) -->
 - [SPR-KKRによる磁性計算](/calc/sprkkr.md)
 - [Ju-KKRによる電子状態計算](/calc/jukkr.md)
+- [TOMBOプログラムによる全電子混合基底法](/calc/tombo.md)
 
 ### 第一原理分子動力学計算
 - [第一原理分子動力学（AIMD）の原理](/calc/aimd.md)
@@ -60,7 +68,7 @@ features:
 - [アモルファスの構造解析手法](/calc/amorphous-analysis.md)
 
 ### 第一原理フェーズフィールド計算
-- [第一原理計算に基づくフェーズフィールド計算の原理](/calc/dft-pf.md)
+- [第一原理計算に基づくフェーズフィールド計算](/calc/dft-pf.md)
 
 ### 熱力学計算
 - [CALPHAD法（計算熱力学）による状態図・相平衡予測](/calc/calphad.md)
@@ -74,7 +82,7 @@ features:
 - [MD 計算と機械学習](/calc/md-machine-learning.md)
 <!-- - [LAMMPS のインストールメモ](/calc/md-lammps-install.md) -->
 - [LAMMPS による分 MD 計算](/calc/md-lammps.md)
-- [ASE/ JAXによる MD 計算](/calc/md-ase-jax.md)
+- [ASE・JAX による MD 計算](/calc/md-ase-jax.md)
 
 ### モンテカルロ計算
 - [モンテカルロ計算の原理と系統](/calc/mc.md)
@@ -107,7 +115,9 @@ features:
 - [LLG方程式に基づくマイクロ磁化シミュレーション](/calc/llg.md)
 - [反磁界（長距離相互作用）の数値解法](/calc/llg-demag-calc.md)
 - [マクスウェル方程式に基づく電磁界解析](/calc/maxwell.md)
-- [磁壁移動に伴う局所渦電流の生成に関する考察](/calc/eddy-current.md)
+- [動く磁壁が誘起する局所渦電流](/calc/eddy-current.md)
+- [弾塑性モデル](/calc/elasto-plasticity.md)
+- [磁気弾性モデル](/calc/magneto-elasticity.md)
 <!-- - [mumax3 のインストールメモ](/calc/mumax3-install.md) -->
 - [mumax3 を用いた LLG 計算](/calc/mumax3-llg.md)
 - [拡張版 mumax+ による磁気弾性計算](/calc/mumaxplus.md)

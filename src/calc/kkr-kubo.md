@@ -1,6 +1,6 @@
-# 線形応答理論とKubo–Greenwood法：輸送係数を相関関数で計算する枠組み
+# Kubo–Greenwood法：輸送係数を相関関数で計算する枠組み
 
-線形応答理論は、外場による微小な摂動に対して、系の応答を平衡状態の揺らぎ（相関関数）で表す理論である。Kubo–Greenwood法は、その一般式を単一粒子状態（バンド・波動関数）へ落とし込み、電気伝導度や光学伝導度を数値計算しやすい形にした実装系の代表である。
+Kubo–Greenwood法は、線形応答理論の一般式を単一粒子状態（バンド・波動関数）へ落とし込み、電気伝導度や光学伝導度を数値計算しやすい形にした実装系の代表である。
 
 ## 参考ドキュメント
 - R. Kubo, Statistical-Mechanical Theory of Irreversible Processes. I, Journal of the Physical Society of Japan 12, 570 (1957)
@@ -11,6 +11,7 @@
   https://www.jps.or.jp/books/50thkinen/50th_10/001.html
 
 ## 1. 線形応答の基本構文
+線形応答理論は、外場による微小な摂動に対して、系の応答を平衡状態の揺らぎ（相関関数）で表す理論である。　　
 時間依存外場 $F(t)$ による摂動を
 $$
 H(t)=H_0 - F(t)\,A

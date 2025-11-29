@@ -68,8 +68,9 @@ export default defineConfig({
     sidebar: [
       { text: '計算', collapsed: false, items: [
         { text: '第一原理計算', collapsed: false, items: [
-          { text: '第一原理計算の原理', link: '/calc/dft' },
-          { text: '第一原理計算におけるワニエ関数', link: '/calc/dft-wannier' },
+          { text: '量子力学入門とシュレーディンガー方程式', link: '/calc/dft-basis' },
+          { text: '第一原理計算の基本原理', link: '/calc/dft' },
+          { text: 'ワニエ関数と局所軌道', link: '/calc/dft-wannier' },
           { text: '第一原理計算を支える数値解法', link: '/calc/dft-calc' },
           { text: '第一原理計算の各種ソフトウェアと特徴', link: '/calc/dft-software' },
           // { text: 'VASP のインストールメモ', link: '/calc/vasp-install' },
