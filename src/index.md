@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Wiki"
   text: "tyamazaki" #"Yamazaki Lab"
-  tagline: # 横浜国立大学<br>材料工学教育プログラム
+  tagline: # 国立大学<br>材料工学
   actions:
     - theme: brand
       text: Website
@@ -17,7 +17,7 @@ hero:
 
 features:
   - title: 計算
-    details: 第一原理計算・数値計算・スパコン計算を軸に、環境構築から代表的手法、解析例までを紹介します。材料物性の理解とデータ駆動解析につながる計算科学の要点をまとめます。
+    details: 第一原理計算・数値計算・スパコン計算を軸に、環境構築から数値解法、解析例までを紹介します。材料物性の理解とデータ駆動解析につながる計算科学の基礎をまとめます。
 
   - title: 実験
     details: 材料合成・熱処理・プロセス制御から、磁気計測・放射光解析までを整理します。再現性を高める手順や装置運用のコツなど、実験で役立つ知見を共有します。
@@ -29,37 +29,48 @@ features:
 
 
 ## 計算 {#計算}
-第一原理計算・数値計算・スパコン計算を軸に、環境構築から代表的手法、解析例までを紹介します。材料物性の理解とデータ駆動解析につながる計算科学の要点をまとめます。
+第一原理計算・数値計算・スパコン計算を軸に、環境構築から数値解法、解析例までを紹介します。材料物性の理解とデータ駆動解析につながる計算科学の基礎をまとめます。
 
 ### 第一原理計算
 - [量子力学入門とシュレーディンガー方程式](/calc/dft-basis.md)
 - [第一原理計算の基本原理](/calc/dft.md)
+- [バンドアンフォールディング](/calc/dft-unfolding.md)
 - [ワニエ関数と局在軌道](/calc/dft-wannier.md)
 - [応答理論入門](/calc/response-theory.md)
 - [摂動論の基礎と応用](/calc/perturbation.md)
-- [バンドアンフォールディング](/calc/dft-unfolding.md)
+- [密度汎関数摂動論](/calc/dfpt.md)
 - [時間依存密度汎関数理論（TDDFT）](/calc/dft-td.md)
-- [実時間TDDFTに基づく量子電子動力学法（QED法）の原理と活用](/calc/qed.md)
-- [虚数時間発展法（ITE）の基礎と計算物性への展開](/calc/dft-imarginary.md)
 - [第一原理計算を支える数値解法](/calc/dft-calc.md)
 - [第一原理計算ソフトウェアと特徴](/calc/dft-software.md)
 <!-- - [VASP のインストールメモ](/calc/vasp-install.md) -->
-- [金属・磁性体のためのVASP計算手順](/calc/vasp-dft.md)
+- [VASPによる金属・磁性体の第一原理計算](/calc/vasp-dft.md)
 - [VASPにおける仮想結晶近似](/calc/vasp-vca.md)
 - [VASPKIT の活用ノート](/calc/vaspkit.md)
-- [phonopy の原理と活用](/calc/phonopy.md)
-- [MAELAS の原理と活用](/calc/maelas.md)
+- [Phonopy によるフォノン計算](/calc/phonopy.md)
+- [MAELAS による磁気弾性効果の計算](/calc/maelas.md)
 - [Bader電荷解析](/calc/bader-charge-analysis.md)
 <!-- - [Wien2k のインストールメモ](/calc/wien2k-install.md) -->
 - [Wien2k の計算例](/calc/wien2k.md)
 - [グリーン関数と KKR法](/calc/kkr.md)
 - [線形応答理論とKubo–Greenwood法](/calc/kkr-kubo.md)
+- [非平衡グリーン関数（NEGF）で理解する量子輸送](/calc/negf.md)
 <!-- - [Akai-KKR のインストールメモ](/calc/akaikkr-install.md) -->
 - [Akai-KKR の計算例](/calc/akaikkr.md)
 <!-- - [SPR-KKR のインストールメモ](/calc/sprkkr-install.md) -->
 - [SPR-KKRによる磁性計算](/calc/sprkkr.md)
-- [Ju-KKRによる電子状態計算](/calc/jukkr.md)
-- [TOMBOプログラムによる全電子混合基底法](/calc/tombo.md)
+- [Ju-KKRによる局所電子状態計算](/calc/jukkr.md)
+- [TOMBOによる全電子混合基底法](/calc/tombo.md)
+
+- [非調和フォノン理論が拓く有限温度物性](/calc/self-consistent-phonon.md)
+- [マグノン-フォノン相互作用の計算](/calc/magnon-phonon.md)
+- [ベリー位相とトポロジカル応答の計算](/calc/berry.md)
+- [実時間TDDFTに基づく量子電子動力学法（QED法）の原理と活用](/calc/qed.md)
+- [虚数時間発展法（ITE）の基礎](/calc/dft-imarginary.md)
+- [核量子効果（NQE）を扱う第一原理計算](/calc/nuclear-quantum-effects.md)
+- [格子ボルツマン法（LBM）入門](/calc/lattice-boltzmann-method.md)
+- [格子QCDシミュレーション入門](/calc/lattice-qcd.md)
+- [カオス理論と非線形ダイナミクス](/calc/chaos.md)
+
 
 ### 第一原理分子動力学計算
 - [第一原理分子動力学（AIMD）の原理](/calc/aimd.md)
@@ -95,6 +106,7 @@ features:
 - [逆モンテカルロ法](/calc/mc-inverse.md)
 - [運動論的モンテカルロ法](/calc/mc-kinetic.md)
 - [量子モンテカルロ法](/calc/mc-quantum.md)
+- [量子アニーリング](/calc/quantum-annealing.md)
 - [グランドカノニカルモンテカルロ法](/calc/mc-grand-canonical.md)
 - [レプリカ交換モンテカルロ法](/calc/mc-exchange.md)
 - [MC 計算による磁性体の計算例](/calc/mc-mag.md)
@@ -106,27 +118,32 @@ features:
 - [Allen–Cahn 法で記述する金属組織シミュレーション](/calc/pf-allen-cahn.md)
 - [Cahn–Hilliard 方程式で記述する金属組織シミュレーション](/calc/pf-cahn-hilliard.md)
 - [デンドライト成長のフェーズフィールドシミュレーション](/calc/dendrite.md)
+- [Phase-Field Crystal（PFC）法の理論](/calc/phase-field-crystal.md)
 
 ### マルチフィジックス計算
 - [有限差分法の原理と数値解法](/calc/fdm.md)
-- [有限要素法の原理と数値解法](/calc/fem.md)
+- [有限要素法の原理](/calc/fem.md)
+- [有限要素法の数値解法](/calc/fem-calc.md)
+- [ガウス・ザイデル法](/calc/fem-gauss-seidel.md)
 - [常微分方程式 (ODE)と偏微分方程式 (PDE) の基礎](/calc/ode-pde.md)
 - [ボロノイ分割法](/calc/volonoi.md)
 - [LLG方程式に基づくマイクロ磁化シミュレーション](/calc/llg.md)
-- [反磁界（長距離相互作用）の数値解法](/calc/llg-demag-calc.md)
+- [反磁界（長距離相互作用）の数値解法](/calc/demag-calc.md)
 - [マクスウェル方程式に基づく電磁界解析](/calc/maxwell.md)
 - [動く磁壁が誘起する局所渦電流](/calc/eddy-current.md)
-- [弾塑性モデル](/calc/elasto-plasticity.md)
-- [磁気弾性モデル](/calc/magneto-elasticity.md)
+- [弾塑性構成モデルの基本方程式](/calc/elasto-plasticity.md)
+- [磁気弾性効果の基本方程式と定式化](/calc/magneto-elasticity.md)
 <!-- - [mumax3 のインストールメモ](/calc/mumax3-install.md) -->
-- [mumax3 を用いた LLG 計算](/calc/mumax3-llg.md)
-- [拡張版 mumax+ による磁気弾性計算](/calc/mumaxplus.md)
+- [mumax による LLG マイクロ磁化・磁気弾性シミュレーション](/calc/mumax3-llg.md)
+<!-- - [拡張版 mumax+ による磁気弾性計算](/calc/mumaxplus.md) -->
 <!-- - [COMSOL Multiphysics のインストールメモ](/calc/comsol-install.md) -->
-- [COMSOL を用いた LLG 計算](/calc/comsol-llg.md)
-- [COMSOL を用いた 電磁場-LLG 連成計算](/calc/comsol-maxwell-llg.md)
-- [COMSOL を用いた 弾性場-LLG 連成計算](/calc/comsol-maelas-llg.md)
+- [COMSOL を用いた LLG 計算と連成解析](/calc/comsol-llg.md)
+<!-- - [COMSOL を用いた 電磁場-LLG 連成計算](/calc/comsol-maxwell-llg.md)
+- [COMSOL を用いた 弾性場-LLG 連成計算](/calc/comsol-maelas-llg.md) -->
 
+- [COMSOL を用いた LLG 計算と連成解析](/calc/scalable.md)
 
+- [有限要素法によるマイクロマグ計算の自作コード](/calc/fem-llg.md)
 
 ## 実験 {#実験}
 材料合成・熱処理・プロセス制御から、磁気計測・放射光解析までを整理します。再現性を高める手順や装置運用のコツなど、実験で役立つ知見を共有します。

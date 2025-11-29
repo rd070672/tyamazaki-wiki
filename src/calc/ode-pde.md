@@ -11,8 +11,6 @@
   https://karel.fpark.tmu.ac.jp/files/notes_pde_2015.pdf
 - 京都大学OCW, シミュレーション概論ノート：偏微分方程式（PDF）  
   https://ocw.kyoto-u.ac.jp/wp-content/uploads/2000/04/1999_introduction-to-simulation_08.pdf
-- MIT, Finite differences（CFL条件を含む講義ノートPDF）  
-  https://dspace.mit.edu/bitstream/handle/1721.1/100852/2-29-fall-2011/contents/lecture-notes/MIT2_29F11_lect_12.pdf
 
 
 ## 1. 微分方程式とは何か
@@ -23,7 +21,7 @@
 
 となる。
 
-### 1.1 ODEとPDEの違い（要点）
+### 1.1 ODEとPDEの違い
 | 観点 | ODE | PDE |
 |---|---|---|
 | 未知関数 | $u(t)$（または $u(x)$） | $u(t, x, y, z, …)$ |
@@ -61,7 +59,7 @@ $$
 
 で表される。
 
-### 3.1 存在と一意性（なぜ重要か）
+### 3.1 存在と一意性
 同じ初期値から解が一意に定まることは、「モデルが予測を持つ」ことと同義である。代表的には、$f$ が $u$ に関して局所リプシッツ連続であれば、十分小さい時間区間で解が存在し一意になる。
 
 直感：

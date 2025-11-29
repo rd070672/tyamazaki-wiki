@@ -1,4 +1,4 @@
-# 有限差分法（FDM）の原理と数値解法：差分近似・安定性・解法設計の要点
+# 有限差分法（FDM）の原理：差分近似・安定性・解法設計
 
 有限差分法は、連続場の微分方程式を格子点上の差分方程式へ置き換え、代数方程式（あるいは時間発展の更新式）として解く方法である。拡散・弾性・電磁場・相変態など、保存則や勾配駆動の方程式を比較的直接に離散化できる点が強みである。
 
@@ -9,8 +9,6 @@
   https://people.maths.ox.ac.uk/trefethen/4all.pdf
 - B. Fornberg, Generation of Finite Difference Formulas on Arbitrarily Spaced Grids, Mathematics of Computation (1988)
   https://www.ams.org/mcom/1988-51-184/S0025-5718-1988-0935077-0/
-- （日本語）明治大学 解析系講義資料：熱方程式に対する差分法 II（PDF）
-  https://nalab.mind.meiji.ac.jp/~mk/labo/text/heat-fdm-2.pdf
 
 
 ## 1. 連続方程式から格子方程式へ：FDMの基本手順
