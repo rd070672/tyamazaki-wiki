@@ -42,25 +42,20 @@ features:
 - [時間依存密度汎関数理論（TDDFT）](/calc/dft-td.md)
 - [第一原理計算を支える数値解法](/calc/dft-calc.md)
 - [第一原理計算ソフトウェアと特徴](/calc/dft-software.md)
-<!-- - [VASP のインストールメモ](/calc/vasp-install.md) -->
 - [VASPによる金属・磁性体の第一原理計算](/calc/vasp-dft.md)
 - [VASPにおける仮想結晶近似](/calc/vasp-vca.md)
 - [VASPKIT の活用ノート](/calc/vaspkit.md)
 - [Phonopy によるフォノン計算](/calc/phonopy.md)
 - [MAELAS による磁気弾性効果の計算](/calc/maelas.md)
 - [Bader電荷解析](/calc/bader-charge-analysis.md)
-<!-- - [Wien2k のインストールメモ](/calc/wien2k-install.md) -->
 - [Wien2k の計算例](/calc/wien2k.md)
 - [グリーン関数と KKR法](/calc/kkr.md)
 - [線形応答理論とKubo–Greenwood法](/calc/kkr-kubo.md)
 - [非平衡グリーン関数（NEGF）で理解する量子輸送](/calc/negf.md)
-<!-- - [Akai-KKR のインストールメモ](/calc/akaikkr-install.md) -->
 - [Akai-KKR の計算例](/calc/akaikkr.md)
-<!-- - [SPR-KKR のインストールメモ](/calc/sprkkr-install.md) -->
 - [SPR-KKRによる磁性計算](/calc/sprkkr.md)
 - [Ju-KKRによる局所電子状態計算](/calc/jukkr.md)
 - [TOMBOによる全電子混合基底法](/calc/tombo.md)
-
 - [非調和フォノン理論が拓く有限温度物性](/calc/self-consistent-phonon.md)
 - [マグノン-フォノン相互作用の計算](/calc/magnon-phonon.md)
 - [ベリー位相とトポロジカル応答の計算](/calc/berry.md)
@@ -91,7 +86,6 @@ features:
 - [MD の数値解法](/calc/md-calc.md)
 - [MD 計算における原子間ポテンシャル選定](/calc/md-potential.md)
 - [MD 計算と機械学習](/calc/md-machine-learning.md)
-<!-- - [LAMMPS のインストールメモ](/calc/md-lammps-install.md) -->
 - [LAMMPS による分 MD 計算](/calc/md-lammps.md)
 - [ASE・JAX による MD 計算](/calc/md-ase-jax.md)
 
@@ -133,15 +127,13 @@ features:
 - [動く磁壁が誘起する局所渦電流](/calc/eddy-current.md)
 - [弾塑性構成モデルの基本方程式](/calc/elasto-plasticity.md)
 - [磁気弾性効果の基本方程式と定式化](/calc/magneto-elasticity.md)
-<!-- - [mumax3 のインストールメモ](/calc/mumax3-install.md) -->
 - [mumax による LLG マイクロ磁化・磁気弾性シミュレーション](/calc/mumax3-llg.md)
-<!-- - [COMSOL Multiphysics のインストールメモ](/calc/comsol-install.md) -->
 - [COMSOL を用いた LLG 計算と連成解析](/calc/comsol-llg.md)
 - [離散化とスケーラブル解法](/calc/scalable.md)
-
 - [有限要素法によるマイクロマグ計算の自作コード](/calc/fem-llg.md)
 - [反磁界（静磁界）計算手法の検討](/calc/demag-compare.md)
 - [3次元線形弾性のHex8有限要素ソルバ](/calc/fem-solver.md)
+- [磁気弾性連成（磁歪）をFEM弾性ソルバへ](/calc/fem-maelas.md)
 
 ## 実験 {#実験}
 材料合成・熱処理・プロセス制御から、磁気計測・放射光解析までを整理します。再現性を高める手順や装置運用のコツなど、実験で役立つ知見を共有します。
