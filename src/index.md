@@ -95,9 +95,9 @@ features:
 ### フェーズフィールド計算
 - [フェーズフィールド計算の原理](/calc/pf.md)
 - [フェーズフィールド法の数値解法](/calc/pf-calc.md)
-- [Allen–Cahn 法に基づく金属組織シミュレーション](/calc/pf-allen-cahn.md)
-- [Cahn–Hilliard 法に基づく金属組織シミュレーション](/calc/pf-cahn-hilliard.md)
-- [デンドライト成長シミュレーション](/calc/dendrite.md)
+- [Allen–Cahn 法で記述する金属組織シミュレーション](/calc/pf-allen-cahn.md)
+- [Cahn–Hilliard 方程式で記述する金属組織シミュレーション](/calc/pf-cahn-hilliard.md)
+- [デンドライト成長のフェーズフィールドシミュレーション](/calc/dendrite.md)
 
 ### マルチフィジックス計算
 - [有限差分法の原理と数値解法](/calc/fdm.md)
@@ -108,7 +108,6 @@ features:
 - [反磁界（長距離相互作用）の数値解法](/calc/llg-demag-calc.md)
 - [マクスウェル方程式に基づく電磁界解析](/calc/maxwell.md)
 - [磁壁移動に伴う局所渦電流の生成に関する考察](/calc/eddy-current.md)
-- [電磁界解析の数値解法](/calc/maxwell.md)
 <!-- - [mumax3 のインストールメモ](/calc/mumax3-install.md) -->
 - [mumax3 を用いた LLG 計算](/calc/mumax3-llg.md)
 - [拡張版 mumax+ による磁気弾性計算](/calc/mumaxplus.md)

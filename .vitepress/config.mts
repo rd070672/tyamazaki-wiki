@@ -133,9 +133,9 @@ export default defineConfig({
           { text: 'デンドライト成長シミュレーション', link: '/calc/dendrite' },
         ]},
         { text: 'マルチフィジックス計算', collapsed: true, items: [
-          { text: 'FEM と FDM の原理', link: '/calc/fem-fdm' },
-          { text: '常微分方程式 (ODE) の基礎', link: '/calc/ode' },
-          { text: '偏微分方程式 (PDE) の基礎', link: '/calc/pde' },
+          { text: '有限差分法の原理と数値解法', link: '/calc/fdm' },
+          { text: '有限要素法の原理と数値解法', link: '/calc/fem' },
+          { text: '常微分方程式 (ODE)と偏微分方程式 (PDE) の基礎', link: '/calc/ode-pde' },
           { text: 'ボロノイ分割法', link: '/calc/volonoi' },
           // { text: 'mumax3 のインストールメモ', link: '/calc/mumax3-install' },
           { text: 'mumax3 を用いた LLG 計算', link: '/calc/mumax3-llg' },
