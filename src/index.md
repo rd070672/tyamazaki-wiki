@@ -197,11 +197,11 @@ features:
 ### 放射光施設
 - [放射光の物理](/exp/sr.md)
 - [放射光ビームラインの光学設計](/exp/sr-optics.md)
-<!-- - [放射光のエネルギー帯域とコヒーレント性](/exp/sr-soft-hard.md) -->
-- [XAS/XMCDの原理](/exp/sr-xmcd.md)
-- [PEHの原理](/exp/sr-peh.md)
-- [XAFSの原理](/exp/sr-xafs.md)
-- [HAXPESの原理](/exp/sr-haxpes.md)
+- [X線吸収分光（XAS）とX線磁気円二色性（XMCD）の原理](/exp/sr-xmcd.md)
+- [光電子ホログラフィー（PEH）](/exp/sr-peh.md)
+- [硬X線光電子分光（HAXPES）の原理](/exp/sr-haxpes.md)
+- [共鳴軟Ｘ線非弾性散乱分光（RIXS）の原理](/exp/sr-rixs.md)
+- [スピン・角度分解光電子分光（SARPES）の原理](/exp/sr-sarpes.md)
 - [アモルファスの構造・物性解析](/exp/sr-amorphous.md)
 
 
