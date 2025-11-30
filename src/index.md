@@ -71,7 +71,11 @@ features:
 - [第一原理分子動力学（AIMD）の原理](/calc/aimd.md)
 - [アモルファス計算のためのAIMD活用](/calc/aimd-amorphous.md)
 - [距離秩序で読み解くアモルファス](/calc/amorphous.md)
+- [アモルファスの局所物性と計算手法](/calc/amorphous-calc.md)
 - [アモルファスの構造解析手法](/calc/amorphous-analysis.md)
+- [アモルファス固体の力学](/calc/amorphous-solid.md)
+- [計算科学に基づくアモルファス固体の力学](/calc/amorphous-solid-calc.md)
+- [アモルファスにおける局所磁気モーメント](/calc/amorphous-moment.md)
 
 ### 第一原理フェーズフィールド計算
 - [第一原理計算に基づくフェーズフィールド計算](/calc/dft-pf.md)
@@ -80,6 +84,7 @@ features:
 - [CALPHAD法（計算熱力学）による状態図・相平衡予測](/calc/calphad.md)
 - [状態図の読み方](/calc/phase-diagram.md)
 - [ランダウ理論と自由エネルギー](/calc/landau.md)
+- [ギブス自由エネルギーで合金を設計する](/calc/gibbs-alloy.md)
 
 ### 分子動力学計算
 - [MD の原理](/calc/md.md)
@@ -88,6 +93,7 @@ features:
 - [MD 計算と機械学習](/calc/md-machine-learning.md)
 - [LAMMPS による分 MD 計算](/calc/md-lammps.md)
 - [ASE・JAX による MD 計算](/calc/md-ase-jax.md)
+- [計算科学で読み解くスピングラス](/calc/spin-glass-calc.md)
 
 ### モンテカルロ計算
 - [モンテカルロ計算の原理と系統](/calc/mc.md)
@@ -104,7 +110,11 @@ features:
 - [グランドカノニカルモンテカルロ法](/calc/mc-grand-canonical.md)
 - [レプリカ交換モンテカルロ法](/calc/mc-exchange.md)
 - [MC 計算による磁性体の計算例](/calc/mc-mag.md)
-- [REMCによるスピングラス解析](/calc/spin-glass.md)
+- [REMCによるスピングラス解析](/calc/spin-glass-remc.md)
+- [スピングラスの物理と応用](/calc/spin-glass-phys.md)
+- [計算科学で読み解くスピングラス](/calc/spin-glass-calc.md)
+- [アモルファス磁性におけるスピングラス](/calc/spin-glass-amorphous.md)
+- [量子スピングラス](/calc/spin-glass-quantum.md)
 
 ### フェーズフィールド計算
 - [フェーズフィールド計算の原理](/calc/pf.md)
@@ -144,6 +154,8 @@ features:
 - MBE -->
 
 ### 熱処理・試料加工
+- [フォトリソグラフィの化学](/exp/photo-lithography.md)
+- [マスクレス露光装置の物理](/exp/maskless-lithography.md)
 <!-- - 赤外線ランプ炉
 - フォトリソグラフィ
 - 電子線リソグラフィ (EBL)
@@ -151,6 +163,14 @@ features:
 - ワイヤーボンディング・パッケージング -->
 
 ### 磁気計測
+- [軟磁性体の物理](/exp/softmag-phys.md)
+- [軟磁性体の高周波特性評価](/exp/softmag-rf.md)
+- [高周波アナライザー装置の測定原理](/exp/softmag-rf-measurement.md)
+- [高周波計測技術の基礎](/exp/softmag-rf-phys.md)
+- [低ノイズ・高感度な電圧測定技術](/exp/low-noise.md)
+- [プリアンプの物理と基礎](/exp/pre-amp.md)
+- [パワーエレクトロニクス受動素子の物理と技術課題](/exp/power-electronics-mag.md)
+- [パワーエレクトロニクス用半導体デバイスの物理と技術課題](/exp/power-electronics-semicon.md)
 <!-- - バルクハウゼンノイズ計測装置 (MBN)
 - 振動試料型磁力計 (VSM)
 - 磁気特性測定システム (MPMS)
@@ -165,27 +185,23 @@ features:
 - 5D-STEM -->
 
 ### 汎用機器・治具設計
+
+- [電磁界シールドの基礎](/exp/mag-shield.md)
 <!-- - 3Dプリンター
 - アルミフレーム設計
 - DAQ (Data Acquisition) ボード
 - 回路設計 -->
 
 ### 放射光施設
-<!-- - [放射光の基礎](/exp/sr.md)
+- [放射光の基礎](/exp/sr.md)
 - [放射光の光学設計の基礎](/exp/sr-optics.md)
 - [軟X線と硬X線の基礎](/exp/sr-soft-hard.md)
-- SPring-8の申請と実験準備
-  - [XMCDの基礎](/exp/sr-xmcd.md)
-  - BL25SU XMCD (X線磁気円二色性)
-  - [PEHの基礎](/exp/sr-peh.md)
-  - BL25SU PEH (光電子ホログラフィー)
-  - [XAFSの基礎](/exp/sr-xafs.md)
-  - BL14B2 in-situ XAFS/XRD
-- KEK(PF)申請と実験準備
-  - BL9C XAFS
-- NanoTerasuの申請と実験準備
-  - [HAXPESの基礎](/exp/sr-haxpes.md)
-  - BL09U HAXPES -->
+- [XMCDの基礎](/exp/sr-xmcd.md)
+- [PEHの基礎](/exp/sr-peh.md)
+- [XAFSの基礎](/exp/sr-xafs.md)
+- [HAXPESの基礎](/exp/sr-haxpes.md)
+- [放射光で評価するアモルファス](/exp/sr-amorphous.md)
+
 
 
 
