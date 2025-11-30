@@ -65,7 +65,7 @@ features:
 - [格子ボルツマン法（LBM）入門](/calc/lattice-boltzmann-method.md)
 - [格子QCDシミュレーション入門](/calc/lattice-qcd.md)
 - [カオス理論と非線形ダイナミクス](/calc/chaos.md)
-
+- [量子カオス理論](/calc/chaos-quantum.md)
 
 ### 第一原理分子動力学計算
 - [第一原理分子動力学（AIMD）の原理](/calc/aimd.md)
@@ -91,7 +91,7 @@ features:
 - [MD の数値解法](/calc/md-calc.md)
 - [MD 計算における原子間ポテンシャル選定](/calc/md-potential.md)
 - [MD 計算と機械学習](/calc/md-machine-learning.md)
-- [LAMMPS による分 MD 計算](/calc/md-lammps.md)
+- [LAMMPS による MD 計算](/calc/md-lammps.md)
 - [ASE・JAX による MD 計算](/calc/md-ase-jax.md)
 - [計算科学で読み解くスピングラス](/calc/spin-glass-calc.md)
 
@@ -149,6 +149,8 @@ features:
 材料合成・熱処理・プロセス制御から、磁気計測・放射光解析までを整理します。再現性を高める手順や装置運用のコツなど、実験で役立つ知見を共有します。
 
 ### 材料合成
+- 物理蒸着法の基礎
+- 化学蒸着法の基礎
 <!-- - 多元スパッタ装置
 - PLD
 - MBE -->
@@ -165,12 +167,12 @@ features:
 ### 磁気計測
 - [軟磁性体の物理](/exp/softmag-phys.md)
 - [軟磁性体の高周波特性評価](/exp/softmag-rf.md)
-- [高周波アナライザー装置の測定原理](/exp/softmag-rf-measurement.md)
-- [高周波計測技術の基礎](/exp/softmag-rf-phys.md)
+- [高周波計測技術](/exp/softmag-rf-phys.md)
+- [信号アナライザーの測定原理](/exp/softmag-rf-measurement.md)
 - [低ノイズ・高感度な電圧測定技術](/exp/low-noise.md)
 - [プリアンプの物理と基礎](/exp/pre-amp.md)
-- [パワーエレクトロニクス受動素子の物理と技術課題](/exp/power-electronics-mag.md)
-- [パワーエレクトロニクス用半導体デバイスの物理と技術課題](/exp/power-electronics-semicon.md)
+- [パワーエレクトロニクス受動素子](/exp/power-electronics-mag.md)
+- [パワーエレクトロニクス用半導体デバイス](/exp/power-electronics-semicon.md)
 <!-- - バルクハウゼンノイズ計測装置 (MBN)
 - 振動試料型磁力計 (VSM)
 - 磁気特性測定システム (MPMS)
@@ -193,16 +195,14 @@ features:
 - 回路設計 -->
 
 ### 放射光施設
-- [放射光の基礎](/exp/sr.md)
-- [放射光の光学設計の基礎](/exp/sr-optics.md)
-- [軟X線と硬X線の基礎](/exp/sr-soft-hard.md)
-- [XMCDの基礎](/exp/sr-xmcd.md)
-- [PEHの基礎](/exp/sr-peh.md)
-- [XAFSの基礎](/exp/sr-xafs.md)
-- [HAXPESの基礎](/exp/sr-haxpes.md)
-- [放射光で評価するアモルファス](/exp/sr-amorphous.md)
-
-
+- [放射光の物理](/exp/sr.md)
+- [放射光ビームラインの光学設計](/exp/sr-optics.md)
+<!-- - [放射光のエネルギー帯域とコヒーレント性](/exp/sr-soft-hard.md) -->
+- [XAS/XMCDの原理](/exp/sr-xmcd.md)
+- [PEHの原理](/exp/sr-peh.md)
+- [XAFSの原理](/exp/sr-xafs.md)
+- [HAXPESの原理](/exp/sr-haxpes.md)
+- [アモルファスの構造・物性解析](/exp/sr-amorphous.md)
 
 
 ## データサイエンス {#データサイエンス}
