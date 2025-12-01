@@ -52,7 +52,7 @@ features:
 - [グリーン関数と KKR法](/calc/kkr.md)
 - [線形応答理論とKubo–Greenwood法](/calc/kkr-kubo.md)
 - [非平衡グリーン関数（NEGF）で理解する量子輸送](/calc/negf.md)
-- [Akai-KKR の計算例](/calc/akaikkr.md)
+- [AkaiKKRによる不規則系電子状態計算](/calc/akaikkr.md)
 - [SPR-KKRによる磁性計算](/calc/sprkkr.md)
 - [Ju-KKRによる局所電子状態計算](/calc/jukkr.md)
 - [TOMBOによる全電子混合基底法](/calc/tombo.md)
@@ -69,7 +69,7 @@ features:
 
 ### 第一原理分子動力学計算
 - [第一原理分子動力学（AIMD）の原理](/calc/aimd.md)
-- [アモルファス計算のためのAIMD活用](/calc/aimd-amorphous.md)
+- [AIMDによるアモルファス設計](/calc/aimd-amorphous.md)
 - [アモルファスの距離秩序と物理](/calc/amorphous.md)
 - [アモルファスの構造と物性の計算手法](/calc/amorphous-calc.md)
 - [アモルファスの構造解析手法](/calc/amorphous-analysis.md)

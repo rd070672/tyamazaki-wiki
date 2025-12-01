@@ -19,7 +19,7 @@
 
 ## 方程式レベルの整理（Maxwell + LLG）
 
-### Maxwell 方程式（準静的磁場の典型形）
+### Maxwell 方程式
 - 磁場に注目した準静的な形の一例：
   $$
     \nabla\times\mathbf{H} = \mathbf{J}_\text{e} + \frac{\partial \mathbf{D}}{\partial t},\quad
@@ -35,7 +35,7 @@
     \mathbf{M} = M_s \mathbf{m}(x,y,z,t)
   $$
 
-### LLG 方程式（単位磁化）
+### LLG 方程式
 - Gilbert 形式：
   $$
     \frac{d\mathbf{m}}{dt}
@@ -97,7 +97,7 @@
   - 電流・コイル → Maxwell → H → LLG → M → Maxwell → …  
     という双方向連成がタイムステップごとに繰り返される。
 
-## 典型的なセットアップ手順
+## セットアップ手順
 
 1. **モデルとパラメータの準備**
    - 3D / 2D モデルを作成。
