@@ -4,11 +4,11 @@
 
 ## 参考ドキュメント
 - MIT OpenCourseWare, Vector Calculus（講義資料PDF）
-https://ocw.mit.edu/courses/res-18-001-calculus-fall-2023/mitres_18_001_f17_ch15.pdf
+  https://ocw.mit.edu/courses/res-18-001-calculus-fall-2023/mitres_18_001_f17_ch15.pdf
 - 信州大学, 物理数学I（勾配・発散・回転・ラプラシアンの意味と公式を含むPDF）
-https://azusa.shinshu-u.ac.jp/~odake/jugyou/bsI_ver2.1.7_all.pdf
+  https://azusa.shinshu-u.ac.jp/~odake/jugyou/bsI_ver2.1.7_all.pdf
 - 九州大学, ベクトル解析の基礎（ガウスの定理やグリーンの定理を含むPDF）
-https://www2.math.kyushu-u.ac.jp/~hara/lectures/06/zoku15-060629.pdf
+  https://www2.math.kyushu-u.ac.jp/~hara/lectures/06/zoku15-060629.pdf
 
 ## 1. 位置ベクトル・スカラー場・ベクトル場
 
@@ -113,7 +113,7 @@ $$
 
 機械学習では、グラフラプラシアンやラプラシアン正則化の直観につながり、滑らかさ制約や半教師あり学習の枠組みで現れることがある。
 
-## 3. 線積分・面積分・体積分（何を積分しているか）
+## 3. 線積分・面積分・体積分
 
 ### 3.1 線積分（line integral）
 
@@ -208,7 +208,7 @@ $$
 
 である。これは2次元版のストークスの定理である。
 
-## 5. 基本恒等式（覚えるというより、形を理解する）
+## 5. 基本恒等式
 
 ベクトル解析には頻繁に使う恒等式がある。丸暗記よりも「符号と演算の形」を押さえる方が、式変形が安定する。
 
@@ -242,7 +242,7 @@ $$
 
 がある。ここで $\nabla^{2}\mathbf{F}$ は各成分にラプラシアンを作用させたものとして理解できる（成分ごとの2階微分の和である）。
 
-## 6. ヤコビアン・ヘッセ行列とベクトル解析（機械学習の計算記法）
+## 6. ヤコビアン・ヘッセ行列とベクトル解析
 
 機械学習では、関数が「入力がベクトル、出力もベクトル」という形になることが多い。ここで微分はテンソル（行列や高階配列）として現れる。
 

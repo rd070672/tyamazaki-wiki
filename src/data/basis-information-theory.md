@@ -14,7 +14,9 @@ https://www.ieice.org/ess/sita/
 
 ある事象 $x$ が起きたときの「驚き」の大きさを、確率 $p(x)$ だけで表す量として自己情報量（self-information）を導入する。
 
-$ I(x) = -\log p(x) $
+$$ 
+I(x) = -\log p(x) 
+$$
 
 - $p(x)$ が小さいほど $I(x)$ は大きくなる（起きにくいほど驚きが大きい）。
 - 対数の底が 2 なら単位は bit、自然対数なら nat である。
@@ -27,7 +29,9 @@ $ I(x) = -\log p(x) $
 
 離散確率変数 $X$ のエントロピーは、自己情報量の期待値である。
 
-$ H(X) = \mathbb{E}[I(X)] = -\sum_{x} p(x)\log p(x) $
+$$ 
+H(X) = \mathbb{E}[I(X)] = -\sum_{x} p(x)\log p(x) 
+$$
 
 意味づけ：
 - $H(X)$ は「平均的な驚き」または「平均的な不確実性」を表す。
@@ -45,7 +49,9 @@ $ H(X) = \mathbb{E}[I(X)] = -\sum_{x} p(x)\log p(x) $
 
 ここで条件付きエントロピーは
 
-$ H(Y\mid X)= -\sum_{x,y} p(x,y)\log p(y\mid x) $
+$$ 
+H(Y\mid X)= -\sum_{x,y} p(x,y)\log p(y\mid x) 
+$$
 
 であり、「$X$ を知った後に残る $Y$ の不確実性」である。
 
@@ -57,39 +63,50 @@ $ H(Y\mid X)= -\sum_{x,y} p(x,y)\log p(y\mid x) $
 
 同じ事象集合上の2つの分布 $p(x)$ と $q(x)$ に対して
 
-$ H(p,q) = -\sum_{x} p(x)\log q(x) $
+$$ 
+H(p,q) = -\sum_{x} p(x)\log q(x) 
+$$
 
 である。意味は「$p$ に従ってデータが出るとき、$q$ を用いて符号化した場合の平均符号長」である。
 
 ### 3.2 KLダイバージェンス（相対エントロピー）
 
-$ D_{\mathrm{KL}}(p\parallel q) = \sum_{x} p(x)\log\frac{p(x)}{q(x)} $
+$$ 
+D_{\mathrm{KL}}(p\parallel q) = \sum_{x} p(x)\log\frac{p(x)}{q(x)} 
+$$
 
 性質：
 - $D_{\mathrm{KL}}(p\parallel q)\ge 0$（Gibbs の不等式）
 - $D_{\mathrm{KL}}(p\parallel q)=0$ は $p=q$ のときに限る
 - 対称ではない：一般に $D_{\mathrm{KL}}(p\parallel q)\ne D_{\mathrm{KL}}(q\parallel p)$
 
-### 3.3 三者の関係：学習の目的が一行で見える式
+### 3.3 三者の関係
 
-$ H(p,q) = H(p) + D_{\mathrm{KL}}(p\parallel q) $
+$$ 
+H(p,q) = H(p) + D_{\mathrm{KL}}(p\parallel q) 
+$$
 
 よって、$p$ が固定なら交差エントロピー最小化はKL最小化と同値である。
-
 
 ## 4. 最尤推定とクロスエントロピー損失：分類が「対数尤度最大化」になる理由
 
 データ $D=\{x_{i}\}_{i=1}^{n}$ が独立同分布で $p_{\theta}(x)$ から生成されると仮定すると、尤度は
 
-$ p_{\theta}(D)=\prod_{i=1}^{n} p_{\theta}(x_{i}) $
+$$ 
+p_{\theta}(D)=\prod_{i=1}^{n} p_{\theta}(x_{i}) 
+$$
 
 対数尤度は
 
-$ \log p_{\theta}(D) = \sum_{i=1}^{n}\log p_{\theta}(x_{i}) $
+$$
+\log p_{\theta}(D) = \sum_{i=1}^{n}\log p_{\theta}(x_{i}) 
+$$
 
 負の対数尤度（NLL）を最小化することは、対数尤度を最大化することと同じである。
 
-$ \min_{\theta} \left(-\sum_{i=1}^{n}\log p_{\theta}(x_{i})\right) \quad \Leftrightarrow \quad \max_{\theta} \sum_{i=1}^{n}\log p_{\theta}(x_{i}) $
+$$
+\min_{\theta} \left(-\sum_{i=1}^{n}\log p_{\theta}(x_{i})\right) \quad \Leftrightarrow \quad \max_{\theta} \sum_{i=1}^{n}\log p_{\theta}(x_{i}) 
+$$
 
 分類でのクロスエントロピー損失は、観測ラベルの経験分布 $\hat{p}$ とモデル $q_{\theta}$ の交差エントロピーとして書けるため、NLL 最小化の形を取る。
 
@@ -97,7 +114,9 @@ $ \min_{\theta} \left(-\sum_{i=1}^{n}\log p_{\theta}(x_{i})\right) \quad \Leftri
 
 $y\in\{0,1\}$、モデル確率 $q_{\theta}(y=1\mid x)=\sigma(f_{\theta}(x))$ とすると
 
-$ \mathcal{L}(\theta)= -\sum_{i=1}^{n}\left[ y_{i}\log q_{\theta}(1\mid x_{i}) + (1-y_{i})\log q_{\theta}(0\mid x_{i}) \right] $
+$$ 
+\mathcal{L}(\theta)= -\sum_{i=1}^{n}\left[ y_{i}\log q_{\theta}(1\mid x_{i}) + (1-y_{i})\log q_{\theta}(0\mid x_{i}) \right] 
+$$
 
 はベルヌーイ尤度のNLLであり、二値クロスエントロピー損失そのものである。
 
@@ -105,7 +124,9 @@ $ \mathcal{L}(\theta)= -\sum_{i=1}^{n}\left[ y_{i}\log q_{\theta}(1\mid x_{i}) +
 
 $K$ クラス、one-hot ラベル $y_{i,k}$、モデル $q_{\theta}(k\mid x_{i})$ に対して
 
-$ \mathcal{L}(\theta)= -\sum_{i=1}^{n}\sum_{k=1}^{K} y_{i,k}\log q_{\theta}(k\mid x_{i}) $
+$$ 
+\mathcal{L}(\theta)= -\sum_{i=1}^{n}\sum_{k=1}^{K} y_{i,k}\log q_{\theta}(k\mid x_{i}) 
+$$
 
 が多クラスのクロスエントロピー損失である。
 
@@ -114,13 +135,19 @@ $ \mathcal{L}(\theta)= -\sum_{i=1}^{n}\sum_{k=1}^{K} y_{i,k}\log q_{\theta}(k\mi
 
 2つの確率変数 $X,Y$ の相互情報量は
 
-$ I(X;Y)=\sum_{x,y} p(x,y)\log\frac{p(x,y)}{p(x)p(y)} $
+$$ 
+I(X;Y)=\sum_{x,y} p(x,y)\log\frac{p(x,y)}{p(x)p(y)} 
+$$
 
 であり、次の等価な表現がある。
 
-$ I(X;Y) = D_{\mathrm{KL}}(p(x,y)\parallel p(x)p(y)) $
+$$ 
+I(X;Y) = D_{\mathrm{KL}}(p(x,y)\parallel p(x)p(y)) 
+$$
 
-$ I(X;Y) = H(X)-H(X\mid Y) = H(Y)-H(Y\mid X) $
+$$ 
+I(X;Y) = H(X)-H(X\mid Y) = H(Y)-H(Y\mid X) 
+$$
 
 意味づけ：
 - $I(X;Y)$ は「$Y$ を知ることで $X$ の不確実性がどれだけ減るか」を表す。
@@ -130,7 +157,9 @@ $ I(X;Y) = H(X)-H(X\mid Y) = H(Y)-H(Y\mid X) $
 
 第三の変数 $Z$ があるとき
 
-$ I(X;Y\mid Z)=H(X\mid Z)-H(X\mid Y,Z) $
+$$ 
+I(X;Y\mid Z)=H(X\mid Z)-H(X\mid Y,Z) 
+$$
 
 である。因果推論やグラフィカルモデルでは、条件付き独立性と結びついて現れやすい。
 
@@ -141,17 +170,23 @@ $ I(X;Y\mid Z)=H(X\mid Z)-H(X\mid Y,Z) $
 
 条件付きエントロピーの連鎖律：
 
-$ H(X_{1},\dots,X_{n}) = \sum_{i=1}^{n} H(X_{i}\mid X_{1},\dots,X_{i-1}) $
+$$ 
+H(X_{1},\dots,X_{n}) = \sum_{i=1}^{n} H(X_{i}\mid X_{1},\dots,X_{i-1}) 
+$$
 
 相互情報量の連鎖律：
 
-$ I(X;Y,Z)=I(X;Y)+I(X;Z\mid Y) $
+$$ 
+I(X;Y,Z)=I(X;Y)+I(X;Z\mid Y) 
+$$
 
 ### 6.2 データ処理不等式（DPI）
 
 $X\to Z\to Y$ がマルコフ連鎖（$X$ と $Y$ が $Z$ を介してつながる）であるとき
 
-$ I(X;Y) \le I(X;Z) $
+$$ 
+I(X;Y) \le I(X;Z) 
+$$
 
 が成り立つ。意味は「処理（写像・圧縮）を通すと情報は増えない」である。表現学習で $Z=f(X)$ を作るとき、$Z$ が保持できる情報は $X$ に含まれる情報を超えない。
 
@@ -160,28 +195,38 @@ $ I(X;Y) \le I(X;Z) $
 
 連続確率変数 $X$ の密度 $f(x)$ に対して微分エントロピー（differential entropy）は
 
-$ h(X) = -\int f(x)\log f(x)\,dx $
+$$ 
+h(X) = -\int f(x)\log f(x)\,dx 
+$$
 
 で定義される。ただし、微分エントロピーは座標変換に対して不変ではなく、値が負になることもある。
 
 一方、KLダイバージェンスは（適切な条件の下で）座標変換に対して不変であり、連続の場合でも「分布のずれ」の尺度として解釈が安定する。
 
-$ D_{\mathrm{KL}}(p\parallel q)=\int p(x)\log\frac{p(x)}{q(x)}\,dx $
+$$ 
+D_{\mathrm{KL}}(p\parallel q)=\int p(x)\log\frac{p(x)}{q(x)}\,dx 
+$$
 
 相互情報量も KL として書けるため、連続でも解釈が安定しやすい。
 
-$ I(X;Y) = \int p(x,y)\log\frac{p(x,y)}{p(x)p(y)}\,dx\,dy $
+$$ 
+I(X;Y) = \int p(x,y)\log\frac{p(x,y)}{p(x)p(y)}\,dx\,dy 
+$$
 
 
 ## 8. 圧縮と汎化：MDL
 
 情報理論の見方では、負の対数尤度は「符号長」に対応する。
 
-$ -\log p_{\theta}(D) $
+$$
+-\log p_{\theta}(D) 
+$$
 
 これにモデルの複雑さ（パラメータの符号長、事前の対数項など）を足したものを最小化するという発想が MDL につながる。MAP 推定は
 
-$ \hat{\theta}_{\mathrm{MAP}}=\arg\max_{\theta}\left[\log p(D\mid\theta)+\log p(\theta)\right] $
+$$ 
+\hat{\theta}_{\mathrm{MAP}}=\arg\max_{\theta}\left[\log p(D\mid\theta)+\log p(\theta)\right] 
+$$
 
 であり、$-\log p(\theta)$ は「複雑さの罰則」として働くため、正則化と同じ形になることが多い。
 
@@ -190,11 +235,15 @@ $ \hat{\theta}_{\mathrm{MAP}}=\arg\max_{\theta}\left[\log p(D\mid\theta)+\log p(
 
 潜在変数 $z$ を持つモデル $p_{\theta}(x,z)$ を考える。事後分布 $p_{\theta}(z\mid x)$ が扱いづらいとき、近似分布 $q_{\phi}(z\mid x)$ を導入し、次を最大化する。
 
-$ \mathrm{ELBO}(x) = \mathbb{E}_{q_{\phi}(z\mid x)}[\log p_{\theta}(x,z)] - \mathbb{E}_{q_{\phi}(z\mid x)}[\log q_{\phi}(z\mid x)] $
+$$ 
+\mathrm{ELBO}(x) = \mathbb{E}_{q_{\phi}(z\mid x)}[\log p_{\theta}(x,z)] - \mathbb{E}_{q_{\phi}(z\mid x)}[\log q_{\phi}(z\mid x)] 
+$$
 
 これは
 
-$ \log p_{\theta}(x) = \mathrm{ELBO}(x) + D_{\mathrm{KL}}(q_{\phi}(z\mid x)\parallel p_{\theta}(z\mid x)) $
+$$ 
+\log p_{\theta}(x) = \mathrm{ELBO}(x) + D_{\mathrm{KL}}(q_{\phi}(z\mid x)\parallel p_{\theta}(z\mid x)) 
+$$
 
 という分解を持ち、ELBO 最大化は「近似事後 $q$ を真の事後へ近づける（KLを小さくする）」方向を保証する。
 

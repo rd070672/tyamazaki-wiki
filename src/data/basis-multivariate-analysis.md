@@ -14,14 +14,16 @@
 
 観測が $n$ サンプル、各サンプルが $p$ 次元の特徴量をもつとする。データ行列を
 
-$X \in \mathbb{R}^{n \times p},\quad
+$$
+X \in \mathbb{R}^{n \times p},\quad
 X=
 \begin{pmatrix}
 x_{1}^{\top}\\
 x_{2}^{\top}\\
 \vdots\\
 x_{n}^{\top}
-\end{pmatrix},\quad x_{i}\in\mathbb{R}^{p}$
+\end{pmatrix},\quad x_{i}\in\mathbb{R}^{p}
+$$
 
 と書く。教師ありではラベル（または目的変数）を $y$ とし、回帰なら $y\in\mathbb{R}^{n}$、分類なら $y\in\{1,\dots,K\}^{n}$ とする。
 
@@ -31,17 +33,23 @@ x_{n}^{\top}
 
 各列の平均ベクトルを $\mu=\frac{1}{n}\sum_{i=1}^{n} x_{i}$ とすると、中心化データは
 
-$X_{c} = X - \mathbf{1}\mu^{\top}$
+$$
+X_{c} = X - \mathbf{1}\mu^{\top}
+$$
+
 
 である（$\mathbf{1}\in\mathbb{R}^{n}$ は全要素 1 のベクトル）。
 
 さらに列ごとの尺度が大きく異なると、分散の大きい変数が支配的になりやすいので、標準偏差で割る標準化（分散を 1 にそろえる）もよく用いられる。標準化は「相関行列ベースの解析」に対応しやすい。
 
-## 共分散・相関・二次形式（幾何）
+## 共分散・相関・二次形式
 
 中心化データ $X_{c}$ の標本共分散行列 $S$ を
 
-$S = \frac{1}{n-1}X_{c}^{\top}X_{c}\in\mathbb{R}^{p\times p}$
+$$
+S = \frac{1}{n-1}X_{c}^{\top}X_{c}\in\mathbb{R}^{p\times p}
+$$
+
 
 と定義する。$S$ は「各変数の分散（対角）」と「変数間の共分散（非対角）」を同時に持つ。
 
@@ -51,20 +59,29 @@ $S = \frac{1}{n-1}X_{c}^{\top}X_{c}\in\mathbb{R}^{p\times p}$
 
 ユークリッド距離が等方的（円形）な尺度であるのに対し、共分散を考慮する距離がマハラノビス距離である。点 $x$ と平均 $\mu$ に対し
 
-$d_{M}(x,\mu)=\sqrt{(x-\mu)^{\top}\Sigma^{-1}(x-\mu)}$
+$$
+d_{M}(x,\mu)=\sqrt{(x-\mu)^{\top}\Sigma^{-1}(x-\mu)}
+$$
 
 である（$\Sigma$ は母共分散、標本では $S$ を用いる）。これは「二次形式」であり、$\Sigma$（または $S$）が作る楕円形の等距離面をもつ。分類、異常度、クラスタリング、統計検定などで重要な役割を果たす。
 
 ## 多変量正規分布（推定と判別）
 
-多変量解析の多くは正規性を仮定するか、正規性が導く線形・二次の形を利用する。$x\in\mathbb{R}^{p}$ が
+多変量解析の多くは正規性を仮定するか、正規性が導く線形・二次の形を利用する。
+$$
+x\in\mathbb{R}^{p}
+$$ が
 
-$x\sim\mathcal{N}(\mu,\Sigma)$
+$$
+x\sim\mathcal{N}(\mu,\Sigma)
+$$
 
 に従うとき、密度は
 
-$p(x)=\frac{1}{(2\pi)^{p/2}\det(\Sigma)^{1/2}}
-\exp\left(-\frac{1}{2}(x-\mu)^{\top}\Sigma^{-1}(x-\mu)\right)$
+$$
+p(x)=\frac{1}{(2\pi)^{p/2}\det(\Sigma)^{1/2}}
+\exp\left(-\frac{1}{2}(x-\mu)^{\top}\Sigma^{-1}(x-\mu)\right)
+$$
 
 である。指数部の二次形式がマハラノビス距離と同じ構造になっている点が重要である。判別分析（LDA/QDA）や Hotelling の $T^{2}$、MANOVA などがここに接続する。
 
@@ -76,21 +93,29 @@ PCA は「分散が最大になる方向」を順に見つけ、データを低�
 
 中心化データに対して、1 次元への射影 $z = X_{c}w$ を考える（$w\in\mathbb{R}^{p}$）。射影後の分散は
 
-$\mathrm{Var}(z)=w^{\top}Sw$
+$$
+\mathrm{Var}(z)=w^{\top}Sw
+$$
 
 であり、$w^{\top}w=1$ の制約でこれを最大化する：
 
-$\max_{w}\; w^{\top}Sw\quad \text{s.t.}\quad w^{\top}w=1$
+$$
+\max_{w}\; w^{\top}Sw\quad \text{s.t.}\quad w^{\top}w=1
+$$
 
 ラグランジュ未定乗数法で解くと
 
-$Sw=\lambda w$
+$$
+Sw=\lambda w
+$$
 
 となり、$w$ は共分散行列 $S$ の固有ベクトル、$\lambda$ は対応する固有値になる。固有値が大きいほど、その方向に沿った分散が大きい。第 1 主成分は最大固有値の固有ベクトルである。
 
 k 次元の PCA は、直交制約 $W^{\top}W=I_{k}$ の下で
 
-$\max_{W\in\mathbb{R}^{p\times k}} \mathrm{tr}(W^{\top}SW)$
+$$
+\max_{W\in\mathbb{R}^{p\times k}} \mathrm{tr}(W^{\top}SW)
+$$
 
 を解くことに対応し、上位 k 個の固有ベクトルを並べた $W$ が解となる。
 
@@ -98,11 +123,15 @@ $\max_{W\in\mathbb{R}^{p\times k}} \mathrm{tr}(W^{\top}SW)$
 
 $X_{c}$ の特異値分解（SVD）を
 
-$X_{c}=U\Sigma V^{\top}$
+$$
+X_{c}=U\Sigma V^{\top}
+$$
 
 とすると、$V$ の列（右特異ベクトル）が主成分方向に一致し、特異値から分散説明率が計算できる。低ランク近似は
 
-$X_{c}\approx U_{k}\Sigma_{k}V_{k}^{\top}$
+$$
+X_{c}\approx U_{k}\Sigma_{k}V_{k}^{\top}
+$$
 
 であり、PCA は「二乗誤差（フロベニウスノルム）で最良のランク k 近似」を与えることでも特徴付けられる。
 
@@ -110,7 +139,9 @@ $X_{c}\approx U_{k}\Sigma_{k}V_{k}^{\top}$
 
 固有値を $\lambda_{1}\ge\lambda_{2}\ge\cdots\ge\lambda_{p}\ge 0$ とすると、第 j 主成分の分散は $\lambda_{j}$ であり、寄与率は
 
-$r_{j}=\frac{\lambda_{j}}{\sum_{\ell=1}^{p}\lambda_{\ell}}$
+$$
+r_{j}=\frac{\lambda_{j}}{\sum_{\ell=1}^{p}\lambda_{\ell}}
+$$
 
 である。累積寄与率 $\sum_{j=1}^{k}r_{j}$ を用い、低次元化の情報損失を見積もる。
 
@@ -122,13 +153,18 @@ PCA が「回転して射影する幾何的手法」だとすれば、因子分�
 
 $x\in\mathbb{R}^{p}$ が q 次元の潜在因子 $f\in\mathbb{R}^{q}$ から生成されるとして
 
-$x = \mu + \Lambda f + \varepsilon$
+$$
+x = \mu + \Lambda f + \varepsilon
+$$
 
-$f\sim\mathcal{N}(0,I_{q}),\quad \varepsilon\sim\mathcal{N}(0,\Psi)$（$\Psi$ は対角行列）
+$$
+f\sim\mathcal{N}(0,I_{q}),\quad \varepsilon\sim\mathcal{N}(0,\Psi)
+$$
+とおく。ここで、$\Psi$ は対角行列である。すると共分散は
 
-とおく。すると共分散は
-
-$\mathrm{Cov}(x)=\Lambda\Lambda^{\top}+\Psi$
+$$
+\mathrm{Cov}(x)=\Lambda\Lambda^{\top}+\Psi
+$$
 
 となる。$\Lambda$ は因子負荷量（loadings）であり、「潜在因子が各観測変数にどう効くか」を表す。回転（バリマックスなど）を導入すると解釈しやすい構造が得られることもある。
 
@@ -138,11 +174,15 @@ PPCA は $\Psi=\sigma^{2}I$ のような等方ノイズを仮定することで 
 
 ICA は、観測が独立な源信号の混合であるとみなし、それを分離する。モデルは
 
-$X = AS$
+$$
+X = AS
+$$
 
 である（行列は適切な次元、$S$ の各成分が統計的に独立、非ガウス）。目的は「復元行列」$W$ により
 
-$S \approx WX$
+$$
+S \approx WX
+$$
 
 を得ることである。PCA が二次統計量（共分散）中心であるのに対し、ICA は高次統計量（尖度や negentropy）を利用して独立性を引き出す。
 
@@ -150,7 +190,9 @@ $S \approx WX$
 
 K クラスの分類を考える。クラス条件付きに
 
-$x\mid y=k \sim \mathcal{N}(\mu_{k},\Sigma_{k})$
+$$
+x\mid y=k \sim \mathcal{N}(\mu_{k},\Sigma_{k})
+$$
 
 を仮定すると、事後確率最大化は判別関数の比較に帰着する。
 
@@ -158,7 +200,9 @@ $x\mid y=k \sim \mathcal{N}(\mu_{k},\Sigma_{k})$
 
 $\Sigma_{k}=\Sigma$（全クラス同一）とすると、判別関数は線形となり、境界は超平面である。クラス k のスコアは（定数を除いて）
 
-$\delta_{k}(x)=x^{\top}\Sigma^{-1}\mu_{k}-\frac{1}{2}\mu_{k}^{\top}\Sigma^{-1}\mu_{k}+\log\pi_{k}$
+$$
+\delta_{k}(x)=x^{\top}\Sigma^{-1}\mu_{k}-\frac{1}{2}\mu_{k}^{\top}\Sigma^{-1}\mu_{k}+\log\pi_{k}
+$$
 
 であり、$\pi_{k}$ は事前確率である。
 
@@ -170,7 +214,9 @@ $\Sigma_{k}$ がクラスごとに異なると判別関数は二次になり、�
 
 2 クラスで、クラス平均との差が大きく、クラス内分散が小さい方向 $w$ を求める最適化は
 
-$J(w)=\frac{w^{\top}S_{B}w}{w^{\top}S_{W}w}$
+$$
+J(w)=\frac{w^{\top}S_{B}w}{w^{\top}S_{W}w}
+$$
 
 である。ここで $S_{B}$ はクラス間散布、$S_{W}$ はクラス内散布である。最適解は一般化固有値問題に帰着し、次元削減と判別を同時に行う解釈が得られる。
 
@@ -180,9 +226,11 @@ $J(w)=\frac{w^{\top}S_{B}w}{w^{\top}S_{W}w}$
 
 2 つの中心化データ行列 $X\in\mathbb{R}^{n\times p}$ と $Y\in\mathbb{R}^{n\times q}$ を考え、共分散ブロックを
 
-$\Sigma_{xx}=\frac{1}{n-1}X^{\top}X,\quad
+$$
+\Sigma_{xx}=\frac{1}{n-1}X^{\top}X,\quad
 \Sigma_{yy}=\frac{1}{n-1}Y^{\top}Y,\quad
-\Sigma_{xy}=\frac{1}{n-1}X^{\top}Y$
+\Sigma_{xy}=\frac{1}{n-1}X^{\top}Y
+$$
 
 とする。
 
@@ -190,8 +238,10 @@ $\Sigma_{xx}=\frac{1}{n-1}X^{\top}X,\quad
 
 線形結合 $u=Xa$ と $v=Yb$ に対し
 
-$\rho=\mathrm{corr}(u,v)=
-\frac{a^{\top}\Sigma_{xy}b}{\sqrt{a^{\top}\Sigma_{xx}a}\sqrt{b^{\top}\Sigma_{yy}b}}$
+$$
+\rho=\mathrm{corr}(u,v)=
+\frac{a^{\top}\Sigma_{xy}b}{\sqrt{a^{\top}\Sigma_{xx}a}\sqrt{b^{\top}\Sigma_{yy}b}}
+$$
 
 を最大化する。これは一般化固有値問題に帰着し、得られる $\rho$ をカノニカル相関という。多視点の共通成分抽出として理解できる。
 
@@ -213,7 +263,9 @@ $\min_{\{c_{i}\},\{\mu_{k}\}} \sum_{i=1}^{n}\|x_{i}-\mu_{c_{i}}\|_{2}^{2}$
 
 確率的には
 
-$p(x)=\sum_{k=1}^{K}\pi_{k}\mathcal{N}(x\mid\mu_{k},\Sigma_{k})$
+$$
+p(x)=\sum_{k=1}^{K}\pi_{k}\mathcal{N}(x\mid\mu_{k},\Sigma_{k})
+$$
 
 の形を仮定し、対数尤度を最大化して推定する。EM アルゴリズムで「所属確率」と「パラメータ」を交互更新する。k-means が「球状（等方）に近い」仮定を暗に持つのに対し、GMM は楕円形のクラスタを表現しうる。
 
@@ -221,7 +273,9 @@ $p(x)=\sum_{k=1}^{K}\pi_{k}\mathcal{N}(x\mid\mu_{k},\Sigma_{k})$
 
 対象間の非類似度（距離）行列 $\Delta=(\delta_{ij})$ が与えられたとき、低次元点 $y_{i}\in\mathbb{R}^{d}$ を探して
 
-$\sum_{i<j}\left(\|y_{i}-y_{j}\|_{2}-\delta_{ij}\right)^{2}$
+$$
+\sum_{i<j}\left(\|y_{i}-y_{j}\|_{2}-\delta_{ij}\right)^{2}
+$$
 
 を小さくする（メトリック MDS の一例）。ノンメトリック MDS は距離の順位（単調変換）を重視し、ストレス関数を最小化する。これは「距離情報を保つ可視化」の基本的な考え方である。
 
@@ -233,7 +287,9 @@ $\sum_{i<j}\left(\|y_{i}-y_{j}\|_{2}-\delta_{ij}\right)^{2}$
 
 1 標本で平均が $\mu_{0}$ かを調べるとき
 
-$T^{2}=n(\bar{x}-\mu_{0})^{\top}S^{-1}(\bar{x}-\mu_{0})$
+$$
+T^{2}=n(\bar{x}-\mu_{0})^{\top}S^{-1}(\bar{x}-\mu_{0})
+$$
 
 である。これは平均差をマハラノビス距離で測った量であり、多変量正規性の下で F 分布に変換できる。2 標本の場合も同様に平均差の二次形式として表される。
 
@@ -249,7 +305,9 @@ $T^{2}=n(\bar{x}-\mu_{0})^{\top}S^{-1}(\bar{x}-\mu_{0})$
 
 目標行列 $T$（例：対角、単位行列、等分散）へ寄せる推定として
 
-$\hat{\Sigma}=(1-\alpha)S+\alpha T,\quad 0\le\alpha\le 1$
+$$
+\hat{\Sigma}=(1-\alpha)S+\alpha T,\quad 0\le\alpha\le 1
+$$
 
 を用いる。Ledoit–Wolf は $\alpha$ を平均二乗誤差の観点から解析的に選ぶ方法として知られる。$\hat{\Sigma}^{-1}$ が安定すると、マハラノビス距離、LDA、GMM、Hotelling の $T^{2}$ などが数値的に扱いやすくなる。
 
@@ -384,7 +442,7 @@ print("squared Mahalanobis distance from mean (approx.):", float(d2))
 $p$ が大きい状況では標本共分散の逆行列が不安定になりやすいが、縮小推定により逆行列（精度行列）が計算しやすくなる。これにより距離や判別の数値計算が扱いやすくなる。
 
 ## まとめと展望
-多変量解析は、(1) 共分散と二次形式、(2) 固有値分解・SVD、(3) 多変量正規分布と尤度、という 3 つの道具で多くが統一的に記述できる枠組みである。PCA・因子分析・ICA は要約と潜在構造、LDA/QDA は確率モデルによる分類、CCA/PLS は複数表現の対応、GMM や MDS は構造化の別表現、Hotelling $T^{2}$ と MANOVA は差の統計的評価として位置づく。
+多変量解析は、(1) 共分散と二次形式、(2) 固有値分解・SVD、(3) 多変量正規分布と尤度、という 3 つの道具で多くが統一的に記述できる枠組みである。PCA・因子分析・ICA は要約と潜在構造、LDA/QDA は確率モデルによる分類、CCA/PLS は複数表現の対応、GMM や MDS は構造化の別表現、Hotelling $T^{2}$ と MANOVA は差の統計的評価として位置づくものである。
 
 今後の展望としては、(i) 高次元での安定な共分散推定（縮小・疎・頑健）、(ii) 多視点データの統合（CCA の正則化や深層化）、(iii) 非線形構造の取り込み（カーネル化や表現学習との接続）が重要である。これらは、古典的多変量解析の目的（要約・関係・判別）を維持したまま、現代的データ規模と複雑性へ拡張する方向で発展している。
 
