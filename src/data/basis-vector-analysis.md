@@ -1,424 +1,412 @@
-# 機械学習のための多変量解析入門
+# 機械学習のためのベクトル解析入門
 
-多変量解析は、複数の変数が同時に変動する観測を、行列の言語で要約・可視化・推定・判別するための枠組みである。機械学習では、次元削減・特徴抽出・分類・クラスタリング・多視点（マルチモーダル）学習などの多くが、多変量解析の拡張として理解できるものである。
+機械学習で頻出する勾配法・自動微分・物理拘束（保存則など）は、ベクトル解析の演算子（勾配・発散・回転）と積分定理で共通の言語に整理できるのである。3次元空間の直観と一般次元の記法を往復すると、式変形と意味理解が同時に進むのである。
 
 ## 参考ドキュメント
-- 村田昇, 「多変量解析の基本」講義ノート（日本語PDF）
-  https://www.stat.titech.ac.jp/~mura/Lecture/mva/mva.pdf
-- scikit-learn User Guide（英語）
- https://scikit-learn.org/stable/user_guide.html
-- Ledoit, O. and Wolf, M., “A Well-Conditioned Estimator for Large-Dimensional Covariance Matrices” 関連PDF（英語）
-  https://www.ledoit.net/ole1a.pdf
+- MIT OpenCourseWare, Vector Calculus（講義資料PDF）
+https://ocw.mit.edu/courses/res-18-001-calculus-fall-2023/mitres_18_001_f17_ch15.pdf
+- 信州大学, 物理数学I（勾配・発散・回転・ラプラシアンの意味と公式を含むPDF）
+https://azusa.shinshu-u.ac.jp/~odake/jugyou/bsI_ver2.1.7_all.pdf
+- 九州大学, ベクトル解析の基礎（ガウスの定理やグリーンの定理を含むPDF）
+https://www2.math.kyushu-u.ac.jp/~hara/lectures/06/zoku15-060629.pdf
 
-## データ表現と記法
+## 1. 位置ベクトル・スカラー場・ベクトル場
 
-観測が $n$ サンプル、各サンプルが $p$ 次元の特徴量をもつとする。データ行列を
+ベクトル解析では、空間上の「量」を次の二つで扱う。
 
-$X \in \mathbb{R}^{n \times p},\quad
-X=
-\begin{pmatrix}
-x_{1}^{\top}\\
-x_{2}^{\top}\\
-\vdots\\
-x_{n}^{\top}
-\end{pmatrix},\quad x_{i}\in\mathbb{R}^{p}$
+- スカラー場：各点に実数が割り当てられる。例として温度 $T(x,y,z)$ がある。
+- ベクトル場：各点にベクトルが割り当てられる。例として速度場 $\mathbf{v}(x,y,z)$ がある。
 
-と書く。教師ありではラベル（または目的変数）を $y$ とし、回帰なら $y\in\mathbb{R}^{n}$、分類なら $y\in\{1,\dots,K\}^{n}$ とする。
+3次元の位置ベクトルを $\mathbf{r}=(x,y,z)^{\top}$ とし、スカラー場を $f(\mathbf{r})$、ベクトル場を $\mathbf{F}(\mathbf{r})=(F_{x},F_{y},F_{z})^{\top}$ と書く。
 
-### 中心化と標準化
+機械学習では、空間座標 $(x,y,z)$ の代わりに、パラメータ $\theta\in\mathbb{R}^{d}$ を「座標」と見なすことが多い。損失関数 $L(\theta)$ はスカラー場、勾配 $\nabla L(\theta)$ はベクトル場と同型である。
 
-多変量解析の多くは「平均との差」や「共分散」に基づくため、中心化（平均を 0 にする）をまず考える。
+## 2. 微分演算子 $\nabla$（ナブラ）と三つの基本演算
 
-各列の平均ベクトルを $\mu=\frac{1}{n}\sum_{i=1}^{n} x_{i}$ とすると、中心化データは
+ナブラ演算子を
 
-$X_{c} = X - \mathbf{1}\mu^{\top}$
+$$
+\nabla=\left(\frac{\partial}{\partial x},\frac{\partial}{\partial y},\frac{\partial}{\partial z}\right)^{\top}
+$$
 
-である（$\mathbf{1}\in\mathbb{R}^{n}$ は全要素 1 のベクトル）。
+と書く。この $\nabla$ をスカラー場・ベクトル場に作用させることで、ベクトル解析の主要演算が定義される。
 
-さらに列ごとの尺度が大きく異なると、分散の大きい変数が支配的になりやすいので、標準偏差で割る標準化（分散を 1 にそろえる）もよく用いられる。標準化は「相関行列ベースの解析」に対応しやすい。
+### 2.1 勾配（gradient）
 
-## 共分散・相関・二次形式（幾何）
+スカラー場 $f(x,y,z)$ の勾配は
 
-中心化データ $X_{c}$ の標本共分散行列 $S$ を
+$$
+\nabla f=\left(\frac{\partial f}{\partial x},\frac{\partial f}{\partial y},\frac{\partial f}{\partial z}\right)^{\top}
+$$
 
-$S = \frac{1}{n-1}X_{c}^{\top}X_{c}\in\mathbb{R}^{p\times p}$
+である。勾配の意味は「最も増加する方向」であり、方向微分で厳密に表せる。
 
-と定義する。$S$ は「各変数の分散（対角）」と「変数間の共分散（非対角）」を同時に持つ。
+単位ベクトル $\mathbf{u}$ に沿った方向微分は
 
-共分散はスケール依存なので、標準化後の共分散は相関行列 $R$ になる。
+$$
+D_{\mathbf{u}} f(\mathbf{r})=\lim_{\epsilon\to 0}\frac{f(\mathbf{r}+\epsilon\mathbf{u})-f(\mathbf{r})}{\epsilon}
+=\nabla f(\mathbf{r})\cdot \mathbf{u}
+$$
 
-### マハラノビス距離
+である。内積が最大になるのは $\mathbf{u}\parallel \nabla f$ のときであるから、勾配は「上り坂の最急方向」を与える。
 
-ユークリッド距離が等方的（円形）な尺度であるのに対し、共分散を考慮する距離がマハラノビス距離である。点 $x$ と平均 $\mu$ に対し
+機械学習の更新式
 
-$d_{M}(x,\mu)=\sqrt{(x-\mu)^{\top}\Sigma^{-1}(x-\mu)}$
+$$
+\theta_{t+1}=\theta_{t}-\eta \nabla L(\theta_{t})
+$$
 
-である（$\Sigma$ は母共分散、標本では $S$ を用いる）。これは「二次形式」であり、$\Sigma$（または $S$）が作る楕円形の等距離面をもつ。分類、異常度、クラスタリング、統計検定などで重要な役割を果たす。
+は、損失を下げる方向 $-\nabla L$ に進む操作であり、ベクトル解析の幾何そのものである。
 
-## 多変量正規分布（推定と判別）
+### 2.2 発散（divergence）
 
-多変量解析の多くは正規性を仮定するか、正規性が導く線形・二次の形を利用する。$x\in\mathbb{R}^{p}$ が
+ベクトル場 $\mathbf{F}=(F_{x},F_{y},F_{z})$ の発散は
 
-$x\sim\mathcal{N}(\mu,\Sigma)$
+$$
+\nabla\cdot \mathbf{F}=\frac{\partial F_{x}}{\partial x}+\frac{\partial F_{y}}{\partial y}+\frac{\partial F_{z}}{\partial z}
+$$
 
-に従うとき、密度は
+である。発散の意味は「点を中心とする湧き出し・吸い込みの強さ」である。
 
-$p(x)=\frac{1}{(2\pi)^{p/2}\det(\Sigma)^{1/2}}
-\exp\left(-\frac{1}{2}(x-\mu)^{\top}\Sigma^{-1}(x-\mu)\right)$
+局所的な意味は、微小体積 $V$ とその境界面 $\partial V$ に対して、単位法線 $\mathbf{n}$ を用い
 
-である。指数部の二次形式がマハラノビス距離と同じ構造になっている点が重要である。判別分析（LDA/QDA）や Hotelling の $T^{2}$、MANOVA などがここに接続する。
+$$
+\frac{1}{|V|}\iint_{\partial V}\mathbf{F}\cdot \mathbf{n}\,dS
+$$
 
-## 次元削減：主成分分析（PCA）
+を $V\to 0$ とした極限として理解できる。外向きの流束が正なら湧き出し、負なら吸い込みである。
 
-PCA は「分散が最大になる方向」を順に見つけ、データを低次元の直交基底へ射影する方法である。直感としては、点群が最も伸びている方向へ座標軸を回転させる操作である。
+機械学習では、確率流 $\mathbf{j}$ と密度 $\rho$ の保存則（連続の式）
 
-### 最適化としての PCA
+$$
+\frac{\partial \rho}{\partial t}+\nabla\cdot \mathbf{j}=0
+$$
 
-中心化データに対して、1 次元への射影 $z = X_{c}w$ を考える（$w\in\mathbb{R}^{p}$）。射影後の分散は
+が、連続時間の生成モデルや最適輸送の考え方と接続する場面がある。
 
-$\mathrm{Var}(z)=w^{\top}Sw$
+### 2.3 回転（curl, rotation）
 
-であり、$w^{\top}w=1$ の制約でこれを最大化する：
+ベクトル場 $\mathbf{F}$ の回転は
 
-$\max_{w}\; w^{\top}Sw\quad \text{s.t.}\quad w^{\top}w=1$
+$$
+\nabla\times \mathbf{F}
+=
+\left(
+\frac{\partial F_{z}}{\partial y}-\frac{\partial F_{y}}{\partial z},
+\frac{\partial F_{x}}{\partial z}-\frac{\partial F_{z}}{\partial x},
+\frac{\partial F_{y}}{\partial x}-\frac{\partial F_{x}}{\partial y}
+\right)^{\top}
+$$
 
-ラグランジュ未定乗数法で解くと
+である。回転の意味は「局所的な渦の強さと軸方向」である。ベクトル場を微小な閉曲線に沿って線積分すると、その値が回転と面積に比例する、という積分的意味が重要である（後述するストークスの定理）。
 
-$Sw=\lambda w$
+### 2.4 ラプラシアン（Laplacian）
 
-となり、$w$ は共分散行列 $S$ の固有ベクトル、$\lambda$ は対応する固有値になる。固有値が大きいほど、その方向に沿った分散が大きい。第 1 主成分は最大固有値の固有ベクトルである。
+スカラー場のラプラシアンは
 
-k 次元の PCA は、直交制約 $W^{\top}W=I_{k}$ の下で
+$$
+\nabla^{2}f=\nabla\cdot(\nabla f)
+=\frac{\partial^{2} f}{\partial x^{2}}+\frac{\partial^{2} f}{\partial y^{2}}+\frac{\partial^{2} f}{\partial z^{2}}
+$$
 
-$\max_{W\in\mathbb{R}^{p\times k}} \mathrm{tr}(W^{\top}SW)$
+である。意味としては「周囲平均との差」に近く、拡散・平滑化・ポアソン方程式の中心にある。
 
-を解くことに対応し、上位 k 個の固有ベクトルを並べた $W$ が解となる。
+機械学習では、グラフラプラシアンやラプラシアン正則化の直観につながり、滑らかさ制約や半教師あり学習の枠組みで現れることがある。
 
-### SVD と再構成誤差
+## 3. 線積分・面積分・体積分（何を積分しているか）
 
-$X_{c}$ の特異値分解（SVD）を
+### 3.1 線積分（line integral）
 
-$X_{c}=U\Sigma V^{\top}$
+曲線 $C$ をパラメータ $t$ で $\mathbf{r}(t)$ と表す。ベクトル場の線積分は
 
-とすると、$V$ の列（右特異ベクトル）が主成分方向に一致し、特異値から分散説明率が計算できる。低ランク近似は
+$$
+\int_{C}\mathbf{F}\cdot d\mathbf{r}
+=\int_{t_{a}}^{t_{b}}\mathbf{F}(\mathbf{r}(t))\cdot \mathbf{r}'(t)\,dt
+$$
 
-$X_{c}\approx U_{k}\Sigma_{k}V_{k}^{\top}$
+である。意味は「曲線方向に沿った仕事量」あるいは「接線方向成分の蓄積」である。
 
-であり、PCA は「二乗誤差（フロベニウスノルム）で最良のランク k 近似」を与えることでも特徴付けられる。
+スカラー場の線積分（弧長積分）は
 
-### 分散説明率
+$$
+\int_{C} f\, ds
+$$
 
-固有値を $\lambda_{1}\ge\lambda_{2}\ge\cdots\ge\lambda_{p}\ge 0$ とすると、第 j 主成分の分散は $\lambda_{j}$ であり、寄与率は
+であり、ベクトル場とは別物である点に注意する。
 
-$r_{j}=\frac{\lambda_{j}}{\sum_{\ell=1}^{p}\lambda_{\ell}}$
+### 3.2 面積分（surface integral）と流束
 
-である。累積寄与率 $\sum_{j=1}^{k}r_{j}$ を用い、低次元化の情報損失を見積もる。
+曲面 $S$ の単位法線を $\mathbf{n}$ とすると、流束（flux）は
 
-## 因子分析（FA）と確率的 PCA（PPCA）
+$$
+\iint_{S}\mathbf{F}\cdot \mathbf{n}\,dS
+$$
 
-PCA が「回転して射影する幾何的手法」だとすれば、因子分析は「潜在変数が観測を生成する確率モデル」である。
+である。意味は「面を貫く流れの総量」である。符号は法線の向き（表裏）で変わる。
 
-### 因子分析の生成モデル
+### 3.3 体積分（volume integral）
 
-$x\in\mathbb{R}^{p}$ が q 次元の潜在因子 $f\in\mathbb{R}^{q}$ から生成されるとして
+体積 $V$ 上の積分は
 
-$x = \mu + \Lambda f + \varepsilon$
+$$
+\iiint_{V} f\, dV
+$$
 
-$f\sim\mathcal{N}(0,I_{q}),\quad \varepsilon\sim\mathcal{N}(0,\Psi)$（$\Psi$ は対角行列）
+であり、保存則・生成消滅（ソース項）と結びつくことが多い。
 
-とおく。すると共分散は
+## 4. 三大積分定理（微分形と積分形の往復）
 
-$\mathrm{Cov}(x)=\Lambda\Lambda^{\top}+\Psi$
+ベクトル解析の強みは、局所（微分）と大域（積分）を結ぶ定理にある。離散化や数値計算では、どちらの形を基本にするかで設計思想が大きく変わる。
 
-となる。$\Lambda$ は因子負荷量（loadings）であり、「潜在因子が各観測変数にどう効くか」を表す。回転（バリマックスなど）を導入すると解釈しやすい構造が得られることもある。
+### 4.1 勾配定理（基本定理：線積分）
 
-PPCA は $\Psi=\sigma^{2}I$ のような等方ノイズを仮定することで PCA と密接につながり、EM による推定で扱える。
+$f$ が十分滑らかで、$C$ が点 $A$ から $B$ へ向かう曲線のとき
 
-## 独立成分分析（ICA）：非ガウス性と分離
+$$
+\int_{C}\nabla f\cdot d\mathbf{r}= f(B)-f(A)
+$$
 
-ICA は、観測が独立な源信号の混合であるとみなし、それを分離する。モデルは
+である。右辺が経路に依存しないことから、$\nabla f$ は保存場（conservative field）である。
 
-$X = AS$
+この事実は、最適化で「ポテンシャル（損失）に従って降りる」ことの数学的基盤にもなっている。
 
-である（行列は適切な次元、$S$ の各成分が統計的に独立、非ガウス）。目的は「復元行列」$W$ により
+### 4.2 ガウスの発散定理（divergence theorem）
 
-$S \approx WX$
+体積 $V$ とその境界閉曲面 $\partial V$ に対して
 
-を得ることである。PCA が二次統計量（共分散）中心であるのに対し、ICA は高次統計量（尖度や negentropy）を利用して独立性を引き出す。
+$$
+\iiint_{V}(\nabla\cdot \mathbf{F})\,dV
+=
+\iint_{\partial V}\mathbf{F}\cdot \mathbf{n}\,dS
+$$
 
-## 判別分析（LDA/QDA）：確率モデルで分類を導く
+である。左辺は体積内部の湧き出しの総量、右辺は境界から出入りする流束の総量であり、保存則の大域形を与える。
 
-K クラスの分類を考える。クラス条件付きに
+### 4.3 ストークスの定理（Stokes' theorem）
 
-$x\mid y=k \sim \mathcal{N}(\mu_{k},\Sigma_{k})$
+曲面 $S$ の境界曲線を $\partial S$ とすると
 
-を仮定すると、事後確率最大化は判別関数の比較に帰着する。
+$$
+\iint_{S}(\nabla\times \mathbf{F})\cdot \mathbf{n}\,dS
+=
+\int_{\partial S}\mathbf{F}\cdot d\mathbf{r}
+$$
 
-### LDA（共分散が共通）
+である。左辺は曲面上の回転の貫通量、右辺は境界での循環である。
 
-$\Sigma_{k}=\Sigma$（全クラス同一）とすると、判別関数は線形となり、境界は超平面である。クラス k のスコアは（定数を除いて）
+向き（orientation）が重要である。境界の進行方向は、法線の向きと右ねじの関係で固定される。
 
-$\delta_{k}(x)=x^{\top}\Sigma^{-1}\mu_{k}-\frac{1}{2}\mu_{k}^{\top}\Sigma^{-1}\mu_{k}+\log\pi_{k}$
+### 4.4 グリーンの定理（2次元の特別形）
 
-であり、$\pi_{k}$ は事前確率である。
+$xy$ 平面上の領域 $D$ とその境界 $\partial D$ に対して、$\mathbf{F}=(P,Q)$ とすると
 
-### QDA（共分散がクラス依存）
+$$
+\oint_{\partial D} P\,dx+Q\,dy
+=
+\iint_{D}\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)dA
+$$
 
-$\Sigma_{k}$ がクラスごとに異なると判別関数は二次になり、境界は二次曲面になる。データが十分にあると柔軟だが、推定パラメータが増える。
+である。これは2次元版のストークスの定理である。
 
-### Fisher の基準（射影としての LDA）
+## 5. 基本恒等式（覚えるというより、形を理解する）
 
-2 クラスで、クラス平均との差が大きく、クラス内分散が小さい方向 $w$ を求める最適化は
+ベクトル解析には頻繁に使う恒等式がある。丸暗記よりも「符号と演算の形」を押さえる方が、式変形が安定する。
 
-$J(w)=\frac{w^{\top}S_{B}w}{w^{\top}S_{W}w}$
+### 5.1 いつもゼロになる合成
 
-である。ここで $S_{B}$ はクラス間散布、$S_{W}$ はクラス内散布である。最適解は一般化固有値問題に帰着し、次元削減と判別を同時に行う解釈が得られる。
+滑らかな $f$ と $\mathbf{F}$ について
 
-## 2 つの変数集合の関係：CCA と PLS
+$$
+\nabla\times (\nabla f)=\mathbf{0}
+$$
 
-機械学習では「同じ対象を別の表現で観測した」状況が多い（例：画像とテキスト、複数センサ、異なる特徴量設計）。このとき、2 つのデータブロックの関係を線形に要約するのが CCA と PLS である。
+$$
+\nabla\cdot (\nabla\times \mathbf{F})=0
+$$
 
-2 つの中心化データ行列 $X\in\mathbb{R}^{n\times p}$ と $Y\in\mathbb{R}^{n\times q}$ を考え、共分散ブロックを
+である。
 
-$\Sigma_{xx}=\frac{1}{n-1}X^{\top}X,\quad
-\Sigma_{yy}=\frac{1}{n-1}Y^{\top}Y,\quad
-\Sigma_{xy}=\frac{1}{n-1}X^{\top}Y$
+意味として、勾配場は局所的に渦を持たず、回転は局所的な湧き出しを持たない、という構造である。数値離散でこの構造を保つかどうかが、安定性や再現性に影響することがある。
 
-とする。
+### 5.2 ラプラシアンとベクトルラプラシアン
 
-### CCA（相関を最大化）
+スカラーでは $\nabla^{2}f=\nabla\cdot\nabla f$ である。
 
-線形結合 $u=Xa$ と $v=Yb$ に対し
+ベクトル場に対する恒等式として
 
-$\rho=\mathrm{corr}(u,v)=
-\frac{a^{\top}\Sigma_{xy}b}{\sqrt{a^{\top}\Sigma_{xx}a}\sqrt{b^{\top}\Sigma_{yy}b}}$
+$$
+\nabla\times(\nabla\times \mathbf{F})
+=
+\nabla(\nabla\cdot \mathbf{F})-\nabla^{2}\mathbf{F}
+$$
 
-を最大化する。これは一般化固有値問題に帰着し、得られる $\rho$ をカノニカル相関という。多視点の共通成分抽出として理解できる。
+がある。ここで $\nabla^{2}\mathbf{F}$ は各成分にラプラシアンを作用させたものとして理解できる（成分ごとの2階微分の和である）。
 
-### PLS（共分散を最大化し回帰へ接続）
+## 6. ヤコビアン・ヘッセ行列とベクトル解析（機械学習の計算記法）
 
-PLS は $X$ と $y$（または $Y$）の共分散を大きくする潜在成分を構成し、回帰予測と結びつける。PCR（PCA Regression）が「まず PCA で X を要約して回帰」なのに対し、PLS は「予測に効く方向を優先して要約する」という意味をもつ。
+機械学習では、関数が「入力がベクトル、出力もベクトル」という形になることが多い。ここで微分はテンソル（行列や高階配列）として現れる。
 
-## クラスタリングと混合モデル：構造を仮定して群を得る
+### 6.1 ヤコビアン（Jacobian）
 
-### k-means（歪み最小化）
+$\mathbf{g}:\mathbb{R}^{d}\to\mathbb{R}^{m}$ のヤコビアンは
 
-クラスタ中心 $\{\mu_{1},\dots,\mu_{K}\}$ と割当 $\{c_{i}\}$ に対し
+$$
+J_{\mathbf{g}}(x)
+=
+\left[\frac{\partial g_{i}}{\partial x_{j}}\right]_{i=1,\dots,m;\,j=1,\dots,d}
+\in \mathbb{R}^{m\times d}
+$$
 
-$\min_{\{c_{i}\},\{\mu_{k}\}} \sum_{i=1}^{n}\|x_{i}-\mu_{c_{i}}\|_{2}^{2}$
+である。多層ニューラルネットの合成関数では、連鎖律によりヤコビアンが積として現れる。
 
-を最小化する。これは距離にもとづく幾何の問題であり、PCA と組み合わせて視覚化・前処理に使われることが多い。
+### 6.2 勾配（gradient）はヤコビアンの特別形
 
-### ガウス混合モデル（GMM）
+スカラー関数 $f:\mathbb{R}^{d}\to\mathbb{R}$ の場合、ヤコビアンは $1\times d$ であり、その転置がベクトルとしての勾配である。
 
-確率的には
+$$
+\nabla f(x)=J_{f}(x)^{\top}
+$$
 
-$p(x)=\sum_{k=1}^{K}\pi_{k}\mathcal{N}(x\mid\mu_{k},\Sigma_{k})$
+### 6.3 ヘッセ行列（Hessian）
 
-の形を仮定し、対数尤度を最大化して推定する。EM アルゴリズムで「所属確率」と「パラメータ」を交互更新する。k-means が「球状（等方）に近い」仮定を暗に持つのに対し、GMM は楕円形のクラスタを表現しうる。
+2階微分を集めたヘッセ行列は
 
-## 距離からの埋め込み：多次元尺度構成法（MDS）
+$$
+H_{f}(x)=\left[\frac{\partial^{2} f}{\partial x_{i}\partial x_{j}}\right]_{i,j=1,\dots,d}
+$$
 
-対象間の非類似度（距離）行列 $\Delta=(\delta_{ij})$ が与えられたとき、低次元点 $y_{i}\in\mathbb{R}^{d}$ を探して
+である。最適化では曲率情報として重要であり、ニュートン法や準ニュートン法の基礎になる。
 
-$\sum_{i<j}\left(\|y_{i}-y_{j}\|_{2}-\delta_{ij}\right)^{2}$
+## 7. 座標系（直交座標・円筒座標・球座標）と演算子の形
 
-を小さくする（メトリック MDS の一例）。ノンメトリック MDS は距離の順位（単調変換）を重視し、ストレス関数を最小化する。これは「距離情報を保つ可視化」の基本的な考え方である。
+3Dの直観を持つために、座標変換を一度は眺める価値がある。直交座標では式が簡潔であるが、対称性がある問題では円筒座標や球座標が自然になる。
 
-## 多変量の検定：Hotelling の $T^{2}$ と MANOVA
+ここでは詳細導出よりも、形が複雑になる理由を述べる。一般座標系では「距離（計量）」が変わり、微小長さ・面積・体積の表式が変わるため、$\nabla$ の成分にスケール因子が入る。機械学習でも、リーマン計量を導入する自然勾配法（natural gradient）の理解に接続する話題である。
 
-多変量解析は「推定・要約」だけでなく「差があるか」を統計的に問う枠組みも含む。
+## 8. ベクトル解析と確率・情報・学習との接点
 
-### Hotelling の $T^{2}$（多変量 t 検定）
+### 8.1 自動微分と計算グラフ
 
-1 標本で平均が $\mu_{0}$ かを調べるとき
+深層学習では、勾配は人手で展開するよりも自動微分で得ることが多い。自動微分は連鎖律を計算グラフ上で系統的に適用する仕組みであり、ベクトル・ヤコビアンの観点が支柱になる。
 
-$T^{2}=n(\bar{x}-\mu_{0})^{\top}S^{-1}(\bar{x}-\mu_{0})$
+- 逆モード（reverse mode）は、出力がスカラー（損失）で入力が高次元（パラメータ）の場合に効率がよい。
+- 順モード（forward mode）は、入力次元が小さい場合に扱いやすい。
 
-である。これは平均差をマハラノビス距離で測った量であり、多変量正規性の下で F 分布に変換できる。2 標本の場合も同様に平均差の二次形式として表される。
+### 8.2 保存則と拘束学習（微分形と積分形）
 
-### MANOVA（多変量分散分析）
+連続の式や拡散方程式などは、微分形（発散やラプラシアンで書かれる）と、積分形（ガウスの発散定理で書かれる）を行き来できる。これは物理法則を利用する学習法（例：方程式残差を損失に入れる方法）でも重要である。
 
-複数の従属変数を同時に扱い、群間で平均ベクトルが等しいかを問う。検定統計量として Wilks の $\Lambda$、Pillai の trace などがあり、群内・群間の平方和積和行列から構成される。直観的には「多変量の平均差を、共分散を見ながら評価する」ものである。
+### 8.3 グラフ上の勾配・発散・回転
 
-## 高次元（p が大きい）での共分散推定：縮小推定
+データ科学では、連続空間ではなくグラフ上でデータが与えられることがある。このとき、勾配・発散・回転に相当する離散作用素が定義され、最小二乗や正則化、拡散過程の設計に使われる。連続のベクトル解析と同型の構造が現れる点が要点である。
 
-機械学習では $p$ が大きく $n$ が相対的に小さい状況が多く、標本共分散 $S$ が不安定になりやすい。そこで、共分散推定に正則化を入れる。
+## 9. まとめ表
 
-### 縮小推定の基本形
+| 対象 | 演算 | 記号 | 入力 | 出力 | 直観的意味 |
+|---|---|---|---|---|---|
+| スカラー場 $f$ | 勾配 | $\nabla f$ | $\mathbb{R}$ | $\mathbb{R}^{3}$ | 最急上昇方向と大きさ |
+| ベクトル場 $\mathbf{F}$ | 発散 | $\nabla\cdot \mathbf{F}$ | $\mathbb{R}^{3}$ | $\mathbb{R}$ | 湧き出し・吸い込み |
+| ベクトル場 $\mathbf{F}$ | 回転 | $\nabla\times \mathbf{F}$ | $\mathbb{R}^{3}$ | $\mathbb{R}^{3}$ | 局所渦の軸と強さ |
+| スカラー場 $f$ | ラプラシアン | $\nabla^{2}f$ | $\mathbb{R}$ | $\mathbb{R}$ | 周囲との差・拡散 |
+| 合成 | 常にゼロ | $\nabla\times\nabla f$ | - | $\mathbf{0}$ | 勾配場は渦なし |
+| 合成 | 常にゼロ | $\nabla\cdot(\nabla\times\mathbf{F})$ | - | $0$ | 回転は湧き出しなし |
 
-目標行列 $T$（例：対角、単位行列、等分散）へ寄せる推定として
+## 10. 数値微分と場の可視化
 
-$\hat{\Sigma}=(1-\alpha)S+\alpha T,\quad 0\le\alpha\le 1$
-
-を用いる。Ledoit–Wolf は $\alpha$ を平均二乗誤差の観点から解析的に選ぶ方法として知られる。$\hat{\Sigma}^{-1}$ が安定すると、マハラノビス距離、LDA、GMM、Hotelling の $T^{2}$ などが数値的に扱いやすくなる。
-
-## 手法の比較
-
-| 手法 | 目的 | 中心となる量 | 主な仮定（概要） | 出力の解釈 |
-|---|---|---|---|---|
-| PCA | 次元削減・要約 | 共分散（2次統計量） | 分散最大の直交方向 | 主成分＝分散が大きい方向 |
-| 因子分析 | 潜在因子の推定 | 共分散の分解 | 線形生成＋ガウス潜在変数 | 因子負荷量＝潜在因子の寄与 |
-| ICA | 信号分離 | 非ガウス性・独立性 | 独立成分＋線形混合 | 独立成分＝分離された源 |
-| LDA | 分類（線形境界） | 平均差と共分散 | クラス正規＋共通共分散 | 判別軸＝分離が良い方向 |
-| QDA | 分類（二次境界） | 平均差と共分散 | クラス正規＋共分散クラス別 | より柔軟な境界 |
-| CCA | 2集合の関係要約 | 相関（正規化共分散） | 線形結合で相関最大 | 共通成分＝対応が強い方向 |
-| PLS | 予測に有利な要約 | 共分散（予測志向） | 線形潜在成分 | 成分＝目的と連動する方向 |
-| k-means | 群分け | ユークリッド距離 | 球状に近い群 | 中心＝代表点 |
-| GMM | 群分け（確率） | 尤度（混合正規） | 混合分布 | 所属確率＝曖昧な群 |
-| MDS | 可視化（距離保存） | 距離・ストレス | 距離が意味をもつ | 低次元配置＝距離の写像 |
-| Hotelling $T^{2}$ | 平均差の検定 | マハラノビス距離 | 多変量正規（多くの場合） | 平均差の大きさ |
-| MANOVA | 群差の検定 | 群内/群間行列 | 多変量正規（多くの場合） | 群の差の総合評価 |
-
-## Python による例
-
-### PCA：標準化→2次元へ→分散説明率を描く
+以下は、スカラー場から勾配を数値近似し、その大きさと方向を確認する例である。連続の定義を離散格子で近似するだけでも、勾配の意味が視覚的に理解しやすい。
 
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA
 
-rng = np.random.default_rng(0)
+# 2Dで可視化（3Dの勾配に対応する直観を作る目的）
+nx, ny = 120, 120
+x = np.linspace(-2.0, 2.0, nx)
+y = np.linspace(-2.0, 2.0, ny)
+X, Y = np.meshgrid(x, y, indexing="xy")
 
-# 相関のある 5 次元データを作る
-n = 800
-z = rng.normal(size=(n, 2))
-A = np.array([[2.0, 0.7],
-              [1.2, 0.4],
-              [0.1, 1.5],
-              [0.5, -0.2],
-              [1.0, 0.1]])
-X = z @ A.T + 0.2 * rng.normal(size=(n, 5))
+# スカラー場 f(x,y)（例：複数の谷を持つ形）
+f = 0.5*(X**2 + 0.5*Y**2) + 0.2*np.sin(3*X)*np.cos(2*Y)
 
-# 標準化
-Xs = StandardScaler().fit_transform(X)
+dx = x[1] - x[0]
+dy = y[1] - y[0]
 
-# PCA
-pca = PCA(n_components=5)
-Z = pca.fit_transform(Xs)
-evr = pca.explained_variance_ratio_
-cev = np.cumsum(evr)
+# 中心差分で勾配を近似
+dfdx = (np.roll(f, -1, axis=1) - np.roll(f, 1, axis=1)) / (2.0*dx)
+dfdy = (np.roll(f, -1, axis=0) - np.roll(f, 1, axis=0)) / (2.0*dy)
 
-plt.figure()
-plt.plot(np.arange(1, 6), cev, marker="o")
-plt.xlabel("number of components")
-plt.ylabel("cumulative explained variance ratio")
-plt.ylim(0, 1.05)
-plt.grid(True)
-plt.show()
+grad_norm = np.sqrt(dfdx**2 + dfdy**2)
 
-plt.figure()
-plt.scatter(Z[:, 0], Z[:, 1], s=8)
-plt.xlabel("PC1")
-plt.ylabel("PC2")
-plt.grid(True)
+plt.figure(figsize=(6, 5))
+plt.contourf(X, Y, f, levels=40)
+plt.colorbar(label="f(x,y)")
+skip = 6
+plt.quiver(X[::skip, ::skip], Y[::skip, ::skip],
+           dfdx[::skip, ::skip], dfdy[::skip, ::skip],
+           angles="xy", scale_units="xy", scale=12)
+plt.title("Scalar field and its gradient (numerical)")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.tight_layout()
 plt.show()
 ```
 
-この例では、標準化により各変数の尺度をそろえ、PCA が相関構造にもとづいて低次元へ要約している。累積寄与率は「情報がどれだけ残るか」を数値で与えるものである。
+この図では、矢印が $\nabla f$ の方向を示す。最適化で用いる降下方向は $-\nabla f$ であり、矢印の反対向きに進むと $f$ が下がる局所挙動が理解できる。
 
-### LDA：2 クラスの線形判別を確認する
+次に、ベクトル場の発散を数値確認する例である。湧き出しがある点で発散が正になる。
+
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 
-rng = np.random.default_rng(1)
+nx, ny = 160, 160
+x = np.linspace(-2.0, 2.0, nx)
+y = np.linspace(-2.0, 2.0, ny)
+X, Y = np.meshgrid(x, y, indexing="xy")
 
-n = 400
-mu0 = np.array([-1.0,  0.0])
-mu1 = np.array([ 1.0,  0.5])
-Sigma = np.array([[1.0, 0.6],
-                  [0.6, 1.2]])
+# ベクトル場 F = (Fx, Fy)
+# 中心から外へ湧き出す場（発散が正）
+Fx = X
+Fy = Y
 
-X0 = rng.multivariate_normal(mu0, Sigma, size=n)
-X1 = rng.multivariate_normal(mu1, Sigma, size=n)
-X = np.vstack([X0, X1])
-y = np.array([0]*n + [1]*n)
+dx = x[1] - x[0]
+dy = y[1] - y[0]
 
-clf = LinearDiscriminantAnalysis()
-clf.fit(X, y)
+dFxdx = (np.roll(Fx, -1, axis=1) - np.roll(Fx, 1, axis=1)) / (2.0*dx)
+dFydy = (np.roll(Fy, -1, axis=0) - np.roll(Fy, 1, axis=0)) / (2.0*dy)
+divF = dFxdx + dFydy
 
-# 可視化用の格子
-x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
-y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
-xx, yy = np.meshgrid(np.linspace(x_min, x_max, 250),
-                     np.linspace(y_min, y_max, 250))
-Z = clf.predict(np.c_[xx.ravel(), yy.ravel()]).reshape(xx.shape)
-
-plt.figure()
-plt.contourf(xx, yy, Z, alpha=0.25)
-plt.scatter(X0[:, 0], X0[:, 1], s=10, label="class 0")
-plt.scatter(X1[:, 0], X1[:, 1], s=10, label="class 1")
-plt.legend()
-plt.xlabel("x1")
-plt.ylabel("x2")
-plt.grid(True)
+plt.figure(figsize=(6, 5))
+plt.contourf(X, Y, divF, levels=40)
+plt.colorbar(label="div F")
+plt.title("Divergence of a source-like vector field")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.tight_layout()
 plt.show()
 ```
 
-クラス共分散が共通であるという仮定のもと、境界が直線になることが見える。これは多変量正規分布の二次形式が、共分散共通のとき線形の判別関数へ簡約されることに対応する。
-
-### 縮小共分散（Ledoit–Wolf）でマハラノビス距離を安定化する
-```python
-import numpy as np
-from sklearn.covariance import LedoitWolf
-
-rng = np.random.default_rng(2)
-
-n, p = 60, 40
-X = rng.normal(size=(n, p))
-X = X - X.mean(axis=0, keepdims=True)
-
-lw = LedoitWolf().fit(X)
-Sigma_hat = lw.covariance_
-Precision_hat = lw.precision_
-
-x = X[0]
-d2 = x @ Precision_hat @ x
-print("squared Mahalanobis distance from mean (approx.):", float(d2))
-```
-
-$p$ が大きい状況では標本共分散の逆行列が不安定になりやすいが、縮小推定により逆行列（精度行列）が計算しやすくなる。これにより距離や判別の数値計算が扱いやすくなる。
+2次元のこの例では $\nabla\cdot \mathbf{F}\approx 2$ に近い値が広く出る。これは $\partial X/\partial x=1$ と $\partial Y/\partial y=1$ の和が 2 になることと整合する。
 
 ## まとめと展望
-多変量解析は、(1) 共分散と二次形式、(2) 固有値分解・SVD、(3) 多変量正規分布と尤度、という 3 つの道具で多くが統一的に記述できる枠組みである。PCA・因子分析・ICA は要約と潜在構造、LDA/QDA は確率モデルによる分類、CCA/PLS は複数表現の対応、GMM や MDS は構造化の別表現、Hotelling $T^{2}$ と MANOVA は差の統計的評価として位置づく。
 
-今後の展望としては、(i) 高次元での安定な共分散推定（縮小・疎・頑健）、(ii) 多視点データの統合（CCA の正則化や深層化）、(iii) 非線形構造の取り込み（カーネル化や表現学習との接続）が重要である。これらは、古典的多変量解析の目的（要約・関係・判別）を維持したまま、現代的データ規模と複雑性へ拡張する方向で発展している。
+ベクトル解析は、勾配・発散・回転という三つの微分演算と、ガウスの発散定理・ストークスの定理などの積分定理によって、局所記述と大域記述を往復する数学である。機械学習の損失最小化は勾配の幾何に直結し、ヤコビアンやヘッセ行列はベクトル解析の微分概念を高次元へ拡張した言語であるため、記法と意味を同時に押さえると理解が安定する。
 
+今後の展望として、(1) 連続空間だけでなくグラフ・多様体上での勾配やラプラシアンの扱い、(2) 保存則や対称性を数式レベルで保持した学習設計、(3) 自動微分と数値離散（有限要素・有限体積など）の整合、が重要になる。これらは、ベクトル解析の演算子と積分定理を共通言語として整理することで、式変形の正確さとモデル設計の見通しを同時に得られる方向で発展していくのである。
 
 ## 参考文献
-- 京都大学 データ分析基礎「主成分分析＋演習の手順」（日本語PDF）
-https://ds.k.kyoto-u.ac.jp/wp-content/uploads/2021/10/slide-05.pdf
+- MIT OpenCourseWare, Stokes' Theorem Notes（PDF）
+https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/9b8d5f9febf584d850891f631393a87c_MIT18_02SC_MNotes_v13.1to2.pdf
+- 徳島大学, ベクトル解析（ストークスの定理）（PDF）
+https://math0.pm.tokushima-u.ac.jp/~ohyama/lecture/vector_analysis/Vec10_u.pdf
+- 東京大学, 物理数学III 講義ノート（一般座標系での勾配・回転・発散など）（PDF）
+https://cat.phys.s.u-tokyo.ac.jp/lecture/MP3_14/mp3_note.pdf
+- 明治大学, 解析概論II 第2部（ベクトル解析）（PDF）
+https://nalab.mind.meiji.ac.jp/~mk/lecture/kaisekigairon-2/kaisekigairon2-part2.pdf
+- J-STAGE, 有向完全グラフ上の勾配・発散・回転作用素を用いた最小二乗問題（PDF）
+https://www.jstage.jst.go.jp/article/bjsiam/27/2/27_27/_pdf
+- PyTorch, Autograd documentation
+https://pytorch.org/docs/stable/autograd.html
+- JAX, Automatic differentiation（grad, jacfwd/jacrev）
+https://jax.readthedocs.io/en/latest/automatic-differentiation.html
 
-- 東京大学 鈴木研究室 講義「主成分分析」（日本語PDF）
-https://ibis.t.u-tokyo.ac.jp/suzuki/lecture/2015/dataanalysis/L7.pdf
-
-- 日本マーケティング・リサーチ協会「マハラノビス研究会報告」（日本語PDF）
-https://www.jmra-net.or.jp/Portals/0/committee/innovation/20230414_001.pdf
-
-- Hotelling, H. (1936) “Relations Between Two Sets of Variates” (CCA の原典, JSTOR)
-https://www.jstor.org/stable/2333955
-
-- Kruskal, J. B. (1964) “Nonmetric multidimensional scaling: A numerical method” (MDS の古典, PDF)
-https://cda.psych.uiuc.edu/psychometrika_highly_cited_articles/kruskal_1964b.pdf
-
-- Pennsylvania State University, STAT 505: MANOVA 解説（英語）
-https://online.stat.psu.edu/stat505/book/export/html/762
-
-- scikit-learn: FastICA（ICA, 英語）
-https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.FastICA.html
-
-- scikit-learn: FactorAnalysis（因子分析, 英語）
-https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.FactorAnalysis.html
-
-- scikit-learn: MDS（多次元尺度構成法, 英語）
-https://scikit-learn.org/stable/modules/generated/sklearn.manifold.MDS.html
-
-- scikit-learn: LedoitWolf（縮小共分散, 英語）
-https://scikit-learn.org/stable/modules/generated/sklearn.covariance.LedoitWolf.html
-
-- Halko, N. et al., “Finding structure with randomness” (ランダム化低ランク分解, 英語PDF)
-https://users.cms.caltech.edu/~jtropp/papers/HMT11-Finding-Structure-SIREV.pdf
