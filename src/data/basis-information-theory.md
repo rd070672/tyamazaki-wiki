@@ -275,12 +275,12 @@ print("I(X;Y) [bit] =", mutual_information(pxy))
 
 ## 参考文献
 - 北海道大学OCW 情報理論 配布資料 #11（日本語PDF）
-https://ocw.hokudai.ac.jp/wp-content/uploads/2016/01/InformationTheory-2005-Note-11.pdf
+  https://ocw.hokudai.ac.jp/wp-content/uploads/2016/01/InformationTheory-2005-Note-11.pdf
 - 高知工科大学 講義資料：相互情報量（日本語PDF）
-https://www.info.kochi-tech.ac.jp/mfukumot/Lecture/IT/materials/lec09.pdf
+  https://www.info.kochi-tech.ac.jp/mfukumot/Lecture/IT/materials/lec09.pdf
 - 千葉大学 講義資料：情報量（エントロピー、ダイバージェンス、相互情報量）（日本語PDF）
-https://www.cfme.chiba-u.jp/~haneishi/class/jyohoriron/InformationTheory3.pdf
+  https://www.cfme.chiba-u.jp/~haneishi/class/jyohoriron/InformationTheory3.pdf
 - 若杉耕一郎, 情報理論とその応用サブソサイエティの活動について（J-STAGE，日本語PDF）
-https://www.jstage.jst.go.jp/article/essfr/5/1/5_1_5/_pdf
+  https://www.jstage.jst.go.jp/article/essfr/5/1/5_1_5/_pdf
 - The Mathematical Theory of Communication (Shannon & Weaver, 1949)（PDF）
-https://pure.mpg.de/pubman/item/item_2383164_3/component/file_2383163/Shannon_Weaver_1949_Mathematical.pdf
+  https://pure.mpg.de/pubman/item/item_2383164_3/component/file_2383163/Shannon_Weaver_1949_Mathematical.pdf

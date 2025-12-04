@@ -240,13 +240,15 @@ features:
 
 ## データサイエンス {#データサイエンス}
 機械学習・統計解析・深層学習、機械学習ポテンシャルなど、データ解析に必要な基本知識や手法を扱います。材料応用の実例と実装、モデル解釈の勘所をまとめます。
+
 ### 教科書
-- [bishopパターン認識と機械学習](/data/bishop-prml.md)
-- [bishop深層学習](/data/bishop-deep-learning.md)
+- [Bishop2006 - パターン認識と機械学習](/data/bishop-prml.md)
+- [Bishop2024 - 深層学習](/data/bishop-deep-learning.md)
 
 ### 数理・統計・情報入門
 - [機械学習のための線形代数入門](/data/basis-linear-algebra.md)
 - [機械学習のための微積分入門](/data/basis-calculus.md)
+- [機械学習のためのベクトル解析入門](/data/basis-vector-analysis)
 - [機械学習のための多変量解析入門](/data/basis-multivariate-analysis)
 - [機械学習のための確率・統計入門](/data/basis-propability)
 - [機械学習のための最適化入門](/data/basis-optimization)
@@ -355,13 +357,6 @@ features:
 - 研究室wikiのウェブサイト(Github pages, VitePress)
 - アクセス解析 (GA4, GTM)
 
-## その他
-- [2025年ノーベル物理学賞](/other/nobel2025-phys.md)
-- [2025年ノーベル化学賞](/other/nobel2025-chem.md)
-- [2024年ノーベル物理学賞](/other/nobel2024-phys.md)
-- [2024年ノーベル化学賞](/other/nobel2024-chem.md)
-
-
 ## ラボ運営 {#ラボ運営}
 <!-- 研究室運営に必要な体制づくり、安全管理、研究活動の進め方、設備立ち上げの要点をまとめています。日常運用から学生支援、装置管理まで、研究が円滑に進むための基本を整理しています。
 
@@ -407,3 +402,11 @@ features:
 - Wi-Fiのセットアップ
 - 机・椅子の新調
 - 家電類の整備 -->
+
+## Nobel Prize
+- 2025年
+  - [ノーベル物理学賞](/other/nobel2025-phys.md)
+  - [ノーベル化学賞](/other/nobel2025-chem.md)
+- 2025年
+  - [ノーベル物理学賞](/other/nobel2024-phys.md)
+  - [ノーベル化学賞](/other/nobel2024-chem.md)

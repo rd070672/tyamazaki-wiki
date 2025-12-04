@@ -1,286 +1,384 @@
-# 機械学習のための情報理論入門
+# 機械学習のための最適化入門
 
-情報理論は、確率分布に基づいて「不確実性」や「情報の伝達量」を定量化する理論である。機械学習では、対数尤度、クロスエントロピー損失、KLダイバージェンス、相互情報量、変分推論の下限などが情報理論の量として統一的に理解できる。
+機械学習における最適化は、損失関数を最小化することでモデルの予測性能を得るための中核である。微分・凸性・確率性という3つの視点を押さえると、多様な手法が一つの枠組みで理解できるのである。
 
 ## 参考ドキュメント
-- C. E. Shannon, A Mathematical Theory of Communication, 1948（原論文PDF）
-https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf
-- T. M. Cover and J. A. Thomas, Elements of Information Theory, 2nd ed.（教科書PDF）
-https://staff.ustc.edu.cn/~cgong821/Wiley.Interscience.Elements.of.Information.Theory.Jul.2006.eBook-DDU.pdf
-- 電子情報通信学会 情報理論とその応用サブソサイエティ（SITAサブソ，日本語）
-https://www.ieice.org/ess/sita/
+- 東京大学（講義資料）, 情報数理科学 VII 最適化の手法（PDF）
+  https://ml.c.u-tokyo.ac.jp/wp-content/uploads/2020/05/optimization.pdf
+- Boyd, S. and Vandenberghe, L., Convex Optimization（書籍ページ）
+  https://stanford.edu/~boyd/cvxbook/
+- Bottou, L., Curtis, F. E., and Nocedal, J., Optimization Methods for Large-Scale Machine Learning（SIAM Review）
+  https://epubs.siam.org/doi/10.1137/16M1080173
 
-## 1. 情報量：自己情報量と符号長
 
-ある事象 $x$ が起きたときの「驚き」の大きさを、確率 $p(x)$ だけで表す量として自己情報量（self-information）を導入する。
+## 1. 最適化が機械学習で果たす役割
 
-$ I(x) = -\log p(x) $
+機械学習の学習は、多くの場合「ある目的関数を小さくする」問題として表現される。目的関数は、データに対する誤差（損失）と、複雑さを抑える項（正則化）から構成されるのが基本である。
 
-- $p(x)$ が小さいほど $I(x)$ は大きくなる（起きにくいほど驚きが大きい）。
-- 対数の底が 2 なら単位は bit、自然対数なら nat である。
-- $I(x)$ は「最適な符号化における符号長」に対応するという直観を持つ（$p(x)$ が大きいものほど短い符号で表すのが合理的である）。
+データ $(x_i, y_i)_{i=1}^n$ とモデル $f_{\theta}$（パラメータ $\theta$）を用いると、経験損失最小化は次で与えられる。
 
-この対応は、以降の「平均符号長」「最短平均符号長」とエントロピーの関係へつながる。
+$$
+\min_{\theta} \; \frac{1}{n}\sum_{i=1}^{n}\ell(f_{\theta}(x_i), y_i) + \lambda \Omega(\theta)
+$$
 
+- $\ell$：損失関数（例：二乗誤差、ロジスティック損失、交差エントロピー）
+- $\Omega$：正則化（例：$L_2$、$L_1$、群正則化）
+- $\lambda$：正則化の強さ
 
-## 2. エントロピー：平均としての不確実性
+深層学習では目的関数が非凸になることが多い一方、線形回帰やリッジ回帰、SVM の一部などは凸最適化として扱えることが多い。凸か非凸かにより、理論保証やアルゴリズム設計の発想が変わるのである。
 
-離散確率変数 $X$ のエントロピーは、自己情報量の期待値である。
+## 2. 最適化問題の分類（制約なし・制約付き・確率的）
 
-$ H(X) = \mathbb{E}[I(X)] = -\sum_{x} p(x)\log p(x) $
+最適化の基本形は以下である。
 
-意味づけ：
-- $H(X)$ は「平均的な驚き」または「平均的な不確実性」を表す。
-- 符号化の観点では、最良の可逆圧縮における平均符号長の下限と結びつく（情報源符号化の定理）。
+- 制約なし最小化
+  $$
+  \min_{x\in \mathbb{R}^d} f(x)
+  $$
 
-### 2.1 エントロピーの基本性質
+- 制約付き最小化
+  $$
+  \min_{x} f(x) \quad \text{s.t.}\quad g_j(x)\le 0,\; h_k(x)=0
+  $$
 
-離散型での代表的な性質である。
+機械学習では、データが巨大であるため目的関数の勾配 $\nabla f(x)$ を全データで厳密に計算しない戦略が重要になる。そこで、確率的（stochastic）な形式が現れる。
 
-- 非負性：$H(X)\ge 0$
-- 一様分布で最大：$X$ が $|\mathcal{X}|$ 通り一様なら
-  $ H(X)=\log|\mathcal{X}| $
-- 連鎖律（チェインルール）：
-  $ H(X,Y)=H(X)+H(Y\mid X) = H(Y)+H(X\mid Y) $
+期待損失の最小化として
 
-ここで条件付きエントロピーは
+$$
+\min_{\theta}\; \mathbb{E}_{(x,y)\sim \mathcal{D}}[\ell(f_{\theta}(x),y)] + \lambda \Omega(\theta)
+$$
 
-$ H(Y\mid X)= -\sum_{x,y} p(x,y)\log p(y\mid x) $
+を考え、ミニバッチで近似して更新するのが基本となる。
 
-であり、「$X$ を知った後に残る $Y$ の不確実性」である。
+## 3. 勾配・ヘッセ行列の意味
 
-## 3. 交差エントロピーとKLダイバージェンス：学習の損失関数の中心
+### 3.1 勾配（gradient）の意味
+関数 $f:\mathbb{R}^d\to\mathbb{R}$ の点 $x$ における勾配 $\nabla f(x)$ は、局所的に「最も増加する方向」を与えるベクトルである。方向ベクトル $u$（$\|u\|_2=1$）に沿った方向微分は
 
-機械学習では「真の分布 $p$」を「モデル分布 $q_{\theta}$」で近似する構図が多い。ここで重要になるのが交差エントロピーとKLダイバージェンスである。
+$$
+D_u f(x) = \lim_{\epsilon\to 0}\frac{f(x+\epsilon u)-f(x)}{\epsilon} = \nabla f(x)^{\top}u
+$$
 
-### 3.1 交差エントロピー
+であり、$u$ を変えると内積 $\nabla f(x)^{\top}u$ が最大になるのは $u\propto \nabla f(x)$ のときである。したがって「減らしたい」場合は $-\nabla f(x)$ 方向に進むのが自然である。
 
-同じ事象集合上の2つの分布 $p(x)$ と $q(x)$ に対して
+### 3.2 ヘッセ行列（Hessian）の意味
+2階微分をまとめたヘッセ行列 $\nabla^2 f(x)$ は曲率を表す。2次近似は
 
-$ H(p,q) = -\sum_{x} p(x)\log q(x) $
+$$
+f(x+\Delta) \approx f(x) + \nabla f(x)^{\top}\Delta + \frac{1}{2}\Delta^{\top}\nabla^2 f(x)\Delta
+$$
 
-である。意味は「$p$ に従ってデータが出るとき、$q$ を用いて符号化した場合の平均符号長」である。
+である。曲率が大きい方向では大きく動くと増加しやすく、曲率が小さい方向では大きく動ける。2階法はこの曲率情報を使うが、計算量・メモリが大きくなるため、準2階法や近似が多用されるのである。
 
-### 3.2 KLダイバージェンス（相対エントロピー）
+## 4. 凸性・滑らかさ・強凸性
 
-$ D_{\mathrm{KL}}(p\parallel q) = \sum_{x} p(x)\log\frac{p(x)}{q(x)} $
+最適化の収束議論では、次の性質が基礎になる。
 
-性質：
-- $D_{\mathrm{KL}}(p\parallel q)\ge 0$（Gibbs の不等式）
-- $D_{\mathrm{KL}}(p\parallel q)=0$ は $p=q$ のときに限る
-- 対称ではない：一般に $D_{\mathrm{KL}}(p\parallel q)\ne D_{\mathrm{KL}}(q\parallel p)$
+- 凸性（convexity）
+  $$
+  f(\alpha x + (1-\alpha)y) \le \alpha f(x) + (1-\alpha)f(y)\quad (\alpha\in[0,1])
+  $$
 
-### 3.3 三者の関係：学習の目的が一行で見える式
+- $L$-滑らか（勾配リプシッツ）
+  $$
+  \|\nabla f(x)-\nabla f(y)\|_2 \le L\|x-y\|_2
+  $$
 
-$ H(p,q) = H(p) + D_{\mathrm{KL}}(p\parallel q) $
+- $\mu$-強凸
+  $$
+  f(y) \ge f(x)+\nabla f(x)^{\top}(y-x) + \frac{\mu}{2}\|y-x\|_2^2
+  $$
 
-よって、$p$ が固定なら交差エントロピー最小化はKL最小化と同値である。
+直観として、凸性は「谷が一つ」であることを意味し、強凸性は「谷底が十分に丸い」ことを意味する。滑らかさは「勾配が急に変わりすぎない」ことを意味する。これらが揃うと、単純な一階法でも収束速度が議論できるのである。
 
+## 5. 一階法（勾配だけで進む）：GD・SGD・モメンタム
 
-## 4. 最尤推定とクロスエントロピー損失：分類が「対数尤度最大化」になる理由
+### 5.1 勾配降下法（Gradient Descent）
+最も基本の更新は
 
-データ $D=\{x_{i}\}_{i=1}^{n}$ が独立同分布で $p_{\theta}(x)$ から生成されると仮定すると、尤度は
+$$
+x_{t+1} = x_t - \eta \nabla f(x_t)
+$$
 
-$ p_{\theta}(D)=\prod_{i=1}^{n} p_{\theta}(x_{i}) $
+である。$\eta$ は学習率であり、進む距離（ステップ幅）を決める。$L$-滑らかな凸関数では、$\eta \le 1/L$ などの条件下で関数値が単調に減る性質が導かれることが多い。
 
-対数尤度は
+### 5.2 確率的勾配法（SGD）
+全データの損失平均 $f(x)=\frac{1}{n}\sum_{i=1}^n f_i(x)$ の勾配は
 
-$ \log p_{\theta}(D) = \sum_{i=1}^{n}\log p_{\theta}(x_{i}) $
+$$
+\nabla f(x)=\frac{1}{n}\sum_{i=1}^n \nabla f_i(x)
+$$
 
-負の対数尤度（NLL）を最小化することは、対数尤度を最大化することと同じである。
+である。SGD は $i_t$ をサンプルして
 
-$ \min_{\theta} \left(-\sum_{i=1}^{n}\log p_{\theta}(x_{i})\right) \quad \Leftrightarrow \quad \max_{\theta} \sum_{i=1}^{n}\log p_{\theta}(x_{i}) $
+$$
+x_{t+1} = x_t - \eta \nabla f_{i_t}(x_t)
+$$
 
-分類でのクロスエントロピー損失は、観測ラベルの経験分布 $\hat{p}$ とモデル $q_{\theta}$ の交差エントロピーとして書けるため、NLL 最小化の形を取る。
+と近似更新する。ミニバッチ $B_t$ を用いるなら
 
-### 4.1 二値分類（ロジスティック回帰）の例
+$$
+x_{t+1}=x_t-\eta \frac{1}{|B_t|}\sum_{i\in B_t}\nabla f_i(x_t)
+$$
 
-$y\in\{0,1\}$、モデル確率 $q_{\theta}(y=1\mid x)=\sigma(f_{\theta}(x))$ とすると
+である。勾配推定にばらつきがあるため、学習率を一定にすると「最適解の近傍に漂う」振る舞いになりやすい。学習率減衰（例：$\eta_t=\eta_0/\sqrt{t}$）はこのばらつきを抑える方向に働くのである。
 
-$ \mathcal{L}(\theta)= -\sum_{i=1}^{n}\left[ y_{i}\log q_{\theta}(1\mid x_{i}) + (1-y_{i})\log q_{\theta}(0\mid x_{i}) \right] $
+### 5.3 モメンタム（heavy-ball）と Nesterov 加速
+モメンタムは速度 $v_t$ を導入して
 
-はベルヌーイ尤度のNLLであり、二値クロスエントロピー損失そのものである。
+$$
+v_{t+1}=\beta v_t + \nabla f(x_t),\qquad
+x_{t+1}=x_t-\eta v_{t+1}
+$$
 
-### 4.2 多クラス分類（softmax）の例
+とする。$\beta\in[0,1)$ は慣性を表す。勾配の向きが一貫している方向では加速し、ジグザグを抑える効果がある。
 
-$K$ クラス、one-hot ラベル $y_{i,k}$、モデル $q_{\theta}(k\mid x_{i})$ に対して
+Nesterov 加速（NAG）は先読み点で勾配を評価する形式として表されることが多い。
 
-$ \mathcal{L}(\theta)= -\sum_{i=1}^{n}\sum_{k=1}^{K} y_{i,k}\log q_{\theta}(k\mid x_{i}) $
+$$
+v_{t+1}=\beta v_t + \nabla f(x_t-\eta\beta v_t),\qquad
+x_{t+1}=x_t-\eta v_{t+1}
+$$
 
-が多クラスのクロスエントロピー損失である。
+凸最適化では $O(1/t^2)$ の収束率を与える議論が知られているが、深層学習では理論よりも経験的調整が重要になりやすい。
 
+## 6. 適応学習率法：AdaGrad・RMSProp・Adam・AdamW
 
-## 5. 相互情報量：表現がどれだけ情報を保持しているか
+勾配のスケールが座標ごとに異なる場合、単一の学習率では進み方が不均一になりやすい。適応学習率法は、各座標に異なるスケーリングを入れて更新する発想である。
 
-2つの確率変数 $X,Y$ の相互情報量は
+### 6.1 AdaGrad
+勾配 $g_t=\nabla f(x_t)$ とすると、座標ごとの二乗勾配和
 
-$ I(X;Y)=\sum_{x,y} p(x,y)\log\frac{p(x,y)}{p(x)p(y)} $
+$$
+s_t = \sum_{\tau=1}^{t} g_{\tau}\odot g_{\tau}
+$$
 
-であり、次の等価な表現がある。
+を用いて
 
-$ I(X;Y) = D_{\mathrm{KL}}(p(x,y)\parallel p(x)p(y)) $
+$$
+x_{t+1}=x_t-\eta \frac{g_t}{\sqrt{s_t}+\epsilon}
+$$
 
-$ I(X;Y) = H(X)-H(X\mid Y) = H(Y)-H(Y\mid X) $
+と更新する。$\odot$ は要素積である。疎な特徴（出現頻度が低い特徴）に対して大きめに進む性質があり、線形モデルや NLP の一部で有効な場面がある。
 
-意味づけ：
-- $I(X;Y)$ は「$Y$ を知ることで $X$ の不確実性がどれだけ減るか」を表す。
-- $p(x,y)$ が独立なら $p(x,y)=p(x)p(y)$ なので $I(X;Y)=0$ となる。
+### 6.2 RMSProp
+AdaGrad は $s_t$ が単調増大して学習率が過度に小さくなりやすい。そこで指数移動平均に置き換える。
 
-### 5.1 条件付き相互情報量
+$$
+s_t=\rho s_{t-1} + (1-\rho) g_t\odot g_t,\qquad
+x_{t+1}=x_t-\eta \frac{g_t}{\sqrt{s_t}+\epsilon}
+$$
 
-第三の変数 $Z$ があるとき
+### 6.3 Adam
+Adam は一次モーメント $m_t$ と二次モーメント $v_t$（指数移動平均）を使う。
 
-$ I(X;Y\mid Z)=H(X\mid Z)-H(X\mid Y,Z) $
+$$
+m_t=\beta_1 m_{t-1}+(1-\beta_1)g_t,\quad
+v_t=\beta_2 v_{t-1}+(1-\beta_2)(g_t\odot g_t)
+$$
 
-である。因果推論やグラフィカルモデルでは、条件付き独立性と結びついて現れやすい。
+初期バイアス補正
 
+$$
+\hat{m}_t=\frac{m_t}{1-\beta_1^t},\qquad \hat{v}_t=\frac{v_t}{1-\beta_2^t}
+$$
 
-## 6. 表現学習の「情報の減り方」を支配する法則
+更新は
 
-### 6.1 エントロピーと相互情報量の連鎖律
+$$
+x_{t+1}=x_t-\eta \frac{\hat{m}_t}{\sqrt{\hat{v}_t}+\epsilon}
+$$
 
-条件付きエントロピーの連鎖律：
+である。学習率調整が容易で、深層学習で広く使われるが、収束性や汎化の性質は問題設定で変わりうる。
 
-$ H(X_{1},\dots,X_{n}) = \sum_{i=1}^{n} H(X_{i}\mid X_{1},\dots,X_{i-1}) $
+### 6.4 AdamW（重み減衰の分離）
+$L_2$ 正則化を「勾配に足す」形式は、Adam のような適応スケーリングと組み合わさると「本来の重み減衰」と一致しないことがある。AdamW は重み減衰を更新から分離して
 
-相互情報量の連鎖律：
+$$
+x_{t+1}=x_t-\eta \frac{\hat{m}_t}{\sqrt{\hat{v}_t}+\epsilon} - \eta\lambda x_t
+$$
 
-$ I(X;Y,Z)=I(X;Y)+I(X;Z\mid Y) $
+のように扱う（表現は流儀で異なる）。深層学習の標準設定として採用されることが増えている。
 
-### 6.2 データ処理不等式（DPI）
+## 7. 二階法・準二階法：Newton・BFGS・L-BFGS
 
-$X\to Z\to Y$ がマルコフ連鎖（$X$ と $Y$ が $Z$ を介してつながる）であるとき
+### 7.1 Newton 法
+Newton 法は2次近似に基づき
 
-$ I(X;Y) \le I(X;Z) $
+$$
+x_{t+1}=x_t - (\nabla^2 f(x_t))^{-1}\nabla f(x_t)
+$$
 
-が成り立つ。意味は「処理（写像・圧縮）を通すと情報は増えない」である。表現学習で $Z=f(X)$ を作るとき、$Z$ が保持できる情報は $X$ に含まれる情報を超えない。
+とする。標準的には速いが、ヘッセ行列の構築や線形方程式の解法が高コストであり、大規模深層学習ではそのままでは使いにくい。
 
+### 7.2 準二階法（BFGS, L-BFGS）
+ヘッセ逆行列 $H_t\approx (\nabla^2 f(x_t))^{-1}$ を更新式で近似するのが準二階法である。L-BFGS は限られた履歴だけを保持してメモリを節約し、大規模でも扱いやすい形にした手法である。深層学習でも微調整や小規模問題で利用されることがある。
 
-## 7. 連続変数：微分エントロピーと不変性
+### 7.3 信頼領域法
+2次モデルが当てになりやすい範囲（信頼領域）だけで最小化する考え方である。線形代数計算が中心となり、理論的整理が進んでいる。
 
-連続確率変数 $X$ の密度 $f(x)$ に対して微分エントロピー（differential entropy）は
+## 8. 制約付き最適化：ラグランジュ・KKT・射影
 
-$ h(X) = -\int f(x)\log f(x)\,dx $
+### 8.1 ラグランジュ関数
+不等式制約 $g(x)\le 0$、等式制約 $h(x)=0$ に対し
 
-で定義される。ただし、微分エントロピーは座標変換に対して不変ではなく、値が負になることもある。
+$$
+\mathcal{L}(x,\lambda,\nu)= f(x) + \sum_j \lambda_j g_j(x) + \sum_k \nu_k h_k(x)
+$$
 
-一方、KLダイバージェンスは（適切な条件の下で）座標変換に対して不変であり、連続の場合でも「分布のずれ」の尺度として解釈が安定する。
+を導入する。凸問題では KKT 条件が最適性条件として重要である。
 
-$ D_{\mathrm{KL}}(p\parallel q)=\int p(x)\log\frac{p(x)}{q(x)}\,dx $
+- 一次条件：$\nabla_x \mathcal{L}=0$
+- 実行可能性：$g_j(x)\le 0,\; h_k(x)=0$
+- 双対実行可能性：$\lambda_j\ge 0$
+- 相補性：$\lambda_j g_j(x)=0$
 
-相互情報量も KL として書けるため、連続でも解釈が安定しやすい。
+### 8.2 射影勾配法
+制約集合 $\mathcal{C}$ に対して
 
-$ I(X;Y) = \int p(x,y)\log\frac{p(x,y)}{p(x)p(y)}\,dx\,dy $
+$$
+x_{t+1}=\Pi_{\mathcal{C}}(x_t-\eta \nabla f(x_t))
+$$
 
+と更新する。$\Pi_{\mathcal{C}}$ はユークリッド射影である。単純形（確率ベクトル）や $L_2$ 球など、射影が明示的に書ける集合で扱いやすい。
 
-## 8. 圧縮と汎化：MDL
+## 9. 正則化と近接勾配法：$L_1$・スパース性・ADMM
 
-情報理論の見方では、負の対数尤度は「符号長」に対応する。
+$L_1$ 正則化はスパース性を誘導し、特徴選択と結びつく。目的が
 
-$ -\log p_{\theta}(D) $
+$$
+\min_x \; f(x)+\lambda \|x\|_1
+$$
 
-これにモデルの複雑さ（パラメータの符号長、事前の対数項など）を足したものを最小化するという発想が MDL につながる。MAP 推定は
+のように「滑らかな項 + 非滑らかな項」に分かれる場合、近接勾配法が基本となる。
 
-$ \hat{\theta}_{\mathrm{MAP}}=\arg\max_{\theta}\left[\log p(D\mid\theta)+\log p(\theta)\right] $
+$$
+x_{t+1}=\mathrm{prox}_{\eta \lambda \|\cdot\|_1}(x_t-\eta \nabla f(x_t))
+$$
 
-であり、$-\log p(\theta)$ は「複雑さの罰則」として働くため、正則化と同じ形になることが多い。
+ここで近接作用素（prox）は
 
+$$
+\mathrm{prox}_{\alpha \|\cdot\|_1}(z)=\arg\min_x \left(\frac{1}{2}\|x-z\|_2^2+\alpha\|x\|_1\right)
+$$
 
-## 9. 変分推論とELBO：KL最小化としての学習
+であり、ソフトしきい値
 
-潜在変数 $z$ を持つモデル $p_{\theta}(x,z)$ を考える。事後分布 $p_{\theta}(z\mid x)$ が扱いづらいとき、近似分布 $q_{\phi}(z\mid x)$ を導入し、次を最大化する。
+$$
+(\mathrm{prox}_{\alpha \|\cdot\|_1}(z))_i = \mathrm{sign}(z_i)\max(|z_i|-\alpha,0)
+$$
 
-$ \mathrm{ELBO}(x) = \mathbb{E}_{q_{\phi}(z\mid x)}[\log p_{\theta}(x,z)] - \mathbb{E}_{q_{\phi}(z\mid x)}[\log q_{\phi}(z\mid x)] $
+として計算できる。凸最適化の枠組みでは、ADMM（交互方向乗数法）などの分解法も広く使われる。
 
-これは
+## 10. 収束の見方
 
-$ \log p_{\theta}(x) = \mathrm{ELBO}(x) + D_{\mathrm{KL}}(q_{\phi}(z\mid x)\parallel p_{\theta}(z\mid x)) $
+最適化の進み具合は、目的関数値 $f(x_t)$ の減少だけでなく、停留性（stationarity）でも捉えるのが自然である。
 
-という分解を持ち、ELBO 最大化は「近似事後 $q$ を真の事後へ近づける（KLを小さくする）」方向を保証する。
+- 勾配ノルム：$\|\nabla f(x_t)\|_2$
+  - 制約なし問題で $\|\nabla f(x^\*)\|_2=0$ は最適性の必要条件である。
+- 近接勾配法では「近接勾配写像」のノルムが停留性の指標として使われる。
+- 期待値で議論する場合：$\mathbb{E}\|\nabla f(x_t)\|_2^2$ などが扱われる。
 
-VAE はこの枠組みの代表例であり、復元項（対数尤度）とKL項（正則化）の和として学習が書ける。
+深層学習では、訓練損失と評価損失（別データでの損失）の両方を記録し、最適化の進行と汎化の関係を観察するのが自然である。
 
+## 11. 学習率設計：一定・減衰・ウォームアップ
 
-## 10. 表現学習・対比学習と情報量
+学習率 $\eta_t$ の形は挙動に強く影響する。基本形として
 
-相互情報量 $I(X;Z)$ を最大化したい場面があるが、$p(x,z)$ が未知で直接計算できない。そこで下界を最大化するという設計が現れる。
+- 一定：$\eta_t=\eta$
+- 逆平方根：$\eta_t=\eta_0/\sqrt{t+1}$
+- ステップ減衰：一定期間ごとに $\eta$ を小さくする
+- コサイン減衰：滑らかに減衰させる
+- ウォームアップ：初期に小さく、徐々に大きくする
 
-代表的には、対比学習（contrastive learning）で用いられる InfoNCE 目的関数は、相互情報量の下界と関係する形で導かれることがある（導出には仮定が要るが、「正例を高く、負例を低く」という形が情報量の増加と整合する）。
+などがある。理論では凸・強凸・確率性の仮定の下で適切な減衰が導かれることが多く、経験則はそこに工学的調整を加えたものとみなせる。
 
+## 12. 主要手法の比較
 
-## 11. 主要な情報量の一覧表
+| 手法 | 使う情報 | 1ステップ計算 | 主な利点 | 主な留意点 |
+|---|---|---:|---|---|
+| GD | 全勾配 | 高い（全データ） | 解析が明快、安定 | 大規模データで重い |
+| SGD | 近似勾配 | 低い | 大規模に強い | ばらつきがある |
+| Momentum | 近似勾配＋速度 | 低い | ジグザグ抑制、加速 | ハイパラ調整が必要 |
+| NAG | 先読み勾配 | 低い | 凸で加速理論 | 実装流儀が複数 |
+| AdaGrad | 二乗勾配和 | 低い | 疎な特徴に強い | 学習率が早く縮みやすい |
+| RMSProp | 二乗勾配EMA | 低い | 非定常に強い | 理論整理は課題が残る |
+| Adam | 1次/2次EMA | 低い | 標準設定が広く普及 | 問題設定で性質が変わる |
+| AdamW | Adam＋分離減衰 | 低い | 重み減衰の整合性 | 減衰係数の扱いに注意 |
+| Newton | 勾配＋ヘッセ | 非常に高い | 収束が速い場合がある | 大規模で難しい |
+| L-BFGS | 勾配＋低メモリ近似 | 中 | 大規模でも使える場合 | ミニバッチと相性に注意 |
+| Prox（ISTA） | 勾配＋prox | 中 | $L_1$ など非滑らかOK | ステップ幅条件が重要 |
+| ADMM | 分解＋双対 | 中〜高 | 構造を活かせる | 収束は設定に依存 |
 
-| 量 | 定義 | 解釈（短い説明） |
-|---|---|---|
-| 自己情報量 | $I(x)=-\log p(x)$ | 事象 $x$ の驚き、符号長 |
-| エントロピー | $H(X)=-\sum_{x}p(x)\log p(x)$ | 不確実性の平均 |
-| 条件付きエントロピー | $H(X\mid Y)=-\sum_{x,y}p(x,y)\log p(x\mid y)$ | $Y$ を知った後の不確実性 |
-| 交差エントロピー | $H(p,q)=-\sum_{x}p(x)\log q(x)$ | $p$ のデータを $q$ で符号化した平均 |
-| KL | $D_{\mathrm{KL}}(p\parallel q)=\sum_{x}p(x)\log\frac{p(x)}{q(x)}$ | 分布のずれ（非対称） |
-| 相互情報量 | $I(X;Y)=\sum_{x,y}p(x,y)\log\frac{p(x,y)}{p(x)p(y)}$ | 共有情報、独立なら0 |
+## 13. ロジスティック回帰をSGDで学習
 
-対数の底を 2 にすると単位は bit であり、情報量を「符号長」として直観しやすい。
-
-
-## 12. エントロピー、KL、相互情報量を計算する
+以下は、二値分類のロジスティック回帰を NumPy だけで SGD 学習し、損失推移を描く例である。
 
 ```python
 import numpy as np
+import matplotlib.pyplot as plt
 
-def entropy(p, base=2.0):
-    p = np.asarray(p, dtype=float)
-    p = p[p > 0]
-    return -np.sum(p * (np.log(p) / np.log(base)))
+# データ生成（合成）
+rng = np.random.default_rng(0)
+n, d = 2000, 20
+X = rng.normal(size=(n, d))
+w_true = rng.normal(size=d)
+logits = X @ w_true
+p = 1 / (1 + np.exp(-logits))
+y = rng.binomial(1, p).astype(np.float64)
 
-def kl_divergence(p, q, base=2.0):
-    p = np.asarray(p, dtype=float)
-    q = np.asarray(q, dtype=float)
-    mask = (p > 0) & (q > 0)
-    return np.sum(p[mask] * (np.log(p[mask] / q[mask]) / np.log(base)))
+# ロジスティック損失（負の対数尤度）＋L2正則化
+def loss_and_grad(w, Xb, yb, lam):
+    z = Xb @ w
+    s = 1 / (1 + np.exp(-z))
+    # loss: 平均
+    eps = 1e-12
+    loss = -np.mean(yb * np.log(s + eps) + (1 - yb) * np.log(1 - s + eps)) + 0.5 * lam * np.sum(w**2)
+    grad = (Xb.T @ (s - yb)) / len(yb) + lam * w
+    return loss, grad
 
-def mutual_information(pxy, base=2.0):
-    pxy = np.asarray(pxy, dtype=float)
-    px = pxy.sum(axis=1, keepdims=True)
-    py = pxy.sum(axis=0, keepdims=True)
-    mask = pxy > 0
-    ratio = pxy[mask] / (px @ py)[mask]
-    return np.sum(pxy[mask] * (np.log(ratio) / np.log(base)))
+# SGD
+w = np.zeros(d)
+lam = 1e-3
+lr0 = 0.2
+batch = 64
+T = 500
 
-# 例：コイン（Bernoulli）2通り
-p = np.array([0.5, 0.5])
-q = np.array([0.9, 0.1])
+losses = []
+for t in range(T):
+    idx = rng.integers(0, n, size=batch)
+    Xb, yb = X[idx], y[idx]
+    lr = lr0 / np.sqrt(t + 1)  # 逆平方根減衰
+    L, g = loss_and_grad(w, Xb, yb, lam)
+    w = w - lr * g
+    losses.append(L)
 
-print("H(p) [bit] =", entropy(p))
-print("H(p,q) [bit] =", -np.sum(p * np.log2(q)))
-print("KL(p||q) [bit] =", kl_divergence(p, q))
-
-# 例：2x2 の同時分布（独立でない例）
-pxy = np.array([[0.4, 0.1],
-                [0.1, 0.4]])
-print("I(X;Y) [bit] =", mutual_information(pxy))
+plt.plot(losses)
+plt.xlabel("iteration")
+plt.ylabel("mini-batch loss")
+plt.tight_layout()
+plt.show()
 ```
 
-この例では、$H(p,q)=H(p)+D_{\mathrm{KL}}(p\parallel q)$ の関係が数値としても確認できる。相互情報量は、独立（$p(x,y)=p(x)p(y)$）に近いほど 0 に近づく。
-
-## 13. 学習で頻出する対応関係のまとめ
-- 交差エントロピー最小化 $\Leftrightarrow$ NLL 最小化 $\Leftrightarrow$ 最尤推定
-- ELBO 最大化 $\Leftrightarrow$ 近似事後と真の事後の KL を小さくする方向
-- 相互情報量は「共有情報」であり、表現 $Z$ が入力 $X$ の何を保持しているかの尺度として現れる
-- KL は対称でないため、設計意図に応じて $D_{\mathrm{KL}}(p\parallel q)$ と $D_{\mathrm{KL}}(q\parallel p)$ の意味が異なる（前者は $p$ の質量を外さない、後者は $q$ の質量を外さない、という違いとして現れる）
+この例では、更新式 $w_{t+1}=w_t-\eta_t g_t$ の $g_t$ がミニバッチ勾配である点に注目するとよい。学習率減衰を外すと、損失が揺れながら下がる振る舞いがより強く現れやすい。
 
 ## まとめと展望
-情報理論の量（エントロピー、交差エントロピー、KL、相互情報量）は、確率分布の近似・推定・圧縮・表現という機械学習の中心課題を同じ言葉で書き直すための基盤である。特に、クロスエントロピー損失が最尤推定のNLLであること、変分推論がKL最小化と下限最大化として整理できることを押さえると、手法の違いが式の違いとして見通せる。
 
-今後の展望としては、(i) 高次元データにおける情報量推定（相互情報量推定、密度比推定）、(ii) 表現学習における情報保存と圧縮の制御（情報ボトルネックなど）、(iii) 不確実性推定や校正と情報量の接続（予測分布のエントロピー、尤度の解釈）を、学習目的と評価指標の両面から統合していく方向が重要である。
+機械学習の最適化は、(i) 目的関数の定式化、(ii) 勾配・曲率の幾何、(iii) 凸性や確率性の仮定、という三層で整理すると見通しが立つのである。GD/SGD とその加速（モメンタム、Nesterov）、適応学習率（Adam/AdamW）、さらに凸最適化の近接法・双対性までを同じ言語で扱えるようになると、モデルやデータ規模が変わっても選択と設計が一貫して行える。
+
+今後の展望として、(1) 非凸最適化での停留点回避や曲率利用、(2) 分散学習における通信と最適化の結合、(3) 目的関数そのものの設計（正則化、ロバスト化、制約化）を含む統合的最適化、が重要になる。これらはアルゴリズムだけでなく、数値線形代数・確率過程・情報理論との接続で理解が深まり、より大規模で安定な学習へつながるのである。
 
 ## 参考文献
-- 北海道大学OCW 情報理論 配布資料 #11（日本語PDF）
-https://ocw.hokudai.ac.jp/wp-content/uploads/2016/01/InformationTheory-2005-Note-11.pdf
-- 高知工科大学 講義資料：相互情報量（日本語PDF）
-https://www.info.kochi-tech.ac.jp/mfukumot/Lecture/IT/materials/lec09.pdf
-- 千葉大学 講義資料：情報量（エントロピー、ダイバージェンス、相互情報量）（日本語PDF）
-https://www.cfme.chiba-u.jp/~haneishi/class/jyohoriron/InformationTheory3.pdf
-- 若杉耕一郎, 情報理論とその応用サブソサイエティの活動について（J-STAGE，日本語PDF）
-https://www.jstage.jst.go.jp/article/essfr/5/1/5_1_5/_pdf
-- The Mathematical Theory of Communication (Shannon & Weaver, 1949)（PDF）
-https://pure.mpg.de/pubman/item/item_2383164_3/component/file_2383163/Shannon_Weaver_1949_Mathematical.pdf
+- Kingma, D. P. and Ba, J., Adam: A Method for Stochastic Optimization（arXiv PDF）
+  https://arxiv.org/pdf/1412.6980
+- Loshchilov, I. and Hutter, F., Decoupled Weight Decay Regularization（OpenReview）
+  https://openreview.net/forum?id=Bkg6RiCqY7
+- Nocedal, J. and Wright, S. J., Numerical Optimization, 2nd ed.（PDFの公開版）
+  https://www.math.uci.edu/~qnie/Publications/NumericalOptimization.pdf
+- Nesterov, Y., A method of solving a convex programming problem with convergence rate o(1/k^2)（1983, 英訳PDF）
+  https://hengshuaiyao.github.io/papers/nesterov83.pdf
+- Tohoku University（土屋氏資料）, 凸最適化の情報幾何と多項式時間内点法（PDF）
+  https://www.math.is.tohoku.ac.jp/~amf/workshops/pdf/tsuchiya.pdf
+- 愛媛大学（二宮氏資料）, 深層学習の基礎と演習（PDF）
+  https://aiweb.cs.ehime-u.ac.jp/~ninomiya/enpitpro/deeplearning.pdf
