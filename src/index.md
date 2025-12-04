@@ -244,26 +244,27 @@ features:
 - [bishopパターン認識と機械学習](/data/bishop-prml.md)
 - [bishop深層学習](/data/bishop-deep-learning.md)
 
-### 数理・統計量・特徴量
+### 数理・統計・情報入門
 - [機械学習のための線形代数入門](/data/basis-linear-algebra.md)
 - [機械学習のための微積分入門](/data/basis-calculus.md)
 - [機械学習のための多変量解析入門](/data/basis-multivariate-analysis)
 - [機械学習のための確率・統計入門](/data/basis-propability)
+- [機械学習のための最適化入門](/data/basis-optimization)
 - [機械学習のための情報理論入門](/data/basis-information-theory)
-- [統計学入門](/data/statistics.md)
-- [ベイズ統計入門](/data/bayes.md)
+
+### 特徴量エンジニアリング
 - [時系列解析](/data/temporal.md)
 - [スペクトル解析](/data/spectral.md)
 - [直積・アダマール積](/data/product.md)
-- [パーシステントホモロジーと位相的データ解析)](/data/persistent.md)
+- [パーシステントホモロジーと位相的データ解析](/data/persistent.md)
 
 ### 材料データベース
 - [Materials Project（材料データベース）](/data/db-materials-project.md)
 - [Open Quantum Materials Database (OQMD)](/data/db-oqmd.md)
 
 ### マテリアルズ・インフォマティクス
-- [マテリアルズ・インフォマティクスの動向と将来展望](/data/info.md)
 - [AI for Science（AI4S）](/data/info-ai4science.md)
+- [マテリアルズ・インフォマティクスの動向と将来展望](/data/info.md)
 - [材料インフォマティクス](/data/info-materials.md)
 - [計測インフォマティクス](/data/info-measure.md)
 - [プロセスインフォマティクス](/data/info-process.md)
