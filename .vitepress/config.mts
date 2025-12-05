@@ -70,7 +70,7 @@ export default defineConfig({
       { text: '計算', collapsed: false, items: [
         { text: '第一原理計算', collapsed: false, items: [
           { text: '物理定数と単位系', link: '/calc/physical-constants' },
-          { text: '量子力学とシュレーディンガー方程式', link: '/calc/dft-basis' },
+          { text: '量子力学とシュレディンガー方程式', link: '/calc/dft-basis' },
           { text: 'ブラケット記法の体系', link: '/calc/bra-ket' },
           { text: 'バンドアンフォールディング', link: '/calc/dft-unfolding' },
           { text: 'ブリルアンゾーン積分のテトラヘドロン法', link: '/calc/tetrahedron' },

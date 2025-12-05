@@ -34,7 +34,7 @@ features:
 ### 第一原理計算
 - 電子論
   - [物理定数と単位系](/calc/physical-constants.md)
-  - [量子力学とシュレーディンガー方程式](/calc/dft-basis.md)
+  - [量子力学とシュレディンガー方程式](/calc/dft-basis.md)
   - [ブラケット記法の体系](/calc/bra-ket.md)
   - [バンドアンフォールディング](/calc/dft-unfolding.md)
   - [ブリルアンゾーン積分のテトラヘドロン法](/calc/tetrahedron.md)
