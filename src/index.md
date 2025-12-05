@@ -37,7 +37,7 @@ features:
   - [量子力学とシュレディンガー方程式](/calc/dft-basis.md)
   - [ブラケット記法の体系](/calc/bra-ket.md)
   - [バンドアンフォールディング](/calc/dft-unfolding.md)
-  - [ブリルアンゾーン積分のテトラヘドロン法](/calc/tetrahedron.md)
+  - [テトラヘドロン法とブリルアンゾーン](/calc/tetrahedron.md)
   - [ワニエ関数と局在軌道](/calc/wannier.md)
   - [最局在ワニエ関数（MLWF）の基礎と発展](/calc/wannier-2.md)
   - [ベリー位相とトポロジカル応答](/calc/berry.md)
