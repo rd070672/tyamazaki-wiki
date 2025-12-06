@@ -1,14 +1,13 @@
 # WIEN2k の計算例
 
+WIEN2k は全電子 FP-(L)APW+lo 法を用した第一原理固体計算コードで、電子構造・バンド構造・状態密度・応力最適化・スピン軌道相互作用 (SOC) などが可能である。ここでは「バルク結晶（例：TiC または MnO／FeSe）を例に，SCF 計算からDOS／バンド構造取得」までの流れを紹介する。
+
 ## 参考リンク  
-- WIEN2k ユーザーガイド： http://www.wien2k.at/reg_user/textbooks/usersguide.pdf
-- “DFT (WIEN2k) and Wannier orbitals” チュートリアル： https://triqs.github.io/dft_tools/latest/tutorials/sr2mgoso6_soc.html
+- WIEN2k ユーザーガイド： 
+  http://www.wien2k.at/reg_user/textbooks/usersguide.pdf
+- “DFT (WIEN2k) and Wannier orbitals” チュートリアル： 
+  https://triqs.github.io/dft_tools/latest/tutorials/sr2mgoso6_soc.html
 
----
-
-## 概要  
-- WIEN2k は全電子 FP-(L)APW+lo 法を用した第一原理固体計算コードで、電子構造・バンド構造・状態密度・応力最適化・スピン軌道相互作用 (SOC) などが可能。
-- ここでは「バルク結晶（例：TiC または MnO／FeSe）を例に，SCF 計算 → DOS／バンド構造取得」までの流れを紹介。
 
 ## 準備と構造定義  
 - 対象構造（例：TiC NaCl 構造）を準備。

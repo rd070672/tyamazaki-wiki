@@ -72,10 +72,12 @@ export default defineConfig({
           { text: '物理定数と単位系', link: '/calc/physical-constants' },
           { text: '量子力学とシュレディンガー方程式', link: '/calc/dft-basis' },
           { text: 'ブラケット記法の体系', link: '/calc/bra-ket' },
+          { text: 'ブロッホの定理', link: '/calc/bloch' },
           { text: 'バンドアンフォールディング', link: '/calc/dft-unfolding' },
           { text: 'テトラヘドロン法とブリルアンゾーン', link: '/calc/tetrahedron' },
           { text: 'ワニエ関数と局在軌道', link: '/calc/wannier' },
           { text: '最局在ワニエ関数（MLWF）の基礎と発展', link: '/calc/wannier-2' },
+          { text: '低次元物質の電子状態', link: '/calc/low-dimentional' },
           { text: 'ベリー位相とトポロジカル応答', link: '/calc/berry' },
           { text: 'ベリー曲率に基づく異常ホール効果・異常ネルンスト効果', link: '/calc/ahe-ane-calc' },
           { text: '応答理論入門', link: '/calc/response-theory' },
@@ -420,14 +422,20 @@ export default defineConfig({
 
       ]},
 
-      { text: 'Nobel Prize', collapsed: true, items: [
-        { text: '2025年', collapsed: true, items: [
-          { text: 'ノーベル物理学賞', link: '/other/nobel2025-phys' },
-          { text: 'ノーベル化学賞', link: '/other/nobel2025-chem' },
+      { text: 'その他', collapsed: true, items: [
+        { text: '未解決問題', collapsed: true, items: [
+          { text: 'ミレニアム懸賞問題', link: '/other/problems-math' },
+          { text: '物理学の未解決問題-2025', link: '/other/problems-physics' },
+          { text: '化学の未解決問題-2025', link: '/other/problems-chemistry' },
+          { text: '材料科学の未解決問題-2025', link: '/other/problems-materials' },
         ]},
-        { text: '2024年', collapsed: true, items: [
-          { text: 'ノーベル物理学賞', link: '/other/nobel2024-phys' },
-          { text: 'ノーベル化学賞', link: '/other/nobel2024-chem' },
+        { text: 'ノーベル賞2025', collapsed: true, items: [
+          { text: '物理学賞ー巨視的量子トンネル', link: '/other/nobel2025-phys' },
+          { text: '化学賞ー金属有機構造体（MOF）', link: '/other/nobel2025-chem' },
+        ]},
+        { text: 'ノーベル賞2025', collapsed: true, items: [
+          { text: '物理学賞ー人工ニューラルネットワーク', link: '/other/nobel2024-phys' },
+          { text: '化学賞ータンパク質設計と構造予測', link: '/other/nobel2024-chem' },
         ]},
       ]},
 

@@ -32,14 +32,16 @@ features:
 第一原理計算・数値シミュレーションを軸に、理論背景から環境構築、数値解法、解析例までを紹介します。材料物性の理解とデータ駆動解析につながる計算科学の基礎をまとめます。
 
 ### 第一原理計算
-- 電子論
+- 基礎
   - [物理定数と単位系](/calc/physical-constants.md)
   - [量子力学とシュレディンガー方程式](/calc/dft-basis.md)
   - [ブラケット記法の体系](/calc/bra-ket.md)
+  - [ブロッホの定理](/calc/bloch.md)
   - [バンドアンフォールディング](/calc/dft-unfolding.md)
   - [テトラヘドロン法とブリルアンゾーン](/calc/tetrahedron.md)
   - [ワニエ関数と局在軌道](/calc/wannier.md)
   - [最局在ワニエ関数（MLWF）の基礎と発展](/calc/wannier-2.md)
+  - [低次元物質の電子状態](/calc/low-dimentional.md)
   - [ベリー位相とトポロジカル応答](/calc/berry.md)
   - [ベリー曲率に基づく異常ホール効果・異常ネルンスト効果](/calc/ahe-ane-calc.md)
   - [応答理論入門](/calc/response-theory.md)
@@ -356,6 +358,20 @@ features:
 - [VitePressを用いた研究室Wikiの整備](/sys/website-wiki.md)
 - [GA4とGTMによるアクセス解析の基礎](/sys/access-analysis.md)
 
+## その他
+- [ミレニアム懸賞問題](/other/problems-math.md)
+- [物理学の未解決問題-2025](/other/problems-physics-2025.md)
+- [化学の未解決問題-2025](/other/problems-chemistry-2025.md)
+- [材料科学の未解決問題-2025](/other/problems-materials-2025.md)
+- Nobel Prize 2025
+  - [物理学賞ー巨視的量子トンネル](/other/nobel2025-phys.md)
+  - [化学賞ー金属有機構造体（MOF）](/other/nobel2025-chem.md)
+- Nobel Prize 2024
+  - [物理学賞ー人工ニューラルネットワーク](/other/nobel2024-phys.md)
+  - [化学賞ータンパク質設計と構造予測](/other/nobel2024-chem.md)
+
+
+
 <!-- ## ラボ運営 {#ラボ運営} -->
 <!-- 研究室運営に必要な体制づくり、安全管理、研究活動の進め方、設備立ち上げの要点をまとめています。日常運用から学生支援、装置管理まで、研究が円滑に進むための基本を整理しています。
 
@@ -401,11 +417,3 @@ features:
 - Wi-Fiのセットアップ
 - 机・椅子の新調
 - 家電類の整備 -->
-
-## Nobel Prize
-- 2025年
-  - [ノーベル物理学賞](/other/nobel2025-phys.md)
-  - [ノーベル化学賞](/other/nobel2025-chem.md)
-- 2025年
-  - [ノーベル物理学賞](/other/nobel2024-phys.md)
-  - [ノーベル化学賞](/other/nobel2024-chem.md)
