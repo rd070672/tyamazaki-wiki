@@ -24,6 +24,16 @@ https://www.epson.jp/support/portal/download/px-h9000.htm
 - 印刷詳細設定はシステムダイアログで行う。  
   （ポップアップの画面で変更しても反映されない → なぜ？）
 
+## 印刷関係
+- ポスター印刷紙  
+  これかも（要チェック）  
+  https://www.monotaro.com/g/06474008/?t.q=62806706
+
+- A4印刷紙  
+  https://www.amazon.co.jp/gp/product/B0107YJ8CY/ref=sw_img_1?smid=A3LUM7THP9CTK3&psc=1
+
+- 印刷トナー
+
 ## 参考リンク
 - マニュアル PDF  
   https://www2.epson.jp/support/manual/data/maxart/pxh7000_h9000/4123020_00.PDF
