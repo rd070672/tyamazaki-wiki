@@ -295,11 +295,6 @@ export default defineConfig({
       ]},
 
       { text: 'データサイエンス', collapsed: true, items: [
-        { text: '教科書', collapsed: true, items: [
-          { text: 'Bishop - パターン認識と機械学習', link: '/data/bishop-prml' },
-          { text: 'Bishop - 深層学習', link: '/data/bishop-deep-learning' },
-        ]},
-
         { text: '機械学習のための数理・統計・情報', collapsed: true, items: [
           { text: '線形代数入門', link: '/data/basis-linear-algebra' },
           { text: '微積分入門', link: '/data/basis-calculus' },
@@ -434,6 +429,12 @@ export default defineConfig({
       ]},
 
       { text: 'その他', collapsed: true, items: [
+        { text: '教科書', collapsed: true, items: [
+          { text: 'Kittel - 固体物理学入門', link: '/other/kittel-solid-state' },
+          { text: 'Bishop - パターン認識と機械学習', link: '/other/bishop-prml' },
+          { text: 'Bishop - 深層学習', link: '/other/bishop-deep-learning' },
+        ]},
+
         { text: '未解決問題', collapsed: true, items: [
           { text: 'ミレニアム懸賞問題', link: '/other/problems-math' },
           { text: '数学-2025', link: '/other/problems-math-2025' },

@@ -252,11 +252,6 @@ features:
 ## データサイエンス {#データサイエンス}
 機械学習・統計解析・深層学習、機械学習ポテンシャルなど、データ解析に必要な基本知識や手法を扱います。材料応用の実例と実装、モデル解釈の勘所をまとめます。
 
-### 教科書
-- [Kittel - 固体物理学入門](/data/kittel-solid-state.md)
-- [Bishop - パターン認識と機械学習](/data/bishop-prml.md)
-- [Bishop - 深層学習](/data/bishop-deep-learning.md)
-
 ### 機械学習のための数理・統計・情報
 - [機線形代数入門](/data/basis-linear-algebra.md)
 - [微積分入門](/data/basis-calculus.md)
@@ -367,13 +362,18 @@ features:
 - [GA4とGTMによるアクセス解析の基礎](/sys/access-analysis.md)
 
 ## その他
-#### 未解決問題
+### 教科書
+- [Kittel - 固体物理学入門](/other/kittel-solid-state.md)
+- [Bishop - パターン認識と機械学習](/other/bishop-prml.md)
+- [Bishop - 深層学習](/other/bishop-deep-learning.md)
+
+### 未解決問題
 - [ミレニアム懸賞問題](/other/problems-math.md)
 - [数学-2025](/other/problems-math-2025.md)
 - [物理学-2025](/other/problems-physics-2025.md)
 - [化学-2025](/other/problems-chemistry-2025.md)
 - [材料科学-2025](/other/problems-materials-2025.md)
-#### ノーベル賞
+### ノーベル賞
 - [物理学賞2025-巨視的量子トンネル](/other/nobel2025-phys.md)
 - [化学賞2025-金属有機構造体（MOF）](/other/nobel2025-chem.md)
 - [物理学賞2024-人工ニューラルネットワーク](/other/nobel2024-phys.md)
