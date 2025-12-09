@@ -1,4 +1,4 @@
-# キッテル『固体物理学入門（Introduction to Solid State Physics）』
+# 固体物理学入門 (Kittel, 2005)
 
 本ページは、C. Kittel『Introduction to Solid State Physics（固体物理学入門）』を軸に、固体物理の主要概念を式とともに体系化した技術文書である。章題と概念の対応、重要式の物理的意味、周辺文献との関係を一体で整理する。
 
@@ -390,25 +390,7 @@ $$
 | 誘電 | ローレンツ | ε(ω)=ε∞+Σ f/(ω0^2−ω^2−iγω) | 応答が共鳴で決まる基本像である |
 
 
-
-## 5. 周辺教科書・講義資料との比較
-
-### 5.1 教科書の役割分担
-キッテルは「物理像とモデル」を前面に出し、広範な事実へ短距離で到達する構成である。導出を丁寧に追いたい場合、相補的な文献が有効である。
-
-| 文献 | 強み | キッテルと併用したときの利点 |
-|---|---|---|
-| Ashcroft & Mermin, Solid State Physics | 多くの導出が丁寧で、電子論・輸送が強い | キッテルの式の根拠を補強できる |
-| Marder, Condensed Matter Physics | 現代的視点で連続体・相転移・場の理論まで接続しやすい | ナノ・界面・相転移などの拡張が自然になる |
-| Ziman, Principles of the Theory of Solids / Electrons and Phonons | 輸送・散乱の理論が体系的 | 緩和時間近似の背後を掘れる |
-| 日本語の固体物理の教科書（複数） | 記法や説明が日本語で整備されている | 初学段階の理解負荷を下げ、講義と同期しやすい |
-
-### 5.2 海外の公開講義資料
-MIT OpenCourseWare などの公開講義は、章テーマに対応する講義ノートがあり、解説の粒度が教材設計として安定している。キッテルの「短い言明」を講義ノートで言い換える用途に向く。
-
-
-
-## 6. 演習問題の位置づけ
+## 5. 演習問題の位置づけ
 
 キッテルの演習は、式の暗記ではなく「近似の選択」と「スケールの見積り」を訓練する性格が強い。解く際は次を意識すると整理が進む。
 
@@ -426,8 +408,6 @@ MIT OpenCourseWare などの公開講義は、章テーマに対応する講義�
 ### 参考文献
 - 丸善ジュンク堂書店：キッテル固体物理学入門（上）第8版（ISBN・刊行日などの書誌）  
   https://www.maruzenjunkudo.co.jp/products/9784621076538
-- books.or.jp：キッテル固体物理学入門（上）第7版（書誌情報）  
-  https://www.books.or.jp/book-details/9784621044230
 - Wiley Instructor Companion Site（Kittel 8th edition の教材導線）  
   https://bcs.wiley.com/he-bcs/Books?action=index&itemId=047141526X&bcsId=2254
 - MIT OpenCourseWare：Solid State Physics（講義資料の例として）  
@@ -436,7 +416,7 @@ MIT OpenCourseWare などの公開講義は、章テーマに対応する講義�
   1956 Physics Prize（トランジスタ関連） https://www.nobelprize.org/prizes/physics/1956/summary/  
   1972 Physics Prize（BCS 理論） https://www.nobelprize.org/prizes/physics/1972/summary/  
   1972 Press release https://www.nobelprize.org/prizes/physics/1972/press-release/
-- 代表的原論文（歴史的背景の参照）
+- 代表的原論文
   - F. Bloch, “Über die Quantenmechanik der Elektronen in Kristallgittern,” Z. Phys. (1929).
   - J. Bardeen, L. N. Cooper, J. R. Schrieffer, “Theory of Superconductivity,” Phys. Rev. 108, 1175 (1957).
   - P. Debye, “Zur Theorie der spezifischen Wärme,” Ann. Phys. (1912).

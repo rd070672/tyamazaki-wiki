@@ -10,7 +10,7 @@
 3. NIST SRM 3600, Absolute Intensity Calibration Standard for Small-Angle X-Ray Scattering（証明書PDF）  
    https://tsapps.nist.gov/srmext/certificates/3600.pdf
 
-## 1. SAXSが測っている量：密度ゆらぎの2点相関
+## 1. SAXS：密度ゆらぎの2点相関
 
 SAXSで観測される強度は、試料内部の電子密度（より一般には散乱長密度）の空間ゆらぎの統計を反映する。散乱長密度を $\rho(\mathbf{r})$、平均からのゆらぎを $\Delta\rho(\mathbf{r})=\rho(\mathbf{r})-\langle\rho\rangle$ とすると、等方的な系の散乱強度は概念的に
 
