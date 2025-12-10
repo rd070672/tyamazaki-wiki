@@ -1,1 +1,1 @@
-### Welcome to Yamazaki Lab Wiki
+### Welcome to tyamazaki wiki
