@@ -57,7 +57,7 @@ export default defineConfig({
       { text: '実験', link: '/#実験' },
       { text: 'データサイエンス', link: '/#データサイエンス'},
       { text: '情報基盤', link: '/#情報基盤'},
-      { text: 'ラボ運営', link: '/#ラボ運営'},
+      // { text: 'ラボ運営', link: '/#ラボ運営'},
       { text: 'その他', items: [
         { text: 'About', link: '/about' },
         { text: 'Changelog', link: '/changelog' },
@@ -422,12 +422,12 @@ export default defineConfig({
         ]},
 
       ]},
-      { text: 'ラボ運営', collapsed: true, items: [
-        { text: '研究備品', collapsed: true, items: [
-          { text: 'ポスター用大型プリンターの使用法', link: '/lab/poster-printer' },
-          { text: 'Wi-fiルーターの設置・設定', link: '/lab/rooter' },
-        ]},
-      ]},
+      // { text: 'ラボ運営', collapsed: true, items: [
+      //   { text: '研究備品', collapsed: true, items: [
+      //     { text: 'ポスター用大型プリンターの使用法', link: '/lab/poster-printer' },
+      //     { text: 'Wi-fiルーターの設置・設定', link: '/lab/rooter' },
+      //   ]},
+      // ]},
 
       { text: 'その他', collapsed: true, items: [
         { text: '教科書', collapsed: true, items: [
