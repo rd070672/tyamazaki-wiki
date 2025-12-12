@@ -85,7 +85,7 @@ v_{\mathrm{xc}}[n](\mathbf{r}) = \frac{\delta E_{\mathrm{xc}}[n]}{\delta n(\math
 $$
 である。$v_{\mathrm{xc}}$ が密度依存であるため、方程式は自己無撞着（self-consistent）に解かれる。
 
-### 3.3 自己無撞着の論理構造（概念）
+### 3.3 自己無撞着の論理構造
 計算は次の論理循環を収束させることで進む：
 
 1. 初期密度 $n^{(0)}(\mathbf{r})$ を与える  
@@ -145,8 +145,8 @@ m(\mathbf{r}) = n_\uparrow(\mathbf{r}) - n_\downarrow(\mathbf{r})
 $$
 を導入する。交換相関汎関数は $E_{\mathrm{xc}}[n_\uparrow,n_\downarrow]$ として与えられ、磁性体の基底状態（強磁性・反強磁性など）の比較が可能となる。
 
-### 5.2 非共線（noncollinear）と磁化ベクトル
-磁化密度をベクトル $\mathbf{m}(\mathbf{r})$ として扱い、スピンが空間的に回転するスピンテクスチャやスキルミオン、弱強磁性などの記述に用いる。この場合、コーン–シャム軌道は二成分スピノルとなる。
+### 5.2 非共線と磁化ベクトル
+磁化密度をベクトル $\mathbf{m}(\mathbf{r})$ として扱い、スピンが空間的に回転するスピンテクスチャやスキルミオン、弱強磁性などの非共線（noncollinear）の記述に用いる。この場合、コーン–シャム軌道は二成分スピノルとなる。
 
 ### 5.3 スピン軌道相互作用（SOC）
 相対論効果としてSOCを取り込むと、磁気異方性、軌道磁気モーメント、Dzyaloshinskii–Moriya相互作用などが現れる。実装は、PAWや全電子法ではスピノルKS方程式として扱うことが多い。SOCはエネルギー差（磁気異方性エネルギーなど）が微小になりやすく、収束設定や$k$点密度の要求が厳しくなることが多い。
@@ -182,12 +182,12 @@ $$
 
 ## 8. 構造・応力・力：DFTが与える力学量
 
-### 8.1 力（Hellmann–Feynmanと基底依存項）
+### 8.1 ヘルマン–ファインマン力基底依存項
 全エネルギー $E$ から原子座標 $\mathbf{R}_I$ に関する力は
 $$
 \mathbf{F}_I = -\frac{\partial E}{\partial \mathbf{R}_I}
 $$
-で定義される。厳密解に対してはヘルマン–ファインマン力が成立するが、離散化基底が原子位置に依存する場合にはプルアイ力（Pulay force）等が現れる。平面波基底は基底が原子位置に依存しないため、概念上はこの点が単純である（ただしPAWや擬ポテンシャルの寄与は含めて評価される）。
+で定義される。厳密解に対してはヘルマン–ファインマン力（Hellmann–Feynman）が成立するが、離散化基底が原子位置に依存する場合にはプルアイ力（Pulay force）等が現れる。平面波基底は基底が原子位置に依存しないため、概念上はこの点が単純である（ただしPAWや擬ポテンシャルの寄与は含めて評価される）。
 
 ### 8.2 応力と格子最適化
 セル変形に対するエネルギー微分から応力テンソル $\sigma_{\alpha\beta}$ が得られる：
@@ -236,7 +236,7 @@ DFTは「理論としては厳密であるが、交換相関汎関数を近似�
 これらは互いに独立ではなく、例えばSOCや磁気異方性のような微小エネルギー差では、複数の誤差源が同程度の大きさになり得る。そのため、収束性の吟味と比較基準（汎関数やデータセットの一貫性）を重視する必要がある。
 
 
-## 13. 手法選択の指針を与える比較表
+## 13. 手法選択の指針
 
 ### 13.1 交換相関近似の比較
 | 近似 | 入力依存性 | 長所 | 注意すべき点 | 計算負荷 |
@@ -262,7 +262,7 @@ DFTは「理論としては厳密であるが、交換相関汎関数を近似�
 | テトラヘドロン | 0 K積分近似 | 絶縁体・半導体で有効 | 金属では工夫が必要 |
 
 
-## 14. 報告・再利用のための計算条件
+## 14. 計算条件
 
 DFT結果は、近似選択と数値設定に依存するため、第三者が同等条件で再計算できるよう、少なくとも次を明示することが望ましい。
 
@@ -276,20 +276,30 @@ DFT結果は、近似選択と数値設定に依存するため、第三者が�
 - エネルギー差が論点の場合、差分の定義（基準構造・基準磁気秩序・基準セルなど）
 
 
-## 16. まとめと展望
+## まとめと展望
 
 DFTは、HK定理が保証する「密度が基底状態物性を定める」という原理を、コーン–シャム形式によって実用計算へ接続した理論である。未知の交換相関汎関数を近似することで、構造・エネルギー・磁性・応力といった多くの量を、系の原子配置と電子数から一貫して求めることができる。
 
 一方で、交換相関近似の系統誤差、分散相互作用や強相関の取り扱い、コーン–シャム固有値の解釈、微小エネルギー差の数値収束など、理論的・数値的な限界も明確である。今後は、制約条件に基づく汎関数設計（meta-GGAやその先）、非局所相関の洗練、GW/DMFT/TDDFTなど他理論との結合、ならびに高精度参照データと計算資源の進展により、DFTが扱える現象範囲と定量性がさらに拡大していくと期待される。
 
 ### 参考文献
-- J. P. Perdew, K. Burke, and M. Ernzerhof, Generalized Gradient Approximation Made Simple, Phys. Rev. Lett. 77, 3865 (1996). https://link.aps.org/doi/10.1103/PhysRevLett.77.3865
-- J. Sun, A. Ruzsinszky, and J. P. Perdew, SCAN meta-GGA, Phys. Rev. Lett. 115, 036402 (2015). https://link.aps.org/doi/10.1103/PhysRevLett.115.036402
-- P. E. Blöchl, Projector augmented-wave method, Phys. Rev. B 50, 17953 (1994). https://link.aps.org/doi/10.1103/PhysRevB.50.17953
-- S. L. Dudarev et al., LDA+U（簡略回転不変形式に関連）, Phys. Rev. B 57, 1505 (1998). https://link.aps.org/doi/10.1103/PhysRevB.57.1505
-- M. Dion et al., Van der Waals Density Functional for General Geometries, Phys. Rev. Lett. 92, 246401 (2004). https://link.aps.org/doi/10.1103/PhysRevLett.92.246401
-- S. Grimme et al., DFT-D3（分散補正の系統）, J. Chem. Phys. 132, 154104 (2010). https://pubs.aip.org/aip/jcp/article/132/15/154104/926936/
-- N. D. Mermin, Thermal Properties of the Inhomogeneous Electron Gas（有限温度DFT）, Phys. Rev. 137, A1441 (1965). https://link.aps.org/doi/10.1103/PhysRev.137.A1441
-- 樋口克彦, 密度汎関数理論の発展, 日本物理学会誌 67(8) (2012). https://www.jstage.jst.go.jp/article/butsuri/67/8/67_KJ00008160775/_pdf
-- RIKEN 常田グループ資料：密度汎関数法の基礎（講義資料） https://www2.riken.jp/qcl/members/tsuneda/web/dft05-sec1.pdf
-- 東京大学 物性研究所 講義ノート（半導体講義内のKS方程式解説） https://note-collection.issp.u-tokyo.ac.jp/katsumoto/semicon2021/note1-14_jp.pdf
+- J. P. Perdew, K. Burke, and M. Ernzerhof, Generalized Gradient Approximation Made Simple, Phys. Rev. Lett. 77, 3865 (1996).   
+  https://link.aps.org/doi/10.1103/PhysRevLett.77.3865
+- J. Sun, A. Ruzsinszky, and J. P. Perdew, SCAN meta-GGA, Phys. Rev. Lett. 115, 036402 (2015).  
+  https://link.aps.org/doi/10.1103/PhysRevLett.115.036402
+- P. E. Blöchl, Projector augmented-wave method, Phys. Rev. B 50, 17953 (1994).  
+  https://link.aps.org/doi/10.1103/PhysRevB.50.17953
+- S. L. Dudarev et al., LDA+U（簡略回転不変形式に関連）, Phys. Rev. B 57, 1505 (1998).  
+  https://link.aps.org/doi/10.1103/PhysRevB.57.1505
+- M. Dion et al., Van der Waals Density Functional for General Geometries, Phys. Rev. Lett. 92, 246401 (2004).  
+  https://link.aps.org/doi/10.1103/PhysRevLett.92.246401
+- S. Grimme et al., DFT-D3（分散補正の系統）, J. Chem. Phys. 132, 154104 (2010).  
+  https://pubs.aip.org/aip/jcp/article/132/15/154104/926936/
+- N. D. Mermin, Thermal Properties of the Inhomogeneous Electron Gas（有限温度DFT）, Phys. Rev. 137, A1441 (1965).  
+  https://link.aps.org/doi/10.1103/PhysRev.137.A1441
+- 樋口克彦, 密度汎関数理論の発展, 日本物理学会誌 67(8) (2012).  
+  https://www.jstage.jst.go.jp/article/butsuri/67/8/67_KJ00008160775/_pdf
+- RIKEN 常田グループ資料：密度汎関数法の基礎（講義資料）  
+  https://www2.riken.jp/qcl/members/tsuneda/web/dft05-sec1.pdf
+- 東京大学 物性研究所 講義ノート（半導体講義内のKS方程式解説）  
+  https://note-collection.issp.u-tokyo.ac.jp/katsumoto/semicon2021/note1-14_jp.pdf
