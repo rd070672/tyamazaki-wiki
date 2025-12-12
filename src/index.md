@@ -82,7 +82,8 @@ features:
   - [磁気ダンピング・磁歪・鉄損の関係性](/calc/damping-maelas-loss.md)
 
 第一原理計算
-  - [第一原理計算の基本原理](/calc/dft.md)
+  - [密度汎関数理論（DFT）の基礎](/calc/dft.md)
+  - [第一原理計算の基本原理](/calc/ab-calc.md)
   - [第一原理計算を支える数値解法](/calc/dft-calc.md)
   - [第一原理計算ソフトウェアと特徴](/calc/dft-software.md)
   - [VASPによる第一原理計算](/calc/vasp-dft.md)

@@ -114,7 +114,8 @@ export default defineConfig({
           { text: '磁気ダンピングの発生メカニズム', link: '/calc/damping-mechanism' },
           { text: '磁気ダンピングの内因的性質', link: '/calc/damping-intrinsic' },
         
-          { text: '第一原理計算の基本原理', link: '/calc/dft' },
+          { text: '密度汎関数理論（DFT）の基礎', link: '/calc/dft' },
+          { text: '第一原理計算の基本原理', link: '/calc/ab-calc' },
           { text: '第一原理計算を支える数値解法', link: '/calc/dft-calc' },
           { text: '第一原理計算ソフトウェアと特徴', link: '/calc/dft-software' },
           { text: 'VASPによる第一原理計算', link: '/calc/vasp-dft' },
