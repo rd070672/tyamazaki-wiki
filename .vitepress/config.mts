@@ -58,7 +58,7 @@ export default defineConfig({
       { text: 'データサイエンス', link: '/#データサイエンス'},
       { text: '情報基盤', link: '/#情報基盤'},
       // { text: 'ラボ運営', link: '/#ラボ運営'},
-      { text: 'その他', items: [
+      { text: 'その他', link: '/#その他', items: [
         { text: 'About', link: '/about' },
         { text: 'Changelog', link: '/changelog' },
         { text: 'Website', link: '/#' },
@@ -76,9 +76,9 @@ export default defineConfig({
           { text: 'バンドアンフォールディング', link: '/calc/dft-unfolding' },
           { text: 'テトラヘドロン法とブリルアンゾーン', link: '/calc/tetrahedron' },
           { text: 'ワニエ関数と局在軌道', link: '/calc/wannier' },
-          { text: '最局在ワニエ関数（MLWF）の基礎と発展', link: '/calc/wannier-2' },
+          { text: '最局在ワニエ関数と電子物性', link: '/calc/wannier-2' },
           { text: '低次元物質の電子状態', link: '/calc/low-dimentional' },
-          { text: 'キタエフ模型', link: '/calc/kitaev-honeycomb-model' },
+          { text: 'キタエフ模型と量子状態', link: '/calc/kitaev-honeycomb-model' },
           { text: 'ベリー位相とトポロジカル応答', link: '/calc/berry' },
           { text: 'ベリー曲率に基づく異常ホール効果・異常ネルンスト効果', link: '/calc/ahe-ane-calc' },
           { text: '応答理論入門', link: '/calc/response-theory' },

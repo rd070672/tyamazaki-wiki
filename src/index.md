@@ -40,9 +40,9 @@ features:
   - [バンドアンフォールディング](/calc/dft-unfolding.md)
   - [テトラヘドロン法とブリルアンゾーン](/calc/tetrahedron.md)
   - [ワニエ関数と局在軌道](/calc/wannier.md)
-  - [最局在ワニエ関数（MLWF）の基礎と発展](/calc/wannier-2.md)
+  - [最局在ワニエ関数と電子物性](/calc/wannier-2.md)
   - [低次元物質の電子状態](/calc/low-dimentional.md)
-  - [キタエフ模型](/calc/kitaev-honeycomb-model.md)
+  - [キタエフ模型と量子状態](/calc/kitaev-honeycomb-model.md)
   - [ベリー位相とトポロジカル応答](/calc/berry.md)
   - [ベリー曲率に基づく異常ホール効果・異常ネルンスト効果](/calc/ahe-ane-calc.md)
   - [応答理論入門](/calc/response-theory.md)
@@ -365,7 +365,7 @@ features:
 - [VitePressを用いた研究室Wikiの整備](/sys/website-wiki.md)
 - [GA4とGTMによるアクセス解析の基礎](/sys/access-analysis.md)
 
-## その他
+## その他 {#その他}
 
 ### 初歩
 - [線形代数の初歩](/other/enter-algebra.md)
