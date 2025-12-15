@@ -470,12 +470,12 @@ export default defineConfig({
           { text: '化学賞2024-タンパク質設計と構造予測', link: '/other/nobel2024-chem' },
         ]},
         { text: '周期表', collapsed: true, items: [
-          { text: '13-アルミニウム-Al', link: '/other/elem-13-al' },
-          { text: '26-鉄-Fe', link: '/other/elem-26-fe' },
-          { text: '27-コバルト-Co', link: '/other/elem-27-co' },
-          { text: '28-ニッケル-Ni', link: '/other/elem-28-ni' },
-          { text: '31-ガリウム-Ga', link: '/other/elem-31-ga' },
-          { text: '32-ゲルマニウム-Ge', link: '/other/elem-32-ge' },
+          { text: '13-アルミニウム-Al', link: '/elem/elem-13-al' },
+          { text: '26-鉄-Fe', link: '/elem/elem-26-fe' },
+          { text: '27-コバルト-Co', link: '/elem/elem-27-co' },
+          { text: '28-ニッケル-Ni', link: '/elem/elem-28-ni' },
+          { text: '31-ガリウム-Ga', link: '/elem/elem-31-ga' },
+          { text: '32-ゲルマニウム-Ge', link: '/elem/elem-32-ge' },
         ]},
       ]},
 
