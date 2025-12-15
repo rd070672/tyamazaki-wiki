@@ -58,7 +58,7 @@ export default defineConfig({
       { text: 'データサイエンス', link: '/#データサイエンス'},
       { text: '情報基盤', link: '/#情報基盤'},
       // { text: 'ラボ運営', link: '/#ラボ運営'},
-      { text: 'その他', link: '/#その他', items: [
+      { text: 'その他', items: [
         { text: 'About', link: '/about' },
         { text: 'Changelog', link: '/changelog' },
         { text: 'Website', link: '/#' },

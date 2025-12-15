@@ -13,7 +13,7 @@ hero:
 
     - theme: alt
       text: Github
-      link: /https://github.com/rd070672/tyamazaki-wiki
+      link: https://github.com/rd070672/tyamazaki-wiki
 
 features:
   - title: 計算
@@ -365,7 +365,7 @@ features:
 - [VitePressを用いた研究室Wikiの整備](/sys/website-wiki.md)
 - [GA4とGTMによるアクセス解析の基礎](/sys/access-analysis.md)
 
-## その他{#その他}
+## その他
 
 ### 初歩
 - [線形代数の初歩](/other/enter-algebra.md)
