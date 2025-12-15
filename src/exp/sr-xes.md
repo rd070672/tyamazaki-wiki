@@ -5,9 +5,9 @@ X線発光分光（XES）は、X線で内殻正孔を作った後の放射遷移
 ## 参考ドキュメント
 1. X線発光分光（SPring-8 Users Information, 日本語PDF）
    https://user.spring8.or.jp/ui/wp-content/uploads/x-ray_emission_spectroscopy.pdf
-2. P. Glatzel and U. Bergmann, High resolution 1s core hole X-ray spectroscopy in 3d transition metal complexes: electronic and structural information, Coord. Chem. Rev. 249, 65–95 (2005)
+2. P. Glatzel and U. Bergmann, High resolution 1s core hole X-ray spectroscopy in 3d transition metal complexes: electronic and structural information, Coord. Chem. Rev. 249, 65–95 (2005)  
    https://www.westbrookuniversity.net/wp-content/uploads/2016/04/high-resolution-1s-core-hole-x-ray-spectroscopy-in-3d-transition-metal-complexes-electronic-and-structural-information.pdf
-3. A. Gallo et al., Valence to core x-ray emission spectroscopy: a probe of the nature of chemical bonds, Adv. Mater. 26, 7730–7746 (2014)
+3. A. Gallo et al., Valence to core x-ray emission spectroscopy: a probe of the nature of chemical bonds, Adv. Mater. 26, 7730–7746 (2014)  
    https://onlinelibrary.wiley.com/doi/10.1002/adma.201305486
 
 ## 1. XESとは何か

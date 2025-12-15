@@ -223,13 +223,13 @@ features:
 
 ### 放射光計測
 #### 基礎
-- [放射光（シンクロトロン放射）の基礎](/exp/sr.md)
+- [シンクロトロン放射の基礎](/exp/sr.md)
 - [ビームラインの光学設計](/exp/sr-optics.md)
 - [放射光による構造解析](/exp/sr-structure.md)
 - [放射光によるダイナミクス解析](/exp/sr-dynamics.md)
 - [アモルファスの構造・物性解析](/exp/sr-amorphous.md)
 - [フェルミの黄金律](/exp/fermi-golden-rule.md)
-- [選択則とクレプシュ・ゴルダン係数](/exp/clebsch-gordan.md)
+- [クレプシュ・ゴルダン係数と選択則](/exp/clebsch-gordan.md)
 
 #### 各手法の原理
 - [X線吸収微細構造（XAFS）](/exp/sr-xafs.md)
@@ -381,7 +381,7 @@ features:
 - [数値解法の初歩](/other/enter-numerical-method.md)
 - [電子回路の初歩](/other/enter-electronic-circuit.md)
 - [データサイエンスの初歩](/other/enter-data-science.md)
-- [ハイパフォーマンス計算（HPC）の初歩](/other/enter-hpc.md)
+- [HPCの初歩](/other/enter-hpc.md)
 
 ### 教科書
 - [Kittel - 固体物理学入門](/other/kittel-solid-state.md)
@@ -399,6 +399,11 @@ features:
 - [化学賞2025-金属有機構造体（MOF）](/other/nobel2025-chem.md)
 - [物理学賞2024-人工ニューラルネットワーク](/other/nobel2024-phys.md)
 - [化学賞2024-タンパク質設計と構造予測](/other/nobel2024-chem.md)
+
+### 周期表
+- [25-マンガン-Mn](/elem/elem-25-mn.md)
+- [26-鉄-Fe](/elem/elem-26-fe.md)
+- [27-ニッケル-Ni](/elem/elem-27-ni.md)
 
 <!-- ## ラボ運営 {#ラボ運営}
 研究室運営に必要な体制づくり、安全管理、研究活動の進め方、設備立ち上げの要点をまとめています。日常運用から学生支援、装置管理まで、研究が円滑に進むための基本を整理しています。

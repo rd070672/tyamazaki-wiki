@@ -267,13 +267,13 @@ export default defineConfig({
 
         { text: '放射光計測', collapsed: true, items: [
           { text: '基礎', collapsed: true, items: [
-            { text: '放射光（シンクロトロン放射）の基礎', link: '/exp/sr' },
+            { text: 'シンクロトロン放射の基礎', link: '/exp/sr' },
             { text: 'ビームラインの光学設計', link: '/exp/sr-optics' },
             { text: '放射光による構造解析', link: '/exp/sr-structure' },
             { text: '放射光によるダイナミクス解析', link: '/exp/sr-dynamics' },
             { text: 'アモルファスの構造・物性解析', link: '/exp/sr-amorphous' },
             { text: 'フェルミの黄金律', link: '/exp/fermi-golden-rule' },
-            { text: '選択則とクレプシュ・ゴルダン係数', link: '/exp/clebsch-gordan' },
+            { text: 'クレプシュ・ゴルダン係数と選択則', link: '/exp/clebsch-gordan' },
           ]},
           { text: '各手法の原理', collapsed: true, items: [
             { text: 'X線吸収微細構造（XAFS）', link: '/exp/sr-xafs' },
@@ -447,7 +447,7 @@ export default defineConfig({
           { text: '数値解法の初歩', link: '/other/enter-numerical-method' },
           { text: '電子回路の初歩', link: '/other/enter-electronic-method' },
           { text: 'データサイエンスの初歩', link: '/other/enter-data-science' },
-          { text: 'ハイパフォーマンス計算（HPC）の初歩', link: '/other/enter-hpc' },          
+          { text: 'HPCの初歩', link: '/other/enter-hpc' },          
         ]},
         
         { text: '教科書', collapsed: true, items: [
@@ -468,6 +468,10 @@ export default defineConfig({
           { text: '化学賞2025-金属有機構造体（MOF）', link: '/other/nobel2025-chem' },
           { text: '物理学賞2024-人工ニューラルネットワーク', link: '/other/nobel2024-phys' },
           { text: '化学賞2024-タンパク質設計と構造予測', link: '/other/nobel2024-chem' },
+        ]},
+        { text: '周期表', collapsed: true, items: [
+          { text: '26-鉄-Fe', link: '/other/elem-26-fe' },
+          
         ]},
       ]},
 
