@@ -435,10 +435,10 @@ export default defineConfig({
       //   ]},
       // ]},
 
-      { text: '周期表', collapsed: true, items: [
-        { text: '78-Pt', link: '/elem/78-pt' },
+      // { text: '周期表', collapsed: true, items: [
+      //   { text: '78-Pt', link: '/elem/78-pt' },
 
-      ]},
+      // ]},
 
       { text: 'その他', collapsed: true, items: [
         { text: '初歩', collapsed: true, items: [
