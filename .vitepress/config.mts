@@ -45,7 +45,7 @@ export default defineConfig({
     // search: {
     //   provider: 'local'
     // },
-    // search: { provider: 'local' },
+    search: { provider: 'local' },
 
     returnToTopLabel: 'Return to top',
 
