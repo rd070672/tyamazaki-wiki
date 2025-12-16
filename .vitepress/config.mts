@@ -471,8 +471,8 @@ export default defineConfig({
       { text: 'その他', collapsed: true, items: [
         { text: '初歩', collapsed: true, items: [
           { text: '線形代数の初歩', link: '/other/enter-algebra' },
-          { text: 'ベクトル解析の初歩', link: '/other/enter-vector' },
           { text: '微積分の初歩', link: '/other/enter-calculus' },
+          { text: 'ベクトル解析の初歩', link: '/other/enter-vector' },
           { text: '物理数学の初歩', link: '/other/enter-physics-math' },
           { text: '電磁気学の初歩', link: '/other/enter-electrodynamics' },
           { text: '量子力学の初歩', link: '/other/enter-quantum' },

@@ -385,8 +385,8 @@ features:
 ## その他
 ### 初歩
 - [線形代数の初歩](/other/enter-algebra.md)
-- [ベクトル解析の初歩](/other/enter-vector.md)
 - [微積分の初歩](/other/enter-calculus.md)
+- [ベクトル解析の初歩](/other/enter-vector.md)
 - [物理数学の初歩](/other/enter-physics-math.md)
 - [電磁気学の初歩](/other/enter-electrodynamics.md)
 - [量子力学の初歩](/other/enter-quantum.md)
