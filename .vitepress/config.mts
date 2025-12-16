@@ -438,7 +438,7 @@ export default defineConfig({
 
       { text: '周期表', collapsed: true, items: [
         { text: 'Periodic table', link: '/elem/table' },
-        { text: '1-H', link: '/elem/71-h' },
+        { text: '1-H', link: '/elem/1-h' },
         { text: '2-He', link: '/elem/2-he' },
         { text: '5-B', link: '/elem/5-b' },
         { text: '6-C', link: '/elem/6-c' },
