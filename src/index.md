@@ -373,7 +373,7 @@ features:
 |3|Na|Mg|||||||||||[Al](/elem/13-al)|[Si](/elem/14-si)|P|S|Cl|[Ar](/elem/18-ar)|
 |4|K|Ca|Sc|[Ti](/elem/22-ti)|V|Cr|[Mn](/elem/25-mn)|[Fe](/elem/26-fe)|[Co](/elem/27-co)|[Ni](/elem/28-ni)|[Cu](/elem/29-cu)|[Zn](/elem/30-zn)|[Ga](/elem/31-ga)|[Ge](/elem/32-ge)|As|Se|Br|Kr|
 |5|Rb|Sr|Y|Zr|Nb|Mo|Tc|Ru|Rh|Pd|Ag|Cd|In|Sn|Sb|Te|I|Xe|
-|6|Cs|Ba|La*|Hf|[Ta](/elem/78-ta)|W|Re|Os|[Ir](/elem/77-ir)|[Pt](/elem/78-pt)|[Au](/elem/79-au)|Hg|Tl|Pb|Bi|Po|At|Rn|
+|6|Cs|Ba|La*|Hf|[Ta](/elem/73-ta)|W|Re|Os|[Ir](/elem/77-ir)|[Pt](/elem/78-pt)|[Au](/elem/79-au)|Hg|Tl|Pb|Bi|Po|At|Rn|
 |7|Fr|Ra|Ac*|Rf|Db|Sg|Bh|Hs|Mt|Ds|Rg|Cn|Nh|Fl|Mc|Lv|Ts|Og|
 
 ランタノイド/アクチノイド
