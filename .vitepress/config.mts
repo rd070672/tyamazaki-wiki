@@ -8,7 +8,13 @@ export default defineConfig({
   srcDir: 'src',
   title: "tyamazaki | wiki",
   description: "tyamazakiの研究取り組みからの知見や経験をwikiとして共有します",
-  lastUpdated: {text: 'Last updated', formatOptions: {dateStyle: 'short', timeStyle: 'medium'}},
+
+  lastUpdated: true, // :contentReference[oaicite:1]{index=1}
+
+  // themeConfig: {
+    
+  // lastUpdated: {text: 'Last updated', formatOptions: {dateStyle: 'short', timeStyle: 'medium'}},
+
   cleanUrls: true,
   markdown: {
     math: true,
@@ -46,6 +52,14 @@ export default defineConfig({
 
     returnToTopLabel: 'Return to top',
 
+    // ここで表示テキストと日時フォーマットを指定する
+    lastUpdated: {
+      text: 'Last updated',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'medium',
+      },
+    },
     // editLink: {
     //   pattern: 'https://github.com/rd070672/tyamazaki-wiki/edit/main/src/:path',
     //   text: 'Edit this page on GitHub'
