@@ -75,6 +75,8 @@ export default defineConfig({
         { text: '第一原理計算', collapsed: false, items: [
           { text: '物理定数と単位系', link: '/calc/physical-constants' },
           { text: '量子力学とシュレディンガー方程式', link: '/calc/dft-basis' },
+          { text: '水素原子の量子状態を導く', link: '/calc/hydrogen-calc' },
+          { text: '水素原子の電子軌道を導く', link: '/calc/hydrogen-calc-2' },
           { text: 'ブラケット記法の体系', link: '/calc/bra-ket' },
           { text: 'ブロッホの定理', link: '/calc/bloch' },
           { text: 'バンドアンフォールディング', link: '/calc/dft-unfolding' },

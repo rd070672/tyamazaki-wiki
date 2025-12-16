@@ -35,6 +35,8 @@ features:
 #### 基礎
   - [物理定数と単位系](/calc/physical-constants.md)
   - [量子力学とシュレディンガー方程式](/calc/dft-basis.md)
+  - [水素原子の量子状態を導く](/calc/hydrogen-calc.md)
+  - [水素原子の電子軌道を導く](/calc/hydrogen-calc-2.md)
   - [ブラケット記法の体系](/calc/bra-ket.md)
   - [ブロッホの定理](/calc/bloch.md)
   - [バンドアンフォールディング](/calc/dft-unfolding.md)
