@@ -401,13 +401,14 @@ features:
 - [化学賞2024-タンパク質設計と構造予測](/other/nobel2024-chem.md)
 
 ### 周期表
+- [周期表](/elem/elem-table.md)
 - [13-アルミニウム-Al](/elem/elem-25-mn.md)
 - [25-マンガン-Mn](/elem/elem-25-mn.md)
 - [26-鉄-Fe](/elem/elem-26-fe.md)
 - [27-コバルト-Co](/elem/elem-27-co.md)
 - [28-ニッケル-Ni](/elem/elem-28-ni.md)
 - [31-ガリウム-Ga](/elem/elem-31-ga.md)
-- [25-ゲルマニウム-Ge](/elem/elem-32-ge.md)
+- [32-ゲルマニウム-Ge](/elem/elem-32-ge.md)
 
 <!-- ## ラボ運営 {#ラボ運営}
 研究室運営に必要な体制づくり、安全管理、研究活動の進め方、設備立ち上げの要点をまとめています。日常運用から学生支援、装置管理まで、研究が円滑に進むための基本を整理しています。
