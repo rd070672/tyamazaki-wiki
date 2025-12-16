@@ -83,7 +83,7 @@ features:
   - [磁気ダンピングの内因的性質](/calc/damping-intrinsic.md)
   - [磁気ダンピング・磁歪・鉄損の関係性](/calc/damping-maelas-loss.md)
 
-第一原理計算
+#### 第一原理計算
   - [密度汎関数理論（DFT）の基礎](/calc/dft.md)
   - [第一原理計算の基本原理](/calc/ab-calc.md)
   - [第一原理計算を支える数値解法](/calc/dft-calc.md)
@@ -340,7 +340,7 @@ features:
 
 
 ## 情報基盤
-研究室の計算・解析環境を支える情報システムでは、プログラミング環境、ワークステーション管理、スパコン利用、ライセンス管理、データバックアップなど、研究活動を円滑に進めるための基盤技術を扱います。効率的で再現性の高い研究を実現するための運用ノウハウを体系的にまとめています。
+研究室の計算・解析環境を支える情報システムでは、プログラミング技術、スパコン利用、ライセンス・ホームページ管理など、研究活動を円滑に進めるための基盤技術を扱います。効率的で再現性の高い研究を実現するための運用ノウハウを体系的にまとめています。
 
 ### データ解析環境
 - [研究・開発のためのデータ解析環境設計](/sys/data-analysis.md)
@@ -365,8 +365,24 @@ features:
 - [VitePressを用いた研究室Wikiの整備](/sys/website-wiki.md)
 - [GA4とGTMによるアクセス解析の基礎](/sys/access-analysis.md)
 
-## その他
+## 周期表
+|Period|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|
+|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|1|H|||||||||||||||||He|
+|2|Li|Be|||||||||||[B](/elem/5-b)|C|N|O|F|Ne|
+|3|Na|Mg|||||||||||[Al](/elem/13-al)|[Si](/elem/14-si)|P|S|Cl|Ar|
+|4|K|Ca|Sc|Ti|V|Cr|[Mn](/elem/25-mn)|[Fe](/elem/26-fe)|[Co](/elem/27-co)|[Ni](/elem/28-ni)|Cu|Zn|[Ga](/elem/31-ga)|[Ge](/elem/32-ge)|As|Se|Br|Kr|
+|5|Rb|Sr|Y|Zr|Nb|Mo|Tc|Ru|Rh|Pd|Ag|Cd|In|Sn|Sb|Te|I|Xe|
+|6|Cs|Ba|La*|Hf|Ta|W|Re|Os|Ir|[Pt](/elem/78-pt)|[Au](/elem/79-au)|Hg|Tl|Pb|Bi|Po|At|Rn|
+|7|Fr|Ra|Ac*|Rf|Db|Sg|Bh|Hs|Mt|Ds|Rg|Cn|Nh|Fl|Mc|Lv|Ts|Og|
 
+ランタノイド/アクチノイド
+|||Series|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|
+|---|---|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|||Lanthanides|La|Ce|Pr|Nd|Pm|Sm|Eu|[Gd](/elem/64-gd)|Tb|Dy|Ho|Er|Tm|Yb|Lu|
+|||Actinides|Ac|Th|Pa|U|Np|Pu|Am|Cm|Bk|Cf|Es|Fm|Md|No|Lr|
+
+## その他
 ### 初歩
 - [線形代数の初歩](/other/enter-algebra.md)
 - [ベクトル解析の初歩](/other/enter-vector.md)
@@ -400,36 +416,6 @@ features:
 - [物理学賞2024-人工ニューラルネットワーク](/other/nobel2024-phys.md)
 - [化学賞2024-タンパク質設計と構造予測](/other/nobel2024-chem.md)
 
-### 周期表
-<!-- - [周期表](/elem/table.md) -->
-
-# 周期表
-|Period|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|
-|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|1|H||||||||||||||||||He|
-|2|Li|Be||||||||||||[B](/elem/5-b)|C|N|O|F|Ne|
-|3|Na|Mg||||||||||||[Al](/elem/13-al)|[Si](/elem/14-si)|P|S|Cl|Ar|
-|4|K|Ca|Sc|Ti|V|Cr|[Mn](/elem/25-mn)|[Fe](/elem/26-fe)|[Co](/elem/27-co)|[Ni](/elem/28-ni)|Cu|Zn|[Ga](/elem/31-ga)|[Ge](/elem/32-ge)|As|Se|Br|Kr|
-|5|Rb|Sr|Y|Zr|Nb|Mo|Tc|Ru|Rh|Pd|Ag|Cd|In|Sn|Sb|Te|I|Xe|
-|6|Cs|Ba|La*|Hf|Ta|W|Re|Os|Ir|[Pt](/elem/78-pt)|[Au](/elem/79-au)|Hg|Tl|Pb|Bi|Po|At|Rn|
-|7|Fr|Ra|Ac*|Rf|Db|Sg|Bh|Hs|Mt|Ds|Rg|Cn|Nh|Fl|Mc|Lv|Ts|Og|
-
-ランタノイド/アクチノイド
-|Series|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|
-|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-|Lanthanides|La|Ce|Pr|Nd|Pm|Sm|Eu|[Gd](/elem/64-gd)|Tb|Dy|Ho|Er|Tm|Yb|Lu|
-|Actinides|Ac|Th|Pa|U|Np|Pu|Am|Cm|Bk|Cf|Es|Fm|Md|No|Lr|
-
-- [13-アルミニウム-Al](/elem/25-mn.md)
-- [25-マンガン-Mn](/elem/25-mn.md)
-- [26-鉄-Fe](/elem/26-fe.md)
-- [27-コバルト-Co](/elem/27-co.md)
-- [28-ニッケル-Ni](/elem/28-ni.md)
-- [31-ガリウム-Ga](/elem/31-ga.md)
-- [32-ゲルマニウム-Ge](/elem/32-ge.md)
-- [64-ガドリニウム-Gd](/elem/64-gd.md)
-- [78-白金-Pt](/elem/78-pt.md)
-- [79-金-Au](/elem/79-au.md)
 
 <!-- ## ラボ運営 {#ラボ運営}
 研究室運営に必要な体制づくり、安全管理、研究活動の進め方、設備立ち上げの要点をまとめています。日常運用から学生支援、装置管理まで、研究が円滑に進むための基本を整理しています。

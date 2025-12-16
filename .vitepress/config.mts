@@ -59,6 +59,7 @@ export default defineConfig({
       { text: '実験', link: '/#実験' },
       { text: 'データサイエンス', link: '/#データサイエンス'},
       { text: '情報基盤', link: '/#情報基盤'},
+      { text: '周期表', link: '/#周期表'},
       // { text: 'ラボ運営', link: '/#ラボ運営'},
       { text: 'その他', items: [
         { text: 'About', link: '/about' },
@@ -433,6 +434,11 @@ export default defineConfig({
       //     { text: 'Wi-fiルーターの設置・設定', link: '/lab/rooter' },
       //   ]},
       // ]},
+
+      { text: '周期表', collapsed: true, items: [
+        { text: '78-Pt', link: '/elem/78-pt' },
+
+      ]},
 
       { text: 'その他', collapsed: true, items: [
         { text: '初歩', collapsed: true, items: [
