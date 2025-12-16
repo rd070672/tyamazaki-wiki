@@ -42,9 +42,9 @@ export default defineConfig({
 
   // https://vitepress.dev/reference/default-theme-config
   themeConfig: {
-    search: {
-      provider: 'local'
-    },
+    // search: {
+    //   provider: 'local'
+    // },
     // search: { provider: 'local' },
 
     returnToTopLabel: 'Return to top',
