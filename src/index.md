@@ -259,7 +259,7 @@ features:
 ### 機械学習のための数理・統計・情報
 - [機線形代数入門](/data/basis-linear-algebra.md)
 - [微積分入門](/data/basis-calculus.md)
-- [解析入門](/data/basis-vector-analysis)
+- [ベクトル解析入門](/data/basis-vector-analysis)
 - [複素解析入門](/data/basis-complex-analysis)
 - [多変量解析入門](/data/basis-multivariate-analysis)
 - [確率・統計入門](/data/basis-propability)
