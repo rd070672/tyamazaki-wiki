@@ -470,6 +470,7 @@ export default defineConfig({
           { text: '化学賞2024-タンパク質設計と構造予測', link: '/other/nobel2024-chem' },
         ]},
         { text: '周期表', collapsed: true, items: [
+          { text: '周期表', link: '/elem/elem-table' },
           { text: '13-アルミニウム-Al', link: '/elem/elem-13-al' },
           { text: '26-鉄-Fe', link: '/elem/elem-26-fe' },
           { text: '27-コバルト-Co', link: '/elem/elem-27-co' },
