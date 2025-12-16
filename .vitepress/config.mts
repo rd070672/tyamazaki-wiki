@@ -437,7 +437,7 @@ export default defineConfig({
       // ]},
 
       { text: '周期表', collapsed: true, items: [
-        { text: '78-Pt', link: '/elem/78-pt' },
+        { text: 'Periodic table', link: '/elem/table' },
         { text: '1-H', link: '/elem/71-h' },
         { text: '2-He', link: '/elem/2-he' },
         { text: '5-B', link: '/elem/5-b' },
@@ -476,14 +476,14 @@ export default defineConfig({
           { text: '物理数学の初歩', link: '/other/enter-physics-math' },
           { text: '電磁気学の初歩', link: '/other/enter-electrodynamics' },
           { text: '量子力学の初歩', link: '/other/enter-quantum' },
-          { text: '統計物理学の初歩', link: '/other/statistical-physics' },
-          { text: '固体物理学の初歩', link: '/other/solid-state-physics' },
+          { text: '統計物理学の初歩', link: '/other/enter-statistical-physics' },
+          { text: '固体物理学の初歩', link: '/other/enter-solid-state-physics' },
+          { text: '電子回路の初歩', link: '/other/enter-electronic-circuit' },
           { text: '放射光科学の初歩', link: '/other/enter-synchrotron' },
           { text: 'プログラミングの初歩', link: '/other/enter-programming' },
-          { text: '数値解法の初歩', link: '/other/enter-numerical-method' },
-          { text: '電子回路の初歩', link: '/other/enter-electronic-method' },
-          { text: 'データサイエンスの初歩', link: '/other/enter-data-science' },
           { text: 'HPCの初歩', link: '/other/enter-hpc' },          
+          { text: '数値解法の初歩', link: '/other/enter-numerical-method' },
+          { text: 'データサイエンスの初歩', link: '/other/enter-data-science' },
         ]},
         
         { text: '教科書', collapsed: true, items: [
@@ -504,15 +504,6 @@ export default defineConfig({
           { text: '化学賞2025-金属有機構造体（MOF）', link: '/other/nobel2025-chem' },
           { text: '物理学賞2024-人工ニューラルネットワーク', link: '/other/nobel2024-phys' },
           { text: '化学賞2024-タンパク質設計と構造予測', link: '/other/nobel2024-chem' },
-        ]},
-        { text: '周期表', collapsed: true, items: [
-          { text: '周期表', link: '/elem/elem-table' },
-          { text: '13-アルミニウム-Al', link: '/elem/elem-13-al' },
-          { text: '26-鉄-Fe', link: '/elem/elem-26-fe' },
-          { text: '27-コバルト-Co', link: '/elem/elem-27-co' },
-          { text: '28-ニッケル-Ni', link: '/elem/elem-28-ni' },
-          { text: '31-ガリウム-Ga', link: '/elem/elem-31-ga' },
-          { text: '32-ゲルマニウム-Ge', link: '/elem/elem-32-ge' },
         ]},
       ]},
 

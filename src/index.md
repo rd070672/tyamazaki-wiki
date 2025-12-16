@@ -392,12 +392,12 @@ features:
 - [量子力学の初歩](/other/enter-quantum.md)
 - [統計物理学の初歩](/other/enter-statistical-physics.md)
 - [固体物理学の初歩](/other/enter-solid-state-physics.md)
+- [電子回路の初歩](/other/enter-electronic-circuit.md)
 - [放射光科学の初歩](/other/enter-synchrotron.md)
 - [プログラミングの初歩](/other/enter-programming.md)
-- [数値解法の初歩](/other/enter-numerical-method.md)
-- [電子回路の初歩](/other/enter-electronic-circuit.md)
-- [データサイエンスの初歩](/other/enter-data-science.md)
 - [HPCの初歩](/other/enter-hpc.md)
+- [数値解法の初歩](/other/enter-numerical-method.md)
+- [データサイエンスの初歩](/other/enter-data-science.md)
 
 ### 教科書
 - [Kittel - 固体物理学入門](/other/kittel-solid-state.md)
