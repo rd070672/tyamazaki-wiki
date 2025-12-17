@@ -37,6 +37,8 @@ features:
   - [量子力学とシュレディンガー方程式](/calc/dft-basis.md)
   - [水素原子の量子状態を導く](/calc/hydrogen-calc.md)
   - [水素原子の電子軌道を導く](/calc/hydrogen-calc-2.md)
+  - [ヘリウム原子の量子・電子状態を読み解く](/calc/helium-calc.md)
+  - [ヘリウム原子をDFTで解析する](/calc/helium-dft.md)
   - [ブラケット記法の体系](/calc/bra-ket.md)
   - [ブロッホの定理](/calc/bloch.md)
   - [バンドアンフォールディング](/calc/dft-unfolding.md)

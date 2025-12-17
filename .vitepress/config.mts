@@ -77,6 +77,8 @@ export default defineConfig({
           { text: '量子力学とシュレディンガー方程式', link: '/calc/dft-basis' },
           { text: '水素原子の量子状態を導く', link: '/calc/hydrogen-calc' },
           { text: '水素原子の電子軌道を導く', link: '/calc/hydrogen-calc-2' },
+          { text: 'ヘリウム原子の量子・電子状態を読み解く', link: '/calc/helium-calc' },
+          { text: 'ヘリウム原子をDFTで解析する', link: '/calc/helium-dft' },
           { text: 'ブラケット記法の体系', link: '/calc/bra-ket' },
           { text: 'ブロッホの定理', link: '/calc/bloch' },
           { text: 'バンドアンフォールディング', link: '/calc/dft-unfolding' },
