@@ -82,8 +82,8 @@ features:
   - [キュリー・ワイス則と平均場理論](/calc/curie-weiss-law.md)
   - [RKKY起源スピングラスの数値モデル](/calc/rkky-calc.md)
   - [スピン軌道相互作用と行列要素](/calc/spin-orbit-coupling.md)
-  - [四重極応答理論](/calc/quadruple.md)
-  - [四重極子モーメントと磁歪の統一的記述](/calc/quadruple-maelas.md)
+  - [四重極応答理論](/calc/quadrupole.md)
+  - [四重極子モーメントと磁歪の統一的記述](/calc/quadrupole-maelas.md)
   - [電子論に基づく弾性定数の導出](/calc/elastic-constant.md)
   - [電子論に基づく磁気弾性定数の導出](/calc/magnetoelastic-constant.md)
   - [マグノン-フォノン相互作用の計算](/calc/magnon-phonon.md)
@@ -251,6 +251,7 @@ features:
 - [コヒーレント回折イメージング（CDI）](/exp/sr-cdi.md)
 - [X線磁気円二色性（XMCD）](/exp/sr-xmcd.md)
 - [X線磁気直線二色性（XMLD）](/exp/sr-xmld.md)
+- [光電子顕微鏡（PEEM）](/exp/sr-peem.md)
 - [スピン・角度分解光電子分光（SARPES）](/exp/sr-sarpes.md)
 - [X線自由電子レーザー（XFEL）](/exp/sr-xfel.md)
 
