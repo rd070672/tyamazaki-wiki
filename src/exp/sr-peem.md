@@ -3,13 +3,13 @@
 放射光光電子顕微鏡（PEEM）は、光励起で放出された電子を電子光学系で結像し、表面の電子状態・化学状態・磁性を二次元像として読む手法である。放射光と組み合わせることで、光子エネルギーと偏光を制御し、元素選択・状態選択の顕微分光へ拡張できる。
 
 ### 参考ドキュメント
-1. J. Stöhr, Y. Wu, B. Hermsmeier, et al., X-ray spectro-microscopy of complex materials and surfaces, IBM Journal of Research and Development 44, 535 (2000).（PDF）
+1. J. Stöhr, Y. Wu, B. Hermsmeier, et al., X-ray spectro-microscopy of complex materials and surfaces, IBM Journal of Research and Development 44, 535 (2000).（PDF）  
    https://www-ssrl.slac.stanford.edu/stohr/ibm-44-535-00.pdf
 
-2. A. Locatelli, Advancements in X-ray photoemission electron microscopy（2025, 総説）
+2. A. Locatelli, Advancements in X-ray photoemission electron microscopy（2025, 総説）  
    https://www.tandfonline.com/doi/full/10.1080/23746149.2025.2549757
 
-3. X線光電子顕微鏡法（XPEEM）（日本語解説, PDF）
+3. X線光電子顕微鏡法（XPEEM）（日本語解説, PDF）  
    https://www.sasj.jp/JSA/CONTENTS/vol.9_1/Vol.9%20No.1/Vol.9%20No.1%20109-113.pdf
 
 
