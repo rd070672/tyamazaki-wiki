@@ -223,3 +223,56 @@ $$
 スピンは「量子状態が回転でどう変わるか」を表す内部自由度であり、角運動量代数という共通のルールで整理できる。相対論ではスピンが自然に現れ、場の量子論では場の種類と相互作用の形を決め、多体系では磁性や対称性の破れとして現れ、量子情報では量子ビットとエンタングルメントの中心になる。
 
 今後は、スピン軌道相互作用が作る新しい物質相や、巨視的磁化に依らない秩序（反強磁性やアルターマグネット）の制御、そしてスピン系を使った量子計算・量子シミュレーションが結びつくことで、スピンは「物理の自由度」であると同時に「情報の自由度」としての重要性をさらに高めていくと考えられる。
+
+### 参考文献
+#### 量子力学（スピン・角運動量・回転）
+- J. J. Sakurai and J. Napolitano, Modern Quantum Mechanics (2nd ed.), Addison-Wesley / Pearson（英語）
+- J. J. Sakurai（著）, 井上健（監訳）ほか（訳）, 現代の量子力学（日本語版）
+- C. Cohen-Tannoudji, B. Diu, F. Laloë, Quantum Mechanics, Wiley（英語） 
+- D. J. Griffiths and D. F. Schroeter, Introduction to Quantum Mechanics (3rd ed.), Cambridge University Press（英語）
+- J. J. Messiah, Quantum Mechanics, Dover（英語）
+- L. D. Landau and E. M. Lifshitz, Quantum Mechanics: Non-Relativistic Theory (Course of Theoretical Physics, Vol. 3), Pergamon / Butterworth-Heinemann（英語）
+
+#### 角運動量の数学（Wigner D、3j/6j/9j、CG係数）
+- A. R. Edmonds, Angular Momentum in Quantum Mechanics, Princeton University Press（英語） 
+- D. A. Varshalovich, A. N. Moskalev, V. K. Khersonskii, Quantum Theory of Angular Momentum, World Scientific（英語） 
+School of Mathematics
+
+#### 群論・表現論（SU(2)、SO(3)、ローレンツ群、内部自由度）
+- A. Zee, Group Theory in a Nutshell for Physicists, Princeton University Press（英語） 
+- W.-K. Tung, Group Theory in Physics, World Scientific（英語）
+- H. Georgi, Lie Algebras in Particle Physics, Westview Press（英語）
+- B. C. Hall, Lie Groups, Lie Algebras, and Representations, Springer（英語）
+
+#### 相対論・場の量子論（スピノル、多脚場、角運動量、Poincaré表現）
+- S. Weinberg, The Quantum Theory of Fields, Vol. 1: Foundations, Cambridge University Press（英語） 
+- M. E. Peskin and D. V. Schroeder, An Introduction to Quantum Field Theory, Westview Press（英語） 
+- M. D. Schwartz, Quantum Field Theory and the Standard Model, Cambridge University Press（英語） 
+- M. Srednicki, Quantum Field Theory（英語） 
+- R. F. Streater and A. S. Wightman, PCT, Spin and Statistics, and All That, Princeton University Press（英語）
+
+#### Wigner分類・小群（little group）と「スピン」の定義域
+- E. P. Wigner, “On Unitary Representations of the Inhomogeneous Lorentz Group,” Annals of Mathematics 40 (1939). 
+- N. Straumann, “On the Wigner little group in quantum mechanics,” arXiv:0809.4942（英語） 
+
+#### スピン統計定理（Spin–Statistics）
+- W. Pauli, “The Connection Between Spin and Statistics,” Physical Review 58 (1940). 
+- G. Lüders and B. Zumino, “Connection between Spin and Statistics,” Physical Review 110 (1958). 
+
+#### 自発的対称性の破れ（SSB）とGoldstone、低エネルギー励起
+- J. Goldstone, “Field Theories with ‘Superconductor’ Solutions,” Il Nuovo Cimento 19 (1961).
+- J. Goldstone, A. Salam, S. Weinberg, “Broken Symmetries,” Physical Review 127 (1962).
+- S. R. Coleman, “There are no Goldstone bosons in two dimensions,” Communications in Mathematical Physics 31 (1973).
+
+#### 量子磁性・スピン系（多体・準粒子・内部自由度の実例）
+- A. Auerbach, Interacting Electrons and Quantum Magnetism, Springer（英語）
+- P. W. Anderson, “Plasmons, Gauge Invariance, and Mass,” Physical Review 130 (1963).
+- T. Holstein and H. Primakoff, “Field Dependence of the Intrinsic Domain Magnetization of a Ferromagnet,” Physical Review 58 (1940).
+
+#### 量子情報（量子ビット、測定、エンタングルメント）
+- M. A. Nielsen and I. L. Chuang, Quantum Computation and Quantum Information (10th Anniversary ed.), Cambridge University Press（英語） 
+- ニールセン／チュアン（著）, 木村達也（訳）, 量子コンピュータと量子通信 I（日本語版；オーム社） 
+- J. Preskill, Lecture Notes for Physics 219/229/230（Quantum Information / Quantum Field Theory 講義ノート） 
+- 日本語の講義ノート（スピン・角運動量の導入）
+- 兵頭俊夫, 量子力学 講義ノート（スピン・角運動量を含む）
+ 

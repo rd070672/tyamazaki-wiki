@@ -41,6 +41,9 @@ features:
 - [伝達関数とシステム同定](/exp/transmission)
 - [スピンを理解する](/calc/spin)
 - [スピンをわかりやすく理解する](/calc/spin-easy)
+- [良いコードとは](/sys/good-code)
+- [臨界現象とスケーリング則](/calc/scaling)
+- [金属の低温物性と近藤効果](/calc/kondo-effect)
 
 ## 計算 {#計算}
 第一原理計算・数値シミュレーションを軸に、理論背景から環境構築、数値解法、解析例までを紹介します。材料物性の理解とデータ駆動解析につながる計算科学の基礎をまとめます。
@@ -66,9 +69,8 @@ features:
   - [応答理論入門](/calc/response-theory)
   - [線形応答理論とKubo–Greenwood法](/calc/kkr-kubo)
   - [摂動論の基礎と応用](/calc/perturbation)
+  - [金属の低温物性と近藤効果](/calc/kondo-effect) 
   - [密度汎関数摂動論](/calc/dfpt)
-  - [二次摂動理論にもとづく磁気ダンピングの導出](/calc/perturbation-damping)
-  - [二次摂動理論にもとづく磁歪定数の導出](/calc/perturbation-maelas)
   - [グリーン関数とKKR法](/calc/kkr)
   - [非平衡グリーン関数（NEGF）と量子輸送](/calc/negf)
   - [ダイソン方程式と多体電子状態の記述](/calc/dyson-derivation)
@@ -102,6 +104,8 @@ features:
   - [四重極子モーメントと磁歪の統一的記述](/calc/quadrupole-maelas)
   - [電子論に基づく弾性定数の導出](/calc/elastic-constant)
   - [電子論に基づく磁気弾性定数の導出](/calc/magnetoelastic-constant)
+  - [二次摂動理論にもとづく磁気ダンピングの導出](/calc/perturbation-damping)
+  - [二次摂動理論にもとづく磁歪定数の導出](/calc/perturbation-maelas)
   - [マグノン-フォノン相互作用の計算](/calc/magnon-phonon)
   - [磁気ダンピングの発生メカニズム](/calc/damping-mechanism)
   - [磁気ダンピングの内因的性質](/calc/damping-intrinsic)
@@ -139,6 +143,7 @@ features:
 ### 熱力学計算
 - [CALPHAD法（計算熱力学）による状態図・相平衡予測](/calc/calphad)
 - [平衡状態図の読み方](/calc/phase-diagram)
+- [臨界現象とスケーリング則](/calc/scaling)
 - [ランダウ理論と自由エネルギー](/calc/landau)
 - [Ginzburg–Landau理論による相転移と空間秩序の記述](/calc/landau-gl-theory)
 - [Wang–Landau法と電子状態](/calc/wang-landau)

@@ -3,11 +3,11 @@
 
 
 ### 参考ドキュメント
-1. ISO/IEC 25010 quality model（品質特性の整理）
+1. ISO/IEC 25010 quality model（品質特性の整理）  
    https://iso25000.com/en/iso-25000-standards/iso-25010
-2. Google Engineering Practices: The Standard of Code Review（レビューの合格基準）
+2. Google Engineering Practices: The Standard of Code Review（レビューの合格基準）  
    https://google.github.io/eng-practices/review/reviewer/standard.html
-3. IPA, ESCR Ver. 3.0 組込みソフトウェア向けコーディング作法ガイド（日本語）
+3. IPA, ESCR Ver. 3.0 組込みソフトウェア向けコーディング作法ガイド（日本語）  
    https://www.ipa.go.jp/archive/publish/qv6pgp00000011mh-att/000064005.pdf
 
 
@@ -201,9 +201,9 @@ $$
 コメントは不要だと言われることがあるが、不要なのは「コードを見れば分かることの繰り返し」である。必要なのは意図、前提、根拠である。
 
 ### 10.1 何を書くか
-- なぜその実装なのか（別案を採らない理由）
+- なぜその実装なのか
 - どの仮定の下で成立するのか
-- 数式や文献との対応（式番号や論文）
+- 数式や文献との対応
 - 入力の単位と座標系
 - 近似と誤差の見積もり
 
