@@ -35,6 +35,7 @@ features:
 - [粘弾性モデルの基礎](/calc/viscoelasticity)
 - [磁壁移動の粘弾性モデル](/calc/domain-wall-movement)
 - [磁気円二色性（MCD）と磁気直線二色性（MLD）](/exp/sr-mcd-mld)
+- [X線磁気直線二色性（XMLD）](/exp/sr-xmld)
 - [ノイズの種類・原因・対策](/exp/noise)
 - [低ノイズ・高感度な電圧測定技術](/exp/low-noise)
 - [サンプリング理論と計測デジタル化の基本](/exp/sampling-digital)
@@ -44,12 +45,12 @@ features:
 - [良いコードとは](/sys/good-code)
 - [臨界現象とスケーリング則](/calc/scaling)
 - [金属の低温物性と近藤効果](/calc/kondo-effect)
+- [フェルミ液体と準粒子](/calc/fermi-liquid)
 
-## 計算 {#計算}
+## 理論・計算 {#計算}
 第一原理計算・数値シミュレーションを軸に、理論背景から環境構築、数値解法、解析例までを紹介します。材料物性の理解とデータ駆動解析につながる計算科学の基礎をまとめます。
 
-### 第一原理計算
-#### 基礎
+### 理論
   - [物理定数と単位系](/calc/physical-constants)
   - [量子力学とシュレディンガー方程式](/calc/dft-basis)
   - [水素原子の量子状態を導く](/calc/hydrogen-calc)
@@ -70,6 +71,7 @@ features:
   - [線形応答理論とKubo–Greenwood法](/calc/kkr-kubo)
   - [摂動論の基礎と応用](/calc/perturbation)
   - [金属の低温物性と近藤効果](/calc/kondo-effect) 
+  - [フェルミ液体と準粒子](/calc/fermi-liquid)
   - [密度汎関数摂動論](/calc/dfpt)
   - [グリーン関数とKKR法](/calc/kkr)
   - [非平衡グリーン関数（NEGF）と量子輸送](/calc/negf)
@@ -90,7 +92,7 @@ features:
   - [量子コンピュータの物理](/calc/quantum-computer)
   - [量子コンピュータ開発動向と展望](/calc/quantum-computer-trend)
 
-#### 磁性
+### 磁性
   - [スピンを理解する](/calc/spin)
   - [スピンをわかりやすく理解する](/calc/spin-easy)
   - [局在電子系の磁性](/calc/localized-electron-magnetism)
@@ -111,7 +113,7 @@ features:
   - [磁気ダンピングの内因的性質](/calc/damping-intrinsic)
   - [磁気ダンピング・磁歪・鉄損の関係性](/calc/damping-maelas-loss)
 
-#### 第一原理計算
+### 第一原理計算
   - [密度汎関数理論（DFT）の基礎](/calc/dft)
   - [第一原理計算の基本原理](/calc/ab-calc)
   - [第一原理計算を支える数値解法](/calc/dft-calc)
