@@ -46,6 +46,7 @@ features:
 - [臨界現象とスケーリング則](/calc/scaling)
 - [金属の低温物性と近藤効果](/calc/kondo-effect)
 - [フェルミ液体と準粒子](/calc/fermi-liquid)
+- [化学ポテンシャルと自由エネルギー](/calc/chemical-potential)
 
 ## 理論・計算 {#計算}
 第一原理計算・数値シミュレーションを軸に、理論背景から環境構築、数値解法、解析例までを紹介します。材料物性の理解とデータ駆動解析につながる計算科学の基礎をまとめます。
@@ -149,6 +150,7 @@ features:
 - [ランダウ理論と自由エネルギー](/calc/landau)
 - [Ginzburg–Landau理論による相転移と空間秩序の記述](/calc/landau-gl-theory)
 - [Wang–Landau法と電子状態](/calc/wang-landau)
+- [化学ポテンシャルと自由エネルギー](/calc/chemical-potential)
 - [ギブス自由エネルギーに基づく合金設計](/calc/gibbs-alloy)
 
 ### 分子動力学計算
