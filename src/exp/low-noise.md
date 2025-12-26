@@ -3,11 +3,11 @@
 微小電圧の計測では、信号そのものよりもノイズ源と結合経路が支配的になりやすい。したがって、ノイズの物理（熱・散弾・1/f・結合）と、計測系の設計（帯域、差動、遮蔽、ガード、同期検波）を同一の枠組みで扱うことが要点である。
 
 ## 参考ドキュメント
-- 高感度測定ハンドブック（日本語PDF、シールド・ガード・微小電圧/抵抗測定の体系）
+- 高感度測定ハンドブック（日本語PDF、シールド・ガード・微小電圧/抵抗測定の体系）  
   https://map-assets.tek.com/map-assets/japan/pdf/LMHandbookJv6_%20240p_KIJ1400_3.pdf
-- AN-347：シールディングとガーディング（日本語PDF、シールド接続の考え方と漏れ電流対策）
+- AN-347：シールディングとガーディング（日本語PDF、シールド接続の考え方と漏れ電流対策）  
   https://www.analog.com/media/jp/technical-documentation/application-notes/an-347_jp.pdf
-- ロックイン検出の原理と最新技術（日本語PDF、同期検波の直観と設計観点）
+- ロックイン検出の原理と最新技術（日本語PDF、同期検波の直観と設計観点）  
   https://www.zhinst.com/sites/default/files/documents/2023-07/zi_whitepaper_principles_of_lock-in_detection_jpn_v2.pdf
 
 ## 1. 微小電圧計測の基本表式：スペクトル密度と帯域

@@ -27,7 +27,15 @@ features:
 
 ---
 
-## 最近追加した項目
+## 最近追加した項目（2025-12）
+- [完全磁気多極子基底とMCD/MLD総和則](/exp/mcd-mld-dipole-sum-rule)
+- [オシロスコープと電流プローブを用いた損失評価法](/exp/osciloscope-measurement)
+- [BHアナライザによる損失評価法](/exp/b-h-measurement)
+- [LCRメータを用いた透磁率測定](/exp/lcr-measurement)
+- [VNAを用いた透磁率測定](/exp/vna-measurement)
+
+
+## 最近追加した項目（2025-11）
 - [四重極応答理論](/calc/quadrupole)
 - [四重極子モーメントと磁歪の統一的記述](/calc/quadrupole-maelas)
 - [電子論に基づく弾性定数の導出](/calc/elastic-constant)
@@ -269,6 +277,7 @@ features:
 - [アモルファスの構造・物性解析](/exp/sr-amorphous)
 - [クレプシュ・ゴルダン係数と選択則](/exp/clebsch-gordan)
 - [磁気円二色性（MCD）と磁気直線二色性（MLD）](/exp/sr-mcd-mld)
+- [完全磁気多極子基底とMCD/MLD総和則](/exp/mcd-mld-dipole-sum-rule)
 
 #### 各手法の原理
 - [X線吸収微細構造（XAFS）](/exp/sr-xafs)

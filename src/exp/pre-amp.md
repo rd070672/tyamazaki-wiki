@@ -3,13 +3,13 @@
 プリアンプは、センサ／試料が生む微小信号を、後段（ADC、ロックイン、スペアナ、VNA、デジタル処理）が扱える形へ変換する第一段の増幅器である。第一段の雑音・入力特性・安定性が、系全体の感度・再現性・周波数応答をほぼ決める。
 
 ## 参考ドキュメント
-- Analog Devices, AN-940: 最適ノイズ性能を得るための低ノイズ・アンプ選択の手引き（日本語）
+- Analog Devices, AN-940: 最適ノイズ性能を得るための低ノイズ・アンプ選択の手引き 
 https://www.analog.com/jp/resources/app-notes/an-940.html
 
-- Texas Instruments, 高速オペアンプのノイズ解析（日本語PDF, JAJA117）
+- Texas Instruments, 高速オペアンプのノイズ解析（日本語PDF, JAJA117）  
 https://www.ti.com/jp/lit/pdf/jaja117
 
-- Texas Instruments, トランス・インピーダンス・アンプ設計の基礎（日本語PDF, JAJA098）
+- Texas Instruments, トランス・インピーダンス・アンプ設計の基礎（日本語PDF, JAJA098）  
 https://www.ti.com/jp/lit/an/jaja098/jaja098.pdf
 
 ## 1. プリアンプが担う役割
@@ -47,9 +47,9 @@ $v_{n,\mathrm{rms}}=\sqrt{4k_{B}TR\Delta f}$
 
 となる。高抵抗の信号源ほど電圧雑音が増える方向に働く。
 
-### 2.2 電流の散弾雑音（shot noise）
+### 2.2 電流の散弾雑音
 
-電流 I には、離散キャリアに由来する雑音が伴い、電流雑音密度は
+電流 I には、離散キャリアに由来する雑音（shot noise）が伴い、電流雑音密度は
 
 $i_{n,\mathrm{sh}}=\sqrt{2qI}\ [\mathrm{A}/\sqrt{\mathrm{Hz}}]$
 
@@ -66,7 +66,7 @@ $e_{n,\mathrm{in}}^{2}\approx e_{n,\mathrm{amp}}^{2}+(i_{n,\mathrm{amp}}R_{s})^{
 
 となる。低 $R_{s}$ では $e_{n,\mathrm{amp}}$ が効きやすく、高 $R_{s}$ では $i_{n,\mathrm{amp}}$ と漏れ・絶縁が効きやすい、という設計の分岐がここから生まれる。
 
-### 2.4 帯域を狭めれば雑音は下がる（ENBW）
+### 2.4 帯域を狭めれば雑音は下がる
 
 白色雑音が支配的なら、等価雑音帯域幅 $B_{\mathrm{ENBW}}$ により
 
@@ -74,11 +74,11 @@ $v_{n,\mathrm{rms}}\approx e_{n}\sqrt{B_{\mathrm{ENBW}}}$
 
 と見積もれる。したがって、必要帯域を定義し、前段で帯域を整形することが最も確実な低雑音化である。
 
-## 3. 雑音のカスケード（Friisの式）
+## 3. 雑音のカスケード
 
 受信機・高周波プリアンプでは、雑音指数（Noise Figure）で議論することが多い。第1段の利得 $G_{1}$ が大きいほど、後段雑音の寄与は $1/G_{1}$ だけ希釈される。
 
-雑音因子 $F$（線形）を用いると、段数カスケードの基本式は
+雑音因子 $F$（線形）を用いると、段数カスケードの基本式（Friisの式）は
 
 $F_{\mathrm{tot}}=F_{1}+\frac{F_{2}-1}{G_{1}}+\frac{F_{3}-1}{G_{1}G_{2}}+\cdots$
 
