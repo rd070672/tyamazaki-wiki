@@ -30,7 +30,7 @@ features:
 ## 最近追加した項目（2025-12）
 - [完全磁気多極子基底とMCD/MLD総和則](/exp/mcd-mld-dipole-sum-rule)
 - [オシロスコープと電流プローブを用いた損失評価法](/exp/osciloscope-measurement)
-- [BHアナライザによる損失評価法](/exp/b-h-measurement)
+- [BHアナライザによる損失評価法](/exp/b-h-analyzer)
 - [LCRメータを用いた透磁率測定](/exp/lcr-measurement)
 - [VNAを用いた透磁率測定](/exp/vna-measurement)
 
@@ -242,6 +242,10 @@ features:
 - [振動試料型磁力計（VSM）による磁化測定の基礎](/exp/vsm)
 - [磁気特性測定システム（MPMS）とSQUID磁力計の基礎](/exp/mpms)
 - [磁気光学カー効果顕微鏡（MOKE）による磁区構造・磁化ダイナミクス観察入門](/exp/moke)
+- [オシロスコープと電流プローブを用いた損失評価法](/exp/osciloscope-measurement)
+- [BHアナライザによる損失評価法](/exp/b-h-analyzer)
+- [LCRメータを用いた透磁率測定](/exp/lcr-measurement)
+- [VNAを用いた透磁率測定](/exp/vna-measurement)
 - [パワーエレクトロニクス用受動素子](/exp/power-electronics-mag)
 - [パワーエレクトロニクス用半導体デバイス](/exp/power-electronics-semicon)
 
@@ -307,7 +311,7 @@ features:
 機械学習・統計解析・深層学習、機械学習ポテンシャルなど、データ解析に必要な基本知識や手法を扱います。材料応用の実例と実装、モデル解釈の勘所をまとめます。
 
 ### 機械学習のための数理・統計・情報
-- [機線形代数入門](/data/basis-linear-algebra)
+- [線形代数入門](/data/basis-linear-algebra)
 - [微積分入門](/data/basis-calculus)
 - [ベクトル解析入門](/data/basis-vector-analysis)
 - [複素解析入門](/data/basis-complex-analysis)
