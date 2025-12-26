@@ -33,6 +33,7 @@ features:
 - [BHアナライザによる損失評価法](/exp/b-h-analyzer)
 - [LCRメータを用いた透磁率測定](/exp/lcr-measurement)
 - [VNAを用いた透磁率測定](/exp/vna-measurement)
+- [配位子場論](/exp/ligand-field-theory)
 
 
 ## 最近追加した項目（2025-11）
@@ -73,6 +74,7 @@ features:
   - [ワニエ関数と局在軌道](/calc/wannier)
   - [最局在ワニエ関数と電子物性](/calc/wannier-2)
   - [低次元物質の電子状態](/calc/low-dimentional)
+  - [配位子場論](/exp/ligand-field-theory)
   - [キタエフ模型と量子状態](/calc/kitaev-honeycomb-model)
   - [ベリー位相とトポロジカル応答](/calc/berry)
   - [ベリー曲率に基づく異常ホール効果・異常ネルンスト効果](/calc/ahe-ane-calc)
