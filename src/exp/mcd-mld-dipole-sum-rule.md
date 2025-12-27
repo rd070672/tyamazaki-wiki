@@ -2,8 +2,9 @@
 
 X線磁気円二色性（XMCD）とX線磁気線二色性（XMLD）の総和則は、吸収スペクトルをエネルギーで積分した量を、基底状態における角運動量・スピン・電荷（軌道占有）の異方性に結び付ける理論である。完全磁気多極子基底（complete magnetic multipole basis）を用いると、従来は混在して見えにくかったXAS/XMCD/XMLD の積分量を「スピンレス（s=0）」と「スピンフル（s=1）」の多極子として同一の代数構造で整理され、反強磁性体や交替磁性におけるXMCD・XMLDの起源を同一の代数構造で扱えるようになる。
 
+![alt text](images/mcd-mld-dipole-sum-rule.png)
 
-## 参考ドキュメント
+### 参考ドキュメント
 1. Y. Yamasaki, Y. Ishii, N. Sasabe, Sci. Technol. Adv. Mater. 26, 2513217 (2025). doi:10.1080/14686996.2025.2513217 
 2. B. T. Thole et al., Phys. Rev. Lett. 68, 1943 (1992). doi:10.1103/PhysRevLett.68.1943
 3. J. Okabayashi, PF NEWS Vol.38 No.4 (2021) 磁気線二色性を用いた垂直磁気異方性の研究
