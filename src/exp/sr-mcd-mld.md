@@ -3,9 +3,12 @@
 磁気円二色性（MCD）と磁気直線二色性（MLD）は、偏光した光に対する吸収（または反射・透過）の差として現れる磁気起源の二色性である。X線領域のXMCD/XMLDは元素選択性を持ち、スピン・軌道磁気モーメント、反強磁性スピン軸、磁気異方性の情報へ直接接続できる。
 
 ## 参考ドキュメント（特に参考にしたもの：日本語を含む3件）
-1. B. T. Thole, P. Carra, F. Sette, G. van der Laan, X-ray circular dichroism as a probe of orbital magnetization, Phys. Rev. Lett. 68, 1943 (1992). DOI: 10.1103/PhysRevLett.68.1943
-2. P. Carra, B. T. Thole, M. Altarelli, X. Wang, X-ray circular dichroism and local magnetic fields, Phys. Rev. Lett. 70, 694 (1993). DOI: 10.1103/PhysRevLett.70.694
-3. KEK Photon Factory 磁気円二色性（XMCD）測定（日本語） https://pfwww.kek.jp/users_info/station_spec/discipline/xmcd.html
+1. B. T. Thole, P. Carra, F. Sette, G. van der Laan, X-ray circular dichroism as a probe of orbital magnetization, Phys. Rev. Lett. 68, 1943 (1992).   
+DOI: 10.1103/PhysRevLett.68.1943
+2. P. Carra, B. T. Thole, M. Altarelli, X. Wang, X-ray circular dichroism and local magnetic fields, Phys. Rev. Lett. 70, 694 (1993).  
+DOI: 10.1103/PhysRevLett.70.694
+3. KEK Photon Factory 磁気円二色性（XMCD）測定  
+https://pfwww.kek.jp/users_info/station_spec/discipline/xmcd.html
 
 
 ## 1. 定義
@@ -75,9 +78,9 @@ XMLDは単純な $\mathbf{E}\parallel\mathbf{M}$ と $\mathbf{E}\perp\mathbf{M}$
 
 
 
-## 5. XMCD総和則（sum rules）
+## 5. XMCD総和則
 
-XMCDから軌道磁気モーメント $m_L$ と（実効的な）スピン磁気モーメント $m_S$ を得る枠組みとして、TholeらおよびCarraらの総和則が用いられる。ここでは遷移金属 $L_{2,3}$ 端（$2p\rightarrow 3d$）を念頭に置く。
+XMCDから軌道磁気モーメント $m_L$ と（実効的な）スピン磁気モーメント $m_S$ を得る枠組みとして、TholeらおよびCarraらの総和則（sum rules）が用いられる。ここでは遷移金属 $L_{2,3}$ 端（$2p\rightarrow 3d$）を念頭に置く。
 
 ### 5.1 積分量の定義
 背景・段差補正後のスペクトルを用い、以下を定義する。
