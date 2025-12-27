@@ -1,14 +1,3 @@
-<script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML"></script>
-<script type="text/x-mathjax-config">
- MathJax.Hub.Config({
-  tex2jax: {
-   inlineMath: [["$","$"]],
-   displayMath: [["$$","$$"]]
-  }
- });
-</script>
-
-
 # 完全磁気多極子基底に基づくX線円二色性・線二色性の総和則
 
 X線磁気円二色性（XMCD）とX線磁気線二色性（XMLD）の総和則は、吸収スペクトルをエネルギーで積分した量を、基底状態における角運動量・スピン・電荷（軌道占有）の異方性に結び付ける理論である。完全磁気多極子基底（complete magnetic multipole basis）を用いると、従来は混在して見えにくかったXAS/XMCD/XMLD の積分量を「スピンレス（s=0）」と「スピンフル（s=1）」の多極子として同一の代数構造で整理され、反強磁性体や交替磁性におけるXMCD・XMLDの起源を同一の代数構造で扱えるようになる。
