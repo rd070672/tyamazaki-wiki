@@ -34,6 +34,7 @@ features:
 - [LCRメータを用いた透磁率測定](exp/lcr-measurement)
 - [VNAを用いた透磁率測定](exp/vna-measurement)
 - [配位子場論](calc/ligand-field-theory)
+- [線形代数とデータサイエンス](data/linear-algebra-data-science)
 
 
 ## 最近追加した項目（2025-11）
@@ -314,6 +315,7 @@ features:
 
 ### 機械学習のための数理・統計・情報
 - [線形代数入門](data/basis-linear-algebra)
+- [線形代数とデータサイエンス](data/linear-algebra-data-science)
 - [微積分入門](data/basis-calculus)
 - [ベクトル解析入門](data/basis-vector-analysis)
 - [複素解析入門](data/basis-complex-analysis)
