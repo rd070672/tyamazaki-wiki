@@ -42,13 +42,15 @@ features:
 - [第一原理分子動力学法の基礎](calc/aimd-easy)
 - [物理学の多様な模型を解説する](calc/model)
 - [熱力学計算の基礎](calc/thermodynamics-calc)
-- [フェーズフィールド法の基礎と数値計算](calc/phase-field)
+- [フェーズフィールド法の基礎と数値計算](other/lecture-phase-field)
 - [計算物理の歴史](calc/calc-history)
 - [データサイエンスの歴史](data/data-science-history)
 - [機械学習の歴史](data/machine-learning-history)
 - [MCPの基礎と実装](sys/mcp-2)
 - [比熱測定の原理と評価式](exp/specific-heat)
-
+- [フェーズフィールド法の基礎と数値計算](other/lecture-phase-field)
+- [材料計算学](other/lecture-computational-materials)
+- [マテリアルズ・インフォマティクス](other/lecture-materials-informatics)
 
 ## 最近追加した項目（2025-11）
 - [四重極応答と磁気弾性](calc/quadrupole)

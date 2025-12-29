@@ -1096,19 +1096,9 @@ $$
 「どれが正しいか」ではなく、「どの物理条件をどこで課しているか」という観点で選ぶのが重要である。
 
 ### 小まとめ
-
 第4章では、勾配エネルギー項から平衡界面の形（$\tanh$ プロファイル）、界面幅 $\delta$、界面エネルギー $\gamma$ を導き、それらが $(\kappa,A)$ により同時に決まることを示した。さらに、異方性界面エネルギーの導入法、強異方性での安定性、三重点の接触角が界面エネルギーの釣り合いで決まること、粒界の表現として多秩序変数と方位場の考え方、外場（応力・電場・磁場）を自由エネルギーへ入れる際に境界条件が本質であることを整理した。  
 
 第5章では、二相二元系から出発して化学ポテンシャルと拡散方程式の導出を確認し、界面で局所平衡を満たすための KKS（拘束付き最小化）とグランドポテンシャル形式（$\mu$ 主変数）を導いた。さらに、反応項を入れる場合の熱力学整合、多成分拡散における交差項と Onsager 行列の正定値性が、物理と数値安定性を同時に守る条件であることを強調した。次に進むべき課題は、これらの定式化を薄界面極限・鋭い界面極限で整理し、材料定数（$\gamma$、モビリティ、拡散係数）との対応を「実装可能な同定手順」として明確化することである。
-
-## 参考文献
-[1] S. G. Kim, W. T. Kim, T. Suzuki, Phase-field model for binary alloys, Physical Review E, 1999.    
-[2] N. Moelans, B. Blanpain, P. Wollants, An introduction to phase-field modeling of microstructure evolution, Calphad, 2008.    
-[3] N. Moelans, B. Blanpain, P. Wollants, Quantitative analysis of grain boundary properties in a generalized phase-field model, Physical Review B, 2008.    
-[4] A. Choudhury, B. Nestler, Grand-potential formulation for multicomponent phase transformations, Physical Review E, 2012.  
-[5] M. Ohno, Quantitative phase-field modeling and simulations of solidification microstructures, ISIJ International, 2020.  
-[6] 大野宗一, 合金の組織形成過程のフェーズフィールドシミュレーション, まてりあ, 2009.  
-[7] 日本金属学会関連の解説・講義資料（フェーズフィールド法、凝固・析出の基礎）  
 
 
 ## 第6章 弾性・塑性・欠陥場との連成
