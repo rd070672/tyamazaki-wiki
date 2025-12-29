@@ -1,13 +1,13 @@
-# フェーズフィールドクリスタル（PFC）法の基礎と応用 
+# フェーズフィールドクリスタル法の基礎と応用 
 
 Phase-Field Crystal（PFC）法は、結晶格子を内包する連続場（密度場）を用いて、原子スケールの空間分解能を保ちながら拡散時間スケールでの組織進化（粒界移動、転位、結晶成長など）を記述する枠組みである。起源は結晶成長における弾性効果を原子スケールで取り込む目的で提案されたモデルに遡る。
 
 ## 参考ドキュメント
-1. H. Emmerich et al., Phase-field-crystal models for condensed matter dynamics on atomic length and diffusive time scales: an overview, arXiv:1207.0257 (2012).
+1. H. Emmerich et al., Phase-field-crystal models for condensed matter dynamics on atomic length and diffusive time scales: an overview, arXiv:1207.0257 (2012).  
    https://arxiv.org/abs/1207.0257
-2. K. R. Elder et al., Modeling Elasticity in Crystal Growth, Phys. Rev. Lett. 88, 245701 (2002).
+2. K. R. Elder et al., Modeling Elasticity in Crystal Growth, Phys. Rev. Lett. 88, 245701 (2002).  
    https://doi.org/10.1103/PhysRevLett.88.245701
-3. 山中 晃徳, フェーズフィールドクリスタル法による多結晶粒成長シミュレーション, 計算力学講演会講演論文集 2018.31, Session 067（J-STAGE, 2019公開）.
+3. 山中 晃徳, フェーズフィールドクリスタル法による多結晶粒成長シミュレーション, 計算力学講演会講演論文集 2018.31, Session 067（J-STAGE, 2019公開）.  
    https://www.jstage.jst.go.jp/article/jsmecmd/2018/31/2018_067/_article/-char/ja/
 
 

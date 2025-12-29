@@ -35,10 +35,24 @@ features:
 - [VNAを用いた透磁率測定](exp/vna-measurement)
 - [配位子場論](calc/ligand-field-theory)
 - [線形代数とデータサイエンス](data/linear-algebra-data-science)
+- [PHOTON](data/photon)
+- [Transformer](calc/transformer)
+- [密度汎関数理論と固有値問題の基礎](calc/dft-easy)
+- [時間依存密度汎関数法の基礎](calc/tddft-easy)
+- [第一原理分子動力学法の基礎](calc/aimd-easy)
+- [物理学の模型（モデル）](calc/model)
+- [計算物理の歴史](calc/calc-science-history)
+- [データサイエンスの歴史](data/data-science-history)
+- [機械学習の歴史](data/machine-learning-history)
+- [MCPの基礎と実装](data/mcp-2)
+- [熱力学計算の基礎](calc/thermodynamics-calc)
+- [比熱測定の原理と評価式](exp/specific-heat)
+- [フェーズフィールド法](calc/phase-field)
 
 
 ## 最近追加した項目（2025-11）
-- [四重極応答理論](calc/quadrupole)
+- [四重極応答と磁気弾性](calc/quadrupole)
+- [四重極応答理論](calc/quadrupole-theory)
 - [四重極子モーメントと磁歪の統一的記述](calc/quadrupole-maelas)
 - [電子論に基づく弾性定数の導出](calc/elastic-constant)
 - [電子論に基づく磁気弾性定数の導出](calc/magnetoelastic-constant)
@@ -374,6 +388,7 @@ features:
 - [GANとDiffusionモデル](data/gan-diffusion)
 - [変分オートエンコーダー(VAE)](data/vae)
 - [Transformer](data/transformer)
+- [PHOTON](data/photon)
 - [材料科学分野におけるLLM](data/llm-mat)
 - [ファインマンLLM](data/llm-feynman)
 
