@@ -36,18 +36,18 @@ features:
 - [配位子場論](calc/ligand-field-theory)
 - [線形代数とデータサイエンス](data/linear-algebra-data-science)
 - [PHOTON](data/photon)
-- [Transformer](calc/transformer)
+- [Transformer](data/transformer)
 - [密度汎関数理論と固有値問題の基礎](calc/dft-easy)
 - [時間依存密度汎関数法の基礎](calc/tddft-easy)
 - [第一原理分子動力学法の基礎](calc/aimd-easy)
 - [物理学の模型（モデル）](calc/model)
-- [計算物理の歴史](calc/calc-science-history)
+- [計算物理の歴史](calc/calc-history)
 - [データサイエンスの歴史](data/data-science-history)
 - [機械学習の歴史](data/machine-learning-history)
-- [MCPの基礎と実装](data/mcp-2)
+- [MCPの基礎と実装](sys/mcp-2)
 - [熱力学計算の基礎](calc/thermodynamics-calc)
 - [比熱測定の原理と評価式](exp/specific-heat)
-- [フェーズフィールド法](calc/phase-field)
+- [フェーズフィールド法の基礎と数値計算](calc/phase-field)
 
 
 ## 最近追加した項目（2025-11）
