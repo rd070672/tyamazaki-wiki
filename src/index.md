@@ -49,6 +49,7 @@ features:
 - [フェーズフィールド法の基礎と数値計算](other/lecture-phase-field)
 - [材料計算学](other/lecture-computational-materials)
 - [マテリアルズ・インフォマティクス](other/lecture-materials-informatics)
+- [AI入門](other/lecture-ai)
 - [物理学の多様な模型を解説する](other/model)
 - [基礎研究と応用研究のあいだ](other/essay-base-apply)
 - [材料工学の中で、物性物理を掘り下げる](other/essay-solid-state-physics)
