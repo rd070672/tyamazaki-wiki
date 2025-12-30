@@ -1,4 +1,4 @@
-# PHOTON
+# PHOTON ~Transformerの次へ~
 
 PHOTON（Parallel Hierarchical Operation for TOp-down Networks）は、自己回帰Transformerが持つ長文脈推論のメモリ帯域ボトルネックを、階層的な潜在ストリームを用いて緩和する言語モデルである。トークン列を下位から上位へ圧縮して保持し、生成時には上位の状態更新を主としつつ、下位トークンはチャンク内の局所復元として生成する設計である。[R1]
 
