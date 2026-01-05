@@ -27,6 +27,10 @@ features:
 
 ---
 
+## 最近追加した項目（2026-1）
+- [Neural Entropyによる深層学習モデル評価](data/neural-entropy)
+- [Industry 5.0の動向と展望](data/neural-entropy)
+
 ## 最近追加した項目（2025-12）
 - [完全磁気多極子基底とMCD/MLD総和則](exp/mcd-mld-dipole-sum-rule)
 - [オシロスコープと電流プローブを用いた損失評価法](exp/osciloscope-measurement)

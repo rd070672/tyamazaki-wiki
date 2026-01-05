@@ -3093,7 +3093,6 @@ PFは連続体場としての組織進化を扱い、FEMは複雑形状・境界
 
 
 ## おわりに
-
 本書では、材料計算学における主要な数値手法――第一原理計算（DFT）、分子動力学（MD）、モンテカルロ法（MC）、フェーズフィールド法（PF）、有限要素法（FEM）――を、単なる計算法の羅列としてではなく、「どのスケールを、どの未知量で記述するのか」という視点から体系的に整理してきた。原子・電子スケールから連続体スケールへと記述が移り変わる中で、計算手法の違いは精度や計算コストの差ではなく、物理量の定義と平均化の仕方の違いとして理解できることが、本書を通じて明確になったはずである。
 
 また、異なる手法を接続する際に本質的に重要なのは、数値そのものを無理に受け渡すことではなく、「何を平均し、何を捨て、どの量を有効変数として残すのか」という定義の選択であることを繰り返し強調してきた。この視点を持つことで、マルチスケール計算は特別な技術ではなく、記述の階層を意識的に行き来するための論理的操作として捉えられるようになる。
@@ -3105,12 +3104,12 @@ PFは連続体場としての組織進化を扱い、FEMは複雑形状・境界
 最終的に本書が目指したのは、特定の手法を使えるようになることではなく、学習の順序そのものを自分で設計できる研究者・技術者を育てることである。いま自分はどのスケールを理解しており、どの未知量が曖昧なのか、次に学ぶべき理論や手法は何か――それらを自ら判断できるようになったとき、材料計算学は単なる計算技術ではなく、思考の道具として機能し始める。本書が、そのための出発点となることを期待したい。
 
 
-## 参考ドキュメント
+### 参考ドキュメント
 1. 東京大学物性研究所 計算物質科学研究センター, 第一原理計算プログラムとOpenMXについて（PDF）: https://ccms.issp.u-tokyo.ac.jp/wp-content/uploads/2019/12/openmx_text.pdf
 2. HPCI, PHASE/0（アプリケーション紹介）: https://www.hpci-office.jp/for_users/appli_software/appli_phase0
 3. 小山敏幸, フェーズフィールド法による組織形成シミュレーション（日本語解説, J-STAGE）: https://www.jstage.jst.go.jp/article/jinstmet/73/12/73_12_955/_article/-char/ja/
 
-## 参考文献（その他）
+### 参考文献（その他）
 - P. Hohenberg and W. Kohn, Inhomogeneous Electron Gas, Physical Review 136, B864 (1964).
 - W. Kohn and L. J. Sham, Self-Consistent Equations Including Exchange and Correlation Effects, Physical Review 140, A1133 (1965).
 - J. P. Perdew, K. Burke, and M. Ernzerhof, Generalized Gradient Approximation Made Simple, Physical Review Letters 77, 3865 (1996).
