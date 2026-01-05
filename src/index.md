@@ -29,7 +29,11 @@ features:
 
 ## 最近追加した項目（2026-1）
 - [Neural Entropyによる深層学習モデル評価](data/neural-entropy)
-- [Industry 5.0の動向と展望](data/neural-entropy)
+- [Industry 5.0の動向と展望](other/industry5)
+- [横浜の歴史を学術的にたどる](other/yokohama)
+- [横浜国立大学の歴史](other/ynu)
+- [戦後日本の大学紛争と学生運動](other/student-movement)
+- [国立大学法人化とその後の制度変化](other/university2004)
 
 ## 最近追加した項目（2025-12）
 - [完全磁気多極子基底とMCD/MLD総和則](exp/mcd-mld-dipole-sum-rule)
