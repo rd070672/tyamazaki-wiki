@@ -6,7 +6,7 @@ export default defineConfig({
 
   base: '/tyamazaki-wiki/',
   srcDir: 'src',
-  title: "tyamazaki | wiki",
+  title: "tyamazaki.wiki",
   description: "tyamazakiの研究取り組みからの知見や経験をwikiとして共有します",
     
   lastUpdated: {text: 'Last updated', formatOptions: {dateStyle: 'short', timeStyle: 'medium'}},
@@ -32,11 +32,11 @@ export default defineConfig({
     }],
 
     ["meta", { property: "og:image", content: "https://rd070672.github.io/tyamazaki-wiki/images/top.jpg" }],
-    ["meta", { property: "og:site_name", content: "山崎研究室" }],
+    ["meta", { property: "og:site_name", content: "tyamazaki" }],
     ["meta", { property: "twitter:card", content: "summary" }],
     ["meta", { property: "twitter:site", content: "@tyamazaki"}],
-    ["meta", { property: "twitter:title", content: "山崎研究室"}],
-    ["meta", { property: "twitter:description", content: "山崎研究室における知見や経験をwikiとして共有します"}],
+    ["meta", { property: "twitter:title", content: "tyamazaki"}],
+    ["meta", { property: "twitter:description", content: "tyamazakiの研究取り組みからの知見や経験をwikiとして共有します"}],
     ["meta", { property: "twitter:image", content: "https://rd070672.github.io/tyamazaki-wiki/images/top.jpg" }]
   ],
 
@@ -61,7 +61,6 @@ export default defineConfig({
       { text: 'データサイエンス', link: '/#データサイエンス'},
       { text: '情報基盤', link: '/#情報基盤'},
       { text: '周期表', link: '/#周期表'},
-      // { text: 'ラボ運営', link: '/#ラボ運営'},
       { text: 'その他', items: [
         { text: 'About', link: '/about' },
         { text: 'Changelog', link: '/changelog' },
