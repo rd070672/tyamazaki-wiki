@@ -34,7 +34,7 @@ features:
 - [横浜国立大学の歴史](other/ynu)
 - [戦後日本の大学紛争と学生運動](other/student-movement)
 - [国立大学法人化とその後の制度変化](other/university-corporation)
-- [スピントロニクス半導体](other/semiconductor-spintronics)
+- [スピントロニクス半導体](exp/semiconductor-spintronics)
 - [計算科学のための大規模数値解法](other/lecture-large-scale-computing)
 
 ## 最近追加した項目（2025-12）
