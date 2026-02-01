@@ -64,8 +64,8 @@ export default defineConfig({
       { text: 'その他', items: [
         { text: 'About', link: '/about' },
         { text: 'Changelog', link: '/changelog' },
-        { text: 'Website', link: '/#' },
-        { text: 'Github', link: 'https://github.com/rd070672/tyamazaki-wiki' },
+        // { text: 'Website', link: '/#' },
+        // { text: 'Github', link: 'https://github.com/rd070672/tyamazaki-wiki' },
       ]},
     ],
 
@@ -523,7 +523,7 @@ export default defineConfig({
     ],
 
     footer: {
-      copyright: '© 2025- tyamazaki',
+      copyright: '© 2026- tyamazaki-wiki. All rights reserved.',
     },
   },
 
